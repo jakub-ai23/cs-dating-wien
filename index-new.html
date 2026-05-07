@@ -237,6 +237,26 @@
       font-size: clamp(1rem, 1.8vw, 1.3rem);
       color: var(--ink-soft);
       margin-bottom: 18px;
+      min-height: 3.2em;
+    }
+    .tw-cursor {
+      display: inline-block;
+      width: 1.5px;
+      height: 1em;
+      background: var(--ink-soft);
+      margin-left: 2px;
+      vertical-align: text-bottom;
+      animation: tw-blink 0.65s step-end infinite;
+    }
+    @keyframes tw-blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+    .hero-cascade {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .hero-cascade.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .hero h1 {
@@ -1335,26 +1355,26 @@
       <span class="masthead-date">Edícia&nbsp;I &nbsp;·&nbsp; Wien &nbsp;·&nbsp; 22.&nbsp;jún&nbsp;2026</span>
     </div>
 
-    <p class="hero-prequestion">Mesiace na appke. Stovky swipov.<br>A stále nikto, s kým máš niečo spoločné.</p>
+    <p class="hero-prequestion"><span id="tw-text"></span><span class="tw-cursor" id="tw-cursor"></span></p>
 
-    <h1>Online dostávaš jeden pokus.<br><em>Naživo dostávaš večer.</em></h1>
+    <h1 class="hero-cascade">Online dostávaš jeden pokus.<br><em>Naživo dostávaš večer.</em></h1>
 
-    <div class="hero-hr"></div>
+    <div class="hero-hr hero-cascade"></div>
 
-    <div class="hero-meta-strip">
+    <div class="hero-meta-strip hero-cascade">
       <div class="hero-meta-cell"><strong>30</strong>miest</div>
       <div class="hero-meta-cell"><strong>15+15</strong>ženy · muži</div>
       <div class="hero-meta-cell"><strong>€29</strong>vstup</div>
       <div class="hero-meta-cell"><strong>22.&nbsp;6.</strong>2026</div>
     </div>
 
-    <div class="cta-row">
+    <div class="cta-row hero-cascade">
       <a href="#prihlaska" class="cta-btn">Prihlásiť sa</a>
       <a href="#preco" class="cta-btn-ghost">Pozri si formát →</a>
     </div>
-    <span class="cta-soft-note">3 minúty. Ak nezapadáš – €29 dostaneš späť.</span>
+    <span class="cta-soft-note hero-cascade">3 minúty. Ak nezapadáš – €29 dostaneš späť.</span>
 
-    <p class="hero-authority">Hosťuje <em>Jakub Popluhar</em> – Slovák, 10+ rokov na Západe. Organizátor medzinárodných eventov (FRESH, európska športová asociácia). Po desiatkach speed-datingov vo Viedni postavil ten, ktorý mu sám chýbal.</p>
+    <p class="hero-authority hero-cascade">Hosťuje <em>Jakub Popluhar</em> – Slovák, 10+ rokov na Západe. Organizátor medzinárodných eventov (FRESH, európska športová asociácia). Po desiatkach speed-datingov vo Viedni postavil ten, ktorý mu sám chýbal.</p>
 
   </div>
 </section>
@@ -1886,6 +1906,42 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); tObs.unobserve(e.target); } });
   }, { threshold: 0.2 });
   document.querySelectorAll('.t-card').forEach(el => tObs.observe(el));
+
+  // Typewriter — hero interrupt
+  (function() {
+    const lines = [
+      'Mesiace na appke. Stovky swipov.',
+      'A stále nikto, s kým máš niečo spoločné.'
+    ];
+    const textEl  = document.getElementById('tw-text');
+    const cursor  = document.getElementById('tw-cursor');
+    if (!textEl || !cursor) return;
+
+    let li = 0, ci = 0;
+    const CHAR  = 44;   // ms per character
+    const PAUSE = 340;  // pause between lines
+    const DONE  = 220;  // pause before cascade
+
+    function type() {
+      if (ci < lines[li].length) {
+        textEl.textContent += lines[li][ci++];
+        setTimeout(type, CHAR);
+      } else if (li < lines.length - 1) {
+        li++; ci = 0;
+        textEl.innerHTML += '<br>';
+        setTimeout(type, PAUSE);
+      } else {
+        setTimeout(() => {
+          cursor.style.display = 'none';
+          document.querySelectorAll('.hero-cascade').forEach((el, i) => {
+            setTimeout(() => el.classList.add('visible'), i * 110);
+          });
+        }, DONE);
+      }
+    }
+
+    setTimeout(type, 350);
+  })();
 </script>
 </body>
 </html>
