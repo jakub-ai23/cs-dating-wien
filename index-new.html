@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Česko-Slovenský Dating · Wien – Online dostávaš jeden pokus. Naživo dostávaš večer.</title>
-  <meta name="description" content="Sick of dating apps und having nothing in common? Kuratovaný večer pre Slovákov a Čechov vo Viedni. 25–39. Vážne hľadanie partnera. Prvá edícia 22. júna 2026.">
+  <meta name="description" content="Kuratovaný speed dating večer pre Slovákov a Čechov vo Viedni. 25–39. Vážne hľadanie partnera. Arcohotel HQ, 22. júna 2026.">
   <meta property="og:title" content="Česko-Slovenský Dating · Wien">
-  <meta property="og:description" content="V tom istom jazyku. V tom istom kruhu. Prvá edícia 22. júna 2026.">
+  <meta property="og:description" content="Online dostávaš jeden pokus. Naživo dostávaš večer. Edícia I, Wien, 22. júna 2026.">
   <meta property="og:type" content="website">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
   <style>
@@ -111,6 +111,30 @@
       transition: background 0.25s;
     }
     .nav-cta:hover { background: var(--burgundy-mid); color: var(--ivory); }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border: 1px solid var(--rule);
+      overflow: hidden;
+    }
+    .lang-toggle a {
+      padding: 6px 11px;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+      border-right: 1px solid var(--rule);
+    }
+    .lang-toggle a:last-child { border-right: none; }
+    .lang-toggle a.active {
+      background: var(--ink);
+      color: var(--ivory);
+    }
+    .lang-toggle a:not(.active):hover { background: var(--ivory-warm); color: var(--ink); }
 
     /* ====================================================
        LAYOUT PRIMITIVES
@@ -1331,6 +1355,10 @@
       <li><a href="#preco">Prečo</a></li>
       <li><a href="#termin">Termín</a></li>
     </ul>
+    <div class="lang-toggle">
+      <a href="index-new.html" class="active">SK</a>
+      <a href="index-cz.html">CZ</a>
+    </div>
     <a href="#prihlaska" class="nav-cta">Prihlásiť sa</a>
   </div>
 </nav>
@@ -1372,9 +1400,9 @@
       <a href="#prihlaska" class="cta-btn">Prihlásiť sa</a>
       <a href="#preco" class="cta-btn-ghost">Pozri si formát →</a>
     </div>
-    <span class="cta-soft-note hero-cascade">3 minúty. Ak nezapadáš – €29 dostaneš späť.</span>
+    <span class="cta-soft-note hero-cascade">3 minúty. Ak nezapadáš, €29 dostaneš späť.</span>
 
-    <p class="hero-authority hero-cascade">Hosťuje <em>Jakub Popluhar</em> — organizátor medzinárodných eventov.<br>Po desiatkach speed-datingov vo Viedni zorganizoval ten, ktorý mu sám chýbal.</p>
+    <p class="hero-authority hero-cascade">Hosťuje <em>Jakub Popluhar</em>, organizátor medzinárodných eventov.<br>Po desiatkach speed-datingov vo Viedni zorganizoval ten, ktorý mu sám chýbal.</p>
 
   </div>
 </section>
@@ -1388,7 +1416,7 @@
 
     <div class="section-eyebrow">
       <span class="section-eyebrow-num">I.</span>
-      <span class="section-eyebrow-label">Skúšal si to inak.</span>
+      <span class="section-eyebrow-label">Iná cesta. Iný výsledok.</span>
       <span class="section-eyebrow-rule"></span>
     </div>
 
@@ -1397,14 +1425,14 @@
     <div class="cv-body">
       Žiješ vo Viedni dva roky. Možno päť. Možno desať.<br><br>
       A jedného dňa zavoláš domov.<br>
-      Babka sa pýta, kedy ju prídeš pozrieť — a koho tentokrát privedieš.<br><br>
+      Babka sa pýta, kedy ju prídeš pozrieť, a koho tentokrát privedieš.<br><br>
       Tvoj partner vie po nemecky. Po anglicky. Možno po taliansky.<br>
       Babka nie.<br><br>
       Nemusíš to už dokazovať. <strong>Vieš to.</strong>
     </div>
 
     <div class="cv-closer">
-      <p class="cv-closer-main">Otázka nie je či. Otázka je kde.</p>
+      <p class="cv-closer-main">Nie je to otázka, či. Je to otázka, kde.</p>
       <p class="cv-closer-here">Tu.</p>
     </div>
 
@@ -1420,7 +1448,7 @@
     <div class="logo-bridge-text">
       <div class="lb-eyebrow">Česko-Slovenský</div>
       <h2>Dve krajiny.<br><em>Jeden spoločný svet.</em></h2>
-      <p>Keď Slovák a Čech sedí oproti sebe vo Viedni, nepotrebujú vysvetľovať, odkiaľ sú. Vedia to.<br>ČS Dating je postavený na práve tomto.</p>
+      <p>Keď Slovák a Čech sedia oproti sebe vo Viedni, nepotrebujú vysvetľovať, odkiaľ sú. Vedia to.<br>Na tom ČS Dating stojí.</p>
     </div>
 
     <div class="logo-bridge-visual">
@@ -1565,7 +1593,7 @@
 
       <div class="diff-card" style="padding:28px 26px;background:var(--ivory-warm);opacity:0.88;">
         <div style="font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;">Dating s kýmkoľvek</div>
-        <p style="font-family:var(--font-display);font-size:1rem;color:var(--ink-mid);line-height:1.7;">Každý hovorí, že na kultúre nezáleží.<br>Tretí mesiac vysvetľuješ, čo sú halušky.<br>Šiesty — že rodina nie je „príliš veľa."<br>Deviaty — sa ti nechce.</p>
+        <p style="font-family:var(--font-display);font-size:1rem;color:var(--ink-mid);line-height:1.7;">Každý hovorí, že na kultúre nezáleží.<br>Tretí mesiac vysvetľuješ, čo sú halušky.<br>Šiesty: že rodina nie je „príliš veľa."<br>Deviaty: sa ti nechce.</p>
       </div>
 
       <div class="diff-card" style="padding:28px 26px;background:var(--ivory);border-top:3px solid var(--burgundy);">
@@ -1596,16 +1624,16 @@
 
     <div class="format-intro-copy">
       Po prvom rande do 30 sekúnd vieš. Niečo ti hovorí.<br>
-      <strong>Apky tento inštinkt nepoužívajú. My ho stavíme do stredu večera.</strong>
+      <strong>Apky tento inštinkt nepoužívajú. My ho dávame do popredia každého večera.</strong>
     </div>
 
     <p class="format-one-liner">10 stretnutí. 6 minút každé. Tri hodiny. Vieš s kým chceš pokračovať.</p>
 
     <div class="format-bonus">
       <div class="format-bonus-label">Vedľajší produkt</div>
-      <p>Žiadny match? Stále odchádzaš so 14 ľuďmi, s ktorými zdieľaš jazyk a históriu.<br>
+      <p>Žiadny match? Stále odchádzaš so 14 ľuďmi, s ktorými máš spoločný jazyk a históriu.<br>
       Priatelia. Sieť. Ľudia, ktorých môžeš zavolať o rok na kávu — bez vysvetľovania.<br>
-      <strong>Vo Viedni — to nie je nula. To je vzácne.</strong></p>
+      <strong>Vo Viedni to nie je nula. To je vzácne.</strong></p>
     </div>
 
   </div>
@@ -1631,7 +1659,7 @@
 
       <div class="t-card">
         <span class="t-qmark" aria-hidden="true">"</span>
-        <p class="t-text">Apky nefiltrujú to, čo treba. Toto je prvý raz, čo niekto urobil priestor presne pre nás – Slovákov a Čechov vo Viedni.</p>
+        <p class="t-text">Apky nefiltrujú to, čo treba. Toto je prvý raz, čo niekto urobil priestor presne pre nás, pre Slovákov a Čechov vo Viedni.</p>
         <p class="t-author">Skúšobná účastníčka &nbsp;·&nbsp; 31 &nbsp;·&nbsp; Wien</p>
       </div>
 
@@ -1696,11 +1724,11 @@
 
         <a href="#prihlaska" class="cta-btn">Prihlásiť sa na Edíciu I</a>
 
-        <p class="event-guarantee">Ak nezapadáš – €29 dostaneš späť do 72 hodín. Žiadne otázky.</p>
+        <p class="event-guarantee">Ak nezapadáš, €29 dostaneš späť do 72 hodín. Žiadne otázky.</p>
       </div>
     </div>
 
-    <p class="host-line">Hosťuje <strong>Jakub Popluhar</strong> — organizátor medzinárodných eventov.<br>Po desiatkach speed-datingov vo Viedni zorganizoval ten, ktorý mu sám chýbal.</p>
+    <p class="host-line">Hosťuje <strong>Jakub Popluhar</strong>, organizátor medzinárodných eventov.<br>Po desiatkach speed-datingov vo Viedni zorganizoval ten, ktorý mu sám chýbal.</p>
 
     <div class="upcoming-events">
 
@@ -1716,7 +1744,7 @@
         <div class="uc-photo"><img src="images/photo-group-vienna.jpg" alt=""></div>
         <div class="uc-date">18</div>
         <div class="uc-month">August 2026 · Utorok</div>
-        <div class="uc-title">Letný Evening</div>
+        <div class="uc-title">Letný večer</div>
         <p class="uc-desc">Outdoor bar. Menej rande, viac rozhovorov. Pre tých, čo chcú najprv spoznať komunitu.</p>
       </div>
 
@@ -1725,7 +1753,7 @@
         <div class="uc-date">14</div>
         <div class="uc-month">September 2026 · Pondelok</div>
         <div class="uc-title">Speed Dating · Edícia II</div>
-        <p class="uc-desc">Rovnaký formát, nové tváre. Pre tých, čo v júni nestihli — alebo chcú znova.</p>
+        <p class="uc-desc">Rovnaký formát, nové tváre. Pre tých, čo v júni nestihli alebo chcú znova.</p>
       </div>
 
     </div>
@@ -1801,7 +1829,7 @@
         <span class="faq-num">02</span>
         <div>
           <div class="faq-q">Prečo prihláška a nie len lístok?</div>
-          <div class="faq-a">Otvorené dvere = priemerný večer. Pomer 15+15, vekový rozsah, vážnosť zámeru – to robí rozdiel. Ak nezapadáš, €29 vraciame do 72 hodín bez otázok.</div>
+          <div class="faq-a">Otvorené dvere znamenajú priemerný večer. Pomer 15+15, vekový rozsah, vážnosť zámeru, to robí rozdiel. Ak nezapadáš, €29 vraciame do 72 hodín bez otázok.</div>
         </div>
       </div>
       <div class="faq-item">
@@ -1842,7 +1870,7 @@
     <p style="font-size:0.88rem;color:rgba(248,244,238,0.45);margin-bottom:24px;">€29 = miesto pri stole. Ak nezapadáš podľa krátkej prihlášky, peniaze späť do 72 hodín.</p>
 
     <p style="font-size:0.72rem;letter-spacing:2px;color:rgba(248,244,238,0.38);margin-bottom:28px;text-transform:uppercase;">
-      01 Vyplň prihlášku (3 min) &nbsp;·&nbsp; 02 Schválenie do 48h &nbsp;·&nbsp; 03 Príď 22. júna
+      01 Vyplň prihlášku (3 min) &nbsp;·&nbsp; 02 Odpoveď do 48h &nbsp;·&nbsp; 03 Príď 22. júna
     </p>
 
     <div class="cta-facts">
@@ -1858,7 +1886,7 @@
 
     <a href="https://tally.so/r/PLACEHOLDER" class="cta-btn-light" id="apply-link">Prihlásiť sa &nbsp;·&nbsp; €29</a>
 
-    <p class="cta-guarantee-block">Ak po prihláške zistíme, že nezapadáš, €29 späť do 72 hodín. Žiadne otázky.<br>Ak na evente do 30 minút povieš, že to nie je pre teba, €29 späť na mieste.<br>Rozhodnutie je tvoje. – Jakub</p>
+    <p class="cta-guarantee-block">Ak po prihláške zistíme, že nezapadáš, €29 späť do 72 hodín. Žiadne otázky.<br>Ak na evente do 30 minút povieš, že to nie je pre teba, €29 späť na mieste.<br>Rozhodnutie je tvoje. — Jakub</p>
 
   </div>
 </section>
