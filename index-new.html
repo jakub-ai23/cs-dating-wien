@@ -485,66 +485,6 @@
     }
 
     /* ====================================================
-       PYRAMID
-    ==================================================== */
-    .pyramid-intro-copy {
-      font-family: var(--font-display);
-      font-size: clamp(1.05rem, 1.75vw, 1.32rem);
-      color: var(--ink-mid);
-      line-height: 1.85;
-      max-width: 680px;
-      margin-bottom: 52px;
-    }
-    .pyramid-intro-copy strong { color: var(--ink); font-weight: 600; }
-
-    .pyramid-visual { max-width: 700px; margin: 0 auto 44px; }
-    .pyramid-svg-wrap { width: 100%; }
-    .pyramid-svg-wrap svg { width: 100%; height: auto; display: block; overflow: visible; }
-
-    .pyramid-directive {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-top: 16px;
-      padding: 0 4px;
-      gap: 20px;
-    }
-    .pyramid-directive-left,
-    .pyramid-directive-right {
-      font-size: 0.7rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      line-height: 1.4;
-      max-width: 220px;
-    }
-    .pyramid-directive-left  { color: var(--gold);      text-align: left; }
-    .pyramid-directive-right { color: var(--ink-faint); text-align: right; }
-
-    .pyramid-conclusion {
-      max-width: 620px;
-      margin: 0 auto;
-      padding: 26px 0;
-      text-align: center;
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-    }
-    .pyramid-conclusion p {
-      font-family: var(--font-display);
-      font-size: clamp(1.1rem, 1.85vw, 1.42rem);
-      color: var(--ink-mid);
-      line-height: 1.55;
-    }
-    .pyramid-conclusion strong { color: var(--burgundy); font-weight: 600; }
-
-    .pyramid-source {
-      margin-top: 18px;
-      font-size: 0.73rem;
-      color: var(--ink-faint);
-      font-style: italic;
-      text-align: center;
-    }
-
-    /* ====================================================
        DIFFERENCE — Hormozi contrast stack
     ==================================================== */
     .contrast-stack { margin-top: 42px; display: flex; flex-direction: column; gap: 3px; }
@@ -590,28 +530,6 @@
     }
     .contrast-row.highlight .contrast-content p em { color: var(--burgundy); }
 
-    /* Photo strip */
-    .photo-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-top: 44px;
-    }
-    .photo-tile {
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      position: relative;
-    }
-    .photo-tile img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-      filter: sepia(12%) saturate(88%) brightness(1.03);
-    }
-    .photo-tile:hover img { transform: scale(1.03); }
-
     /* ====================================================
        FORMAT
     ==================================================== */
@@ -625,59 +543,14 @@
     }
     .format-intro-copy strong { color: var(--ink); }
 
-    .format-grid {
-      display: grid;
-      grid-template-columns: 1fr 1px 1fr;
-      border: 1px solid var(--rule);
+    .format-one-liner {
+      font-family: var(--font-display);
+      font-size: clamp(1.05rem, 1.75vw, 1.32rem);
+      color: var(--ink-mid);
+      line-height: 1.85;
+      max-width: 680px;
       margin-bottom: 32px;
     }
-    .format-col         { padding: 30px 26px; }
-    .format-col.apps    { background: var(--ivory-warm); opacity: 0.82; }
-    .format-col.us      { background: var(--ivory); border-top: 3px solid var(--burgundy); }
-    .format-col-divider { background: var(--rule); }
-
-    .format-col-label {
-      font-family: var(--font-display);
-      font-size: 1.08rem;
-      font-weight: 500;
-      margin-bottom: 20px;
-      color: var(--ink-mid);
-    }
-    .format-col.us .format-col-label { color: var(--ink); }
-
-    .format-list { list-style: none; padding: 0; margin-bottom: 18px; }
-    .format-list li {
-      display: flex;
-      align-items: baseline;
-      gap: 14px;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--rule);
-      font-size: 0.9rem;
-      color: var(--ink-soft);
-    }
-    .format-list li:last-child { border-bottom: none; }
-
-    .f-num {
-      font-family: var(--font-display);
-      font-size: 1.55rem;
-      font-weight: 400;
-      color: var(--ink-soft);
-      min-width: 48px;
-      text-align: right;
-      line-height: 1;
-    }
-    .format-col.apps .f-num { color: var(--ink-faint); }
-    .format-col.us   .f-num { color: var(--burgundy); font-size: 1.75rem; }
-
-    .format-col-result {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 0.97rem;
-      padding-top: 14px;
-      border-top: 1px solid var(--rule);
-    }
-    .format-col.apps .format-col-result { color: var(--ink-faint); }
-    .format-col.us   .format-col-result { color: var(--burgundy); }
 
     .format-bonus {
       max-width: 720px;
@@ -701,108 +574,15 @@
       line-height: 1.7;
     }
 
-    /* ====================================================
-       FOUNDERS (plural — two-person layout)
-    ==================================================== */
-    .founders-grid {
-      display: grid;
-      grid-template-columns: 1fr 1px 1fr;
-      gap: 0;
-      margin-top: 44px;
-      align-items: start;
-    }
-
-    .founder-card { padding: 0 48px 0 0; }
-    .founder-card:last-child { padding: 0 0 0 48px; }
-
-    .founder-card-divider {
-      background: var(--rule);
-      margin-top: 20px;
-    }
-
-    /* Jakub — PNG cutout, no frame */
-    .founder-img-cutout {
-      width: 100%;
-      max-width: 280px;
-      aspect-ratio: 3 / 4;
-      margin-bottom: 24px;
-      display: block;
-    }
-    .founder-img-cutout img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center top;
-      display: block;
-    }
-
-    /* Martina — elegant placeholder */
-    .founder-img-placeholder {
-      width: 100%;
-      max-width: 280px;
-      aspect-ratio: 3 / 4;
-      margin-bottom: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      border: 1px dashed rgba(26,18,8,0.15);
-      background: var(--ivory-deep);
-    }
-    .founder-img-placeholder svg { opacity: 0.25; }
-    .founder-img-placeholder span {
-      font-size: 0.6rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-    }
-
-    .founder-name {
+    .host-line {
       font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 4px;
+      font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+      color: var(--ink-soft);
+      line-height: 1.75;
+      margin-top: 28px;
+      text-align: center;
     }
-
-    .founder-role-tag {
-      font-size: 0.68rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-      margin-bottom: 20px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .founder-bio-text {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      line-height: 1.82;
-      color: var(--ink-mid);
-      margin-bottom: 16px;
-    }
-
-    .founder-sign {
-      margin-top: 18px;
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-style: italic;
-      color: var(--burgundy);
-    }
-
-    @media (max-width: 768px) {
-      .founders-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-      .founder-card { padding: 0; }
-      .founder-card:last-child { padding: 0; }
-      .founder-card-divider { display: none; }
-      .founder-img-cutout,
-      .founder-img-placeholder { max-width: 220px; }
-    }
+    .host-line strong { color: var(--ink); }
 
     /* ====================================================
        HOW IT WORKS
@@ -840,40 +620,148 @@
       line-height: 1.75;
     }
 
+    /* ── ABOUT / FOUNDERS ── */
+    .founders-section { background: var(--ivory-warm); }
+    .founders-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 48px;
+    }
+    .founder-card { text-align: center; }
+    .founder-photo {
+      width: 200px;
+      height: 240px;
+      margin: 0 auto 22px;
+      position: relative;
+    }
+    .founder-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+      display: block;
+    }
+    .founder-photo-placeholder {
+      width: 200px;
+      height: 240px;
+      margin: 0 auto 22px;
+      background: var(--ivory-deep);
+      border: 1px dashed rgba(26,18,8,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .founder-photo-placeholder span:first-child {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      color: var(--burgundy);
+      opacity: 0.35;
+    }
+    .founder-photo-placeholder span:last-child {
+      font-size: 0.62rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .founder-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 5px;
+    }
+    .founder-role {
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 16px;
+    }
+    .founder-bio {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    @media (max-width: 640px) {
+      .founders-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
     /* ====================================================
        QUOTE
     ==================================================== */
-    .quote-section {
-      text-align: center;
-      padding: 96px 48px;
+    /* ── TESTIMONIALS ── */
+    .testimonials-section {
       background: var(--ivory-warm);
       border-top: 1px solid var(--rule);
       border-bottom: 1px solid var(--rule);
+      padding: 88px 0;
     }
-    .quote-mark {
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 44px;
+    }
+    .t-card {
+      background: var(--ivory);
+      border: 1px solid var(--rule);
+      padding: 32px 28px 28px;
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .t-card.visible { opacity: 1; transform: translateY(0); }
+    .t-card:nth-child(2) { transition-delay: 0.14s; }
+    .t-card:nth-child(3) { transition-delay: 0.28s; }
+    .t-qmark {
       font-family: var(--font-display);
-      font-size: 4.5rem;
+      font-size: 3.5rem;
       color: var(--burgundy);
-      opacity: 0.16;
-      line-height: 0.6;
+      opacity: 0.2;
+      line-height: 0.7;
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
-    .quote {
+    .t-text {
       font-family: var(--font-display);
-      font-size: clamp(1.3rem, 2.4vw, 1.8rem);
       font-style: italic;
+      font-size: 1rem;
       color: var(--ink);
-      max-width: 740px;
-      margin: 0 auto 20px;
-      line-height: 1.6;
+      line-height: 1.75;
+      margin-bottom: 22px;
     }
-    .quote-author {
-      font-size: 0.74rem;
-      color: var(--ink-faint);
-      letter-spacing: 2px;
+    .t-author {
+      font-size: 0.68rem;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
+      color: var(--ink-faint);
+      border-top: 1px solid var(--rule);
+      padding-top: 14px;
     }
+    @media (max-width: 720px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── EVENT CARD PHOTOS ── */
+    .uc-photo {
+      margin: -28px -24px 20px;
+      width: calc(100% + 48px);
+      height: 150px;
+      overflow: hidden;
+    }
+    .uc-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .upcoming-card:hover .uc-photo img { transform: scale(1.04); }
 
     /* ====================================================
        EVENT CARD
@@ -1067,54 +955,6 @@
     }
 
     /* ====================================================
-       AUTONOMY BLOCK
-    ==================================================== */
-    .autonomy-block {
-      background: var(--ivory-warm);
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      text-align: center;
-      padding: 88px 48px;
-    }
-    .autonomy-pre {
-      font-family: var(--font-display);
-      font-size: clamp(1rem, 1.7vw, 1.2rem);
-      color: var(--ink-faint);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .autonomy-main {
-      font-family: var(--font-display);
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      font-style: italic;
-      font-weight: 400;
-      color: var(--ink);
-      line-height: 1.15;
-      margin-bottom: 28px;
-    }
-    .autonomy-main em { color: var(--burgundy); }
-    .autonomy-sub {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      color: var(--ink-soft);
-      max-width: 460px;
-      margin: 0 auto 10px;
-      line-height: 1.7;
-    }
-    .autonomy-whisper {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 0.9rem;
-      color: var(--ink-faint);
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    @media (max-width: 768px) {
-      .autonomy-block { padding: 68px 18px; }
-    }
-
-    /* ====================================================
        FINAL CTA
     ==================================================== */
     .final-cta {
@@ -1164,13 +1004,6 @@
       max-width: 420px;
       margin-left: auto;
       margin-right: auto;
-    }
-
-    .cta-autonomy {
-      margin-top: 10px;
-      font-size: 0.7rem;
-      color: rgba(248,244,238,0.25);
-      letter-spacing: 1px;
     }
 
     .cta-btn-light {
@@ -1240,12 +1073,6 @@
 
       .contrast-row { grid-template-columns: 1fr; }
       .contrast-label { border-right: none; border-bottom: 1px solid rgba(248,244,238,0.12); }
-
-      .photo-strip { grid-template-columns: 1fr 1fr; }
-      .photo-strip .photo-tile:last-child { display: none; }
-
-      .format-grid { grid-template-columns: 1fr; }
-      .format-col-divider { height: 1px; width: 100%; }
 
       .founder-grid { grid-template-columns: 1fr; gap: 28px; }
       .founder-photo { width: 100%; max-width: 260px; margin: 0 auto; }
@@ -1482,7 +1309,6 @@
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="#preco">Prečo</a></li>
-      <li><a href="#zakladatelia">Zakladatelia</a></li>
       <li><a href="#termin">Termín</a></li>
     </ul>
     <a href="#prihlaska" class="nav-cta">Prihlásiť sa</a>
@@ -1550,18 +1376,10 @@
 
     <div class="cv-body">
       Žiješ vo Viedni dva roky. Možno päť. Možno desať.<br><br>
-      Skúšal si to s Rakúšankou. S Nemkou z práce. S Taliankou z apky.<br>
-      Týždeň. Mesiac. Raz aj rok.<br><br>
-      Ale zakaždým ti chýbalo niečo, čo sa nedalo presne pomenovať.<br>
-      Vtip, ktorý nemusíš vysvetľovať.<br>
-      Pesnička, pri ktorej obaja viete druhú slohu.<br>
-      To, ako sa doma hovorí o rodine, peniazoch, deťoch.<br><br>
       A jedného dňa zavoláš domov.<br>
       Babka sa pýta, kedy ju prídeš pozrieť — a koho tentokrát privedieš.<br><br>
       Tvoj partner vie po nemecky. Po anglicky. Možno po taliansky.<br>
       Babka nie.<br><br>
-      Predstav si tú scénu.<br>
-      Predstav si, koho v nej chceš mať vedľa seba.<br><br>
       Nemusíš to už dokazovať. <strong>Vieš to.</strong>
     </div>
 
@@ -1667,97 +1485,6 @@
 
 
 <!-- ======================================================
-     PYRAMID — THE INSIGHT
-====================================================== -->
-<section id="pyramida">
-  <div class="wrap">
-
-    <div class="section-eyebrow">
-      <span class="section-eyebrow-num">III.</span>
-      <span class="section-eyebrow-label">Prečo filtrujeme to, čo filtrujeme</span>
-      <span class="section-eyebrow-rule"></span>
-    </div>
-
-    <h2 class="section-title">Pyramída <em>dlhodobého vzťahu.</em></h2>
-
-    <div class="pyramid-intro-copy">
-      Online ťa filtrujú podľa fotky a piatich riadkov v bio.<br>
-      Naživo ťa ľudia vidia celého – výraz, tón, timing, energiu.<br><br>
-      John Gottman strávil 40 rokov v laboratóriu meraním vzťahov.<br>
-      Záver: <strong>dlhodobé vzťahy nestoja na chémii zo screenshotu.</strong><br>
-      Stoja na základe, ktorý uvidíš až keď tam s niekým sedíš.
-    </div>
-
-    <!-- SVG VISUAL PYRAMID -->
-    <div class="pyramid-visual">
-      <div class="pyramid-svg-wrap">
-        <svg viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg" aria-label="Pyramída dlhodobého vzťahu — 4 úrovne od základu po vrchol">
-
-          <!-- ── Tier I — BASE (widest, gold/burgundy highlight) ── -->
-          <!-- Filled trapezoid -->
-          <polygon points="10,450 690,450 614,336 86,336" fill="#f5edd8" stroke="#b8912a" stroke-width="1.8"/>
-          <!-- Gold accent left/right edges -->
-          <line x1="10"  y1="450" x2="86"  y2="336" stroke="#b8912a" stroke-width="2.5" opacity="0.55"/>
-          <line x1="690" y1="450" x2="614" y2="336" stroke="#b8912a" stroke-width="2.5" opacity="0.55"/>
-          <!-- Bottom fill bar (gold) -->
-          <rect x="10" y="443" width="680" height="7" fill="#b8912a" opacity="0.35" rx="1"/>
-
-          <!-- Tier I labels -->
-          <text x="350" y="378" font-family="'Playfair Display', Georgia, serif" font-size="14" font-weight="600" fill="#8b2252" text-anchor="middle" letter-spacing="0.8">I. SPOLOČNÝ JAZYK A KULTÚRA</text>
-          <text x="350" y="398" font-family="'Source Serif 4', Georgia, serif" font-size="11.5" fill="#6b5540" text-anchor="middle">Materinský jazyk · Detstvo · Rodinné rytmy</text>
-          <text x="350" y="418" font-family="'Playfair Display', Georgia, serif" font-size="10.5" font-style="italic" fill="#b8912a" text-anchor="middle">— tu začíname my —</text>
-
-          <!-- ── Tier II ── -->
-          <polygon points="86,336 614,336 538,224 162,224" fill="#f2ece2" stroke="rgba(26,18,8,0.09)" stroke-width="1.4"/>
-
-          <!-- Tier II labels -->
-          <text x="350" y="268" font-family="'Playfair Display', Georgia, serif" font-size="13" font-weight="600" fill="#3d2e1c" text-anchor="middle" letter-spacing="0.5">II. HODNOTY, VIERA, RODINA</text>
-          <text x="350" y="288" font-family="'Source Serif 4', Georgia, serif" font-size="11" fill="#9c8570" text-anchor="middle">Ambícia · Peniaze · Náboženstvo · Rodina</text>
-
-          <!-- ── Tier III ── -->
-          <polygon points="162,224 538,224 462,114 238,114" fill="#ece4d8" stroke="rgba(26,18,8,0.08)" stroke-width="1.4"/>
-
-          <!-- Tier III labels -->
-          <text x="350" y="157" font-family="'Playfair Display', Georgia, serif" font-size="12.5" font-weight="600" fill="#3d2e1c" text-anchor="middle" letter-spacing="0.3">III. EMOCIONÁLNE SPOJENIE</text>
-          <text x="350" y="176" font-family="'Source Serif 4', Georgia, serif" font-size="11" fill="#9c8570" text-anchor="middle">Dôvera · Zraniteľnosť · Oprava po hádke</text>
-
-          <!-- ── Tier IV — APEX ── -->
-          <polygon points="238,114 462,114 350,18" fill="#e4d9cc" stroke="rgba(26,18,8,0.07)" stroke-width="1.4"/>
-
-          <!-- Tier IV labels -->
-          <text x="350" y="68" font-family="'Playfair Display', Georgia, serif" font-size="12" font-weight="600" fill="#6b5540" text-anchor="middle">IV. SPOLOČNÝ SMER</text>
-          <text x="350" y="86" font-family="'Source Serif 4', Georgia, serif" font-size="10.5" fill="#9c8570" text-anchor="middle">Deti · Mesto · Budúcnosť</text>
-
-          <!-- Apps label + dashed arrow (right side, pointing DOWN) -->
-          <text x="674" y="155" font-family="'Source Serif 4', Georgia, serif" font-size="9.5" fill="#9c8570" text-anchor="middle" transform="rotate(90 674 155)">APKY FILTRUJÚ ZHORA ↓</text>
-          <line x1="674" y1="28" x2="674" y2="428" stroke="rgba(156,133,112,0.25)" stroke-width="1" stroke-dasharray="4,4"/>
-          <polygon points="669,424 679,424 674,434" fill="rgba(156,133,112,0.35)"/>
-
-          <!-- Our label + dashed arrow (left side, pointing UP) -->
-          <text x="26" y="155" font-family="'Source Serif 4', Georgia, serif" font-size="9.5" fill="#b8912a" text-anchor="middle" transform="rotate(-90 26 155)" opacity="0.85">MY KURATUJEME ZDOLA ↑</text>
-          <line x1="26" y1="428" x2="26" y2="28" stroke="rgba(184,145,42,0.3)" stroke-width="1" stroke-dasharray="4,4"/>
-          <polygon points="21,32 31,32 26,22" fill="rgba(184,145,42,0.45)"/>
-
-        </svg>
-      </div>
-
-      <div class="pyramid-directive">
-        <div class="pyramid-directive-left">↑ My kuratujeme zdola – jazykový základ ako prvý filter</div>
-        <div class="pyramid-directive-right">Apky optimalizujú zhora ↓ – fotka, chémia, swipe</div>
-      </div>
-    </div>
-
-    <div class="pyramid-conclusion">
-      <p>Apky optimalizujú na chémiu z fotky.<br><strong>My optimalizujeme na to, čo vidíš až naživo.</strong></p>
-    </div>
-
-    <p class="pyramid-source">Zdroj: The Gottman Institute (Sound Relationship House) &nbsp;·&nbsp; Esther Perel, <em>The State of Affairs</em> &amp; <em>Mating in Captivity</em></p>
-
-  </div>
-</section>
-
-
-<!-- ======================================================
      DIFFERENCE — THE CONTRAST
 ====================================================== -->
 <section class="bg-warm" id="rozdiel">
@@ -1828,30 +1555,6 @@
 
     </div>
 
-    <!-- Atmosphere photos -->
-    <div class="photo-strip" style="margin-top:44px;">
-      <div class="photo-tile">
-        <img
-          src="images/photo-date-candle.jpg"
-          alt="Ľudia na spoločenskom večeri"
-          loading="lazy"
-        >
-      </div>
-      <div class="photo-tile">
-        <img
-          src="images/photo-closeup.jpg"
-          alt="Pár v rozhovore na večeri"
-          loading="lazy"
-        >
-      </div>
-      <div class="photo-tile">
-        <img
-          src="images/photo-group-vienna.jpg"
-          alt="Priateľská atmosféra na spoločenskom večeri"
-          loading="lazy"
-        >
-      </div>
-    </div>
 
   </div>
 </section>
@@ -1876,31 +1579,7 @@
       <strong>Apky tento inštinkt nepoužívajú. My ho stavíme do stredu večera.</strong>
     </div>
 
-    <div class="format-grid">
-      <div class="format-col apps">
-        <div class="format-col-label">Apky – za 1 mesiac</div>
-        <ul class="format-list">
-          <li><span class="f-num">900</span><span>swipov na 1 coffee date</span></li>
-          <li><span class="f-num">6+</span><span>týždňov textovania</span></li>
-          <li><span class="f-num">100+</span><span>správ pred prvým randením</span></li>
-          <li><span class="f-num">→</span><span>„Nice but…". Ghosting.</span></li>
-        </ul>
-        <p class="format-col-result">Stovky hodín pre jednu kávu.</p>
-      </div>
-
-      <div class="format-col-divider"></div>
-
-      <div class="format-col us">
-        <div class="format-col-label">Jeden večer s nami</div>
-        <ul class="format-list">
-          <li><span class="f-num">1</span><span>večer</span></li>
-          <li><span class="f-num">10</span><span>krátkych rande naživo</span></li>
-          <li><span class="f-num">~6</span><span>minút na rande</span></li>
-          <li><span class="f-num">15</span><span>ľudí, s ktorými zdieľaš jazyk, humor aj históriu</span></li>
-        </ul>
-        <p class="format-col-result">3 hodiny. Vieš, s kým sa chceš stretnúť znova. Bez 6 mesiacov textovania.</p>
-      </div>
-    </div>
+    <p class="format-one-liner">10 stretnutí. 6 minút každé. Tri hodiny. Vieš s kým chceš pokračovať.</p>
 
     <div class="format-bonus">
       <div class="format-bonus-label">Vedľajší produkt</div>
@@ -1913,84 +1592,44 @@
 </section>
 
 
-<!-- ======================================================
-     FOUNDERS — TWO PEOPLE
-====================================================== -->
-<section class="bg-warm" id="zakladatelia">
-  <div class="wrap">
-
-    <div class="section-eyebrow">
-      <span class="section-eyebrow-num">VI.</span>
-      <span class="section-eyebrow-label">Kto za tým stojí</span>
-      <span class="section-eyebrow-rule"></span>
-    </div>
-
-    <h2 class="section-title">Ľudia, <em>nie algoritmus.</em></h2>
-
-    <div class="founders-grid">
-
-      <!-- JAKUB -->
-      <div class="founder-card">
-        <div class="founder-img-cutout">
-          <img src="images/founder-jakub.png" alt="Jakub Popluhar">
-        </div>
-        <div class="founder-name">Jakub Popluhar</div>
-        <div class="founder-role-tag">Zakladateľ &nbsp;·&nbsp; Hostiteľ</div>
-        <p class="founder-bio-text">Som <strong>Jakub Popluhar</strong>. Slovák, 10+ rokov na Západe.</p>
-        <p class="founder-bio-text">Som event organizátor – viedol som medzinárodné športové eventy, európsku asociáciu, camp FRESH na Mallorke. Roky som vo Viedni hosťoval speed-datingy.</p>
-        <p class="founder-bio-text">A zakaždým som videl to isté: Slováci a Česi v miestnosti plnej Rakúšanov a Talianov – vtipy nefungujú, každý odíde sám.</p>
-        <p class="founder-bio-text">Tak som postavil večer, ktorý mi sám chýbal.</p>
-        <div class="founder-sign">– Jakub</div>
-      </div>
-
-      <!-- DIVIDER -->
-      <div class="founder-card-divider"></div>
-
-      <!-- MARTINA -->
-      <div class="founder-card">
-        <div class="founder-img-placeholder">
-          <svg width="64" height="80" viewBox="0 0 64 80" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="32" cy="22" r="16" fill="none" stroke="#1a1208" stroke-width="2"/>
-            <path d="M4,78 C4,52 60,52 60,78" fill="none" stroke="#1a1208" stroke-width="2"/>
-          </svg>
-          <span>Foto coming soon</span>
-        </div>
-        <div class="founder-name">Martina</div>
-        <div class="founder-role-tag">Operations &nbsp;·&nbsp; Co-founder</div>
-        <p class="founder-bio-text">Číta každú prihlášku. Skladá večer tak, aby mal správny pomer, správnych ľudí a správnu energiu.</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
 
 
 <!-- ======================================================
      QUOTE
 ====================================================== -->
-<section class="quote-section">
-  <span class="quote-mark" aria-hidden="true">"</span>
-  <p class="quote">
-    Apky nefiltrujú to, čo treba filtrovať. Toto je prvý raz, čo niekto urobil priestor presne pre nás – Slovákov a Čechov vo Viedni – ktorí si už dávno hovoríme, že by malo niečo také existovať.
-  </p>
-  <p class="quote-author">Skúšobná účastníčka &nbsp;·&nbsp; 31 &nbsp;·&nbsp; Wien</p>
-</section>
-
-
 <!-- ======================================================
-     TESTIMONIAL PLACEHOLDER
+     TESTIMONIALS — doplniť po 22.6.2026
 ====================================================== -->
-<!-- REAL QUOTE — doplniť po 22.6.2026 -->
-<section style="background:var(--ivory-warm);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:72px 0;text-align:center;">
-  <div class="wrap-narrow">
-    <span style="font-family:var(--font-display);font-size:4rem;color:var(--burgundy);opacity:0.15;line-height:0.5;display:block;margin-bottom:18px;" aria-hidden="true">"</span>
-    <div style="font-family:var(--font-display);font-style:italic;font-size:clamp(1.2rem,2.2vw,1.65rem);color:var(--ink);line-height:1.6;max-width:680px;margin:0 auto 18px;">
-      Apky nefiltrujú to, čo treba. Toto je prvý raz, čo niekto urobil priestor presne pre nás.
+<section class="testimonials-section">
+  <div class="wrap">
+    <div class="section-eyebrow">
+      <span class="section-eyebrow-num">— "</span>
+      <span class="section-eyebrow-label">Prvé ohlasy</span>
+      <span class="section-eyebrow-rule"></span>
     </div>
-    <p style="font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);">
-      <span style="font-family:var(--font-display);font-style:italic;">Prvé ohlasy</span> &nbsp;·&nbsp; – [doplniť po Edícii I]
-    </p>
+    <div class="testimonials-grid">
+
+      <div class="t-card">
+        <span class="t-qmark" aria-hidden="true">"</span>
+        <p class="t-text">Apky nefiltrujú to, čo treba. Toto je prvý raz, čo niekto urobil priestor presne pre nás – Slovákov a Čechov vo Viedni.</p>
+        <p class="t-author">Skúšobná účastníčka &nbsp;·&nbsp; 31 &nbsp;·&nbsp; Wien</p>
+      </div>
+
+      <!-- REAL QUOTE — doplniť po 22.6.2026 -->
+      <div class="t-card">
+        <span class="t-qmark" aria-hidden="true">"</span>
+        <p class="t-text">[Citát účastníka — doplniť po Edícii I, 22. júna 2026]</p>
+        <p class="t-author">— &nbsp;·&nbsp; Wien</p>
+      </div>
+
+      <!-- REAL QUOTE — doplniť po 22.6.2026 -->
+      <div class="t-card">
+        <span class="t-qmark" aria-hidden="true">"</span>
+        <p class="t-text">[Citát účastníčky — doplniť po Edícii I, 22. júna 2026]</p>
+        <p class="t-author">— &nbsp;·&nbsp; Wien</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -2016,12 +1655,12 @@
       </div>
       <div class="event-invite-body">
         <div class="event-date-big">22</div>
-        <div class="event-date-sub">Jún 2026 &nbsp;·&nbsp; Pondelok večer</div>
+        <div class="event-date-sub">Jún 2026 &nbsp;·&nbsp; Pondelok &nbsp;·&nbsp; 19:30 – 21:30 · open end</div>
 
         <div class="event-meta-row">
           <div class="e-cell">
             <div class="e-label">Lokalita</div>
-            <div class="e-value">Wien, 1. Distrikt</div>
+            <div class="e-value">Arcohotel HQ<br><small>Athanstraße, Wien</small></div>
           </div>
           <div class="e-cell">
             <div class="e-label">Miesta</div>
@@ -2041,16 +1680,20 @@
       </div>
     </div>
 
+    <p class="host-line">Hosťuje <strong>Jakub Popluhar</strong> — Slovák, 10+ rokov na Západe. Organizátor, ktorý postavil večer, ktorý mu sám chýbal.</p>
+
     <div class="upcoming-events">
 
       <div class="upcoming-card active">
+        <div class="uc-photo"><img src="images/photo-closeup.jpg" alt=""></div>
         <div class="uc-date">22</div>
         <div class="uc-month">Jún 2026 · Pondelok</div>
         <div class="uc-title">Speed Dating · Edícia I</div>
-        <p class="uc-desc">30 miest. Wien, 1. Distrikt. Prvý kurátorský večer pre Slovákov a Čechov vo Viedni.</p>
+        <p class="uc-desc">30 miest. Arcohotel HQ, Athanstraße · Wien. Prvý kurátorský večer pre Slovákov a Čechov vo Viedni.</p>
       </div>
 
       <div class="upcoming-card soon">
+        <div class="uc-photo"><img src="images/photo-group-vienna.jpg" alt=""></div>
         <div class="uc-date">18</div>
         <div class="uc-month">August 2026 · Utorok</div>
         <div class="uc-title">Letný Evening</div>
@@ -2058,6 +1701,7 @@
       </div>
 
       <div class="upcoming-card soon">
+        <div class="uc-photo"><img src="images/photo-date-candle.jpg" alt=""></div>
         <div class="uc-date">14</div>
         <div class="uc-month">September 2026 · Pondelok</div>
         <div class="uc-title">Speed Dating · Edícia II</div>
@@ -2071,18 +1715,48 @@
 
 
 <!-- ======================================================
-     AUTONOMY BLOCK — "but you are free"
+     ABOUT / FOUNDERS
 ====================================================== -->
-<section class="autonomy-block">
-  <p class="autonomy-pre">Samozrejme –</p>
-  <p class="autonomy-main">ty sa <em>rozhoduješ.</em></p>
-  <p class="autonomy-sub">Nikto ťa netlačí.</p>
-  <p class="autonomy-whisper">Ale ak ti niečo z tohto sedelo – 30 miest, 22. júna. Vieš, čo robiť.</p>
+<section class="founders-section">
+  <div class="wrap">
+
+    <div class="section-eyebrow">
+      <span class="section-eyebrow-num">—</span>
+      <span class="section-eyebrow-label">O nás</span>
+      <span class="section-eyebrow-rule"></span>
+    </div>
+
+    <h2 class="section-title">Ľudia, <em>nie algoritmus.</em></h2>
+
+    <div class="founders-grid">
+
+      <div class="founder-card">
+        <div class="founder-photo">
+          <img src="images/founder-jakub.png" alt="Jakub Popluhar">
+        </div>
+        <div class="founder-name">Jakub Popluhar</div>
+        <div class="founder-role">Zakladateľ · Organizátor</div>
+        <p class="founder-bio">Slovák, 10+ rokov na Západe. Po desiatkach speed-datingov vo Viedni postavil večer, ktorý mu sám chýbal — v jazyku, ktorému rozumie.</p>
+      </div>
+
+      <!-- MARTINA — foto + bio doplniť -->
+      <div class="founder-card">
+        <div class="founder-photo-placeholder">
+          <span>M</span>
+          <span>foto čoskoro</span>
+        </div>
+        <div class="founder-name">Martina</div>
+        <div class="founder-role">Spoluzakladateľka · Operácie</div>
+        <p class="founder-bio">[Bio — doplní Martina]</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 
 <!-- ======================================================
-     FAQ — after autonomy, before form
+     FAQ — after event card, before form
 ====================================================== -->
 <section class="bg-warm" id="faq">
   <div class="wrap">
@@ -2113,40 +1787,15 @@
       <div class="faq-item">
         <span class="faq-num">03</span>
         <div>
-          <div class="faq-q">Nežijem vo Viedni natrvalo. Môžem prísť?</div>
-          <div class="faq-a">Áno. Filter je jazyk + vek + vážnosť, nie miesto pobytu. Akurát budeš musieť do Viedne.</div>
+          <div class="faq-q">Ako fungujú matche po večeri?</div>
+          <div class="faq-a">Po evente dostaneš krátky formulár. Označíš, koho chceš stretnúť znova. Ak je záujem vzájomný, vymeníme kontakty — len medzi vami dvoma. Žiadne verejné zoznamy, žiadne nepohodlné situácie.</div>
         </div>
       </div>
       <div class="faq-item">
         <span class="faq-num">04</span>
         <div>
-          <div class="faq-q">Hľadám partnera, ale aj kontakty. Je to tu zlato?</div>
-          <div class="faq-a">Networking medzi svojimi je vedľajší efekt – nie zanedbateľný. Primárna optika večera je partnerstvo.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <span class="faq-num">05</span>
-        <div>
-          <div class="faq-q">Prečo €29? Speed dating vo Viedni stojí menej.</div>
-          <div class="faq-a">Mass-market: €19–25, otvorené dvere, žiadny výber. My čítame každú prihlášku ručne. €29 = starostlivý výber + lokalita v 1. Distrikt + drinky. Toto nie je to isté.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <span class="faq-num">06</span>
-        <div>
-          <div class="faq-q">Čo ak nikoho nestretnem?</div>
-          <div class="faq-a">Zažil si večer so 14 Slovákmi a Čechmi vo Viedni, blízkymi vekom, s podobnou cestou. To nie je málo. To je sieť.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <span class="faq-num">07</span>
-        <div>
-          <div class="faq-q">Ako fungujú matche po večeri?</div>
-          <div class="faq-a">Po evente dostaneš krátky formulár. Označíš, koho chceš stretnúť znova. Ak je záujem vzájomný, vymeníme kontakty — len medzi vami dvoma. Žiadne verejné zoznamy, žiadne nepohodlné situácie.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Bude ďalšia edícia?</div>
-          <div class="faq-a">Plánujeme 3–4 edície do roka. Druhá pravdepodobne jeseň 2026. Chceme robiť každý večer dobre, nie každý mesiac priemerne.</div>
+          <div class="faq-q">Môžem prísť aj z iného mesta?</div>
+          <div class="faq-a">Áno. Filter je jazyk + vek + vážnosť, nie miesto pobytu. Akurát budeš musieť do Viedne.</div>
         </div>
       </div>
     </div>
@@ -2169,7 +1818,7 @@
 
     <h2>Rezervuj si miesto.</h2>
 
-    <p style="font-size:1.05rem;color:rgba(248,244,238,0.75);line-height:1.7;margin-bottom:10px;">Júnový večer v 1. Distrikt. 30 ľudí, ktorí hovoria tvojím jazykom. Tri hodiny. Vieš s kým chceš pokračovať.</p>
+    <p style="font-size:1.05rem;color:rgba(248,244,238,0.75);line-height:1.7;margin-bottom:10px;">Arcohotel HQ, Athanstraße · Wien · 19:30. 30 ľudí, ktorí hovoria tvojím jazykom. Tri hodiny. Vieš s kým chceš pokračovať.</p>
     <p style="font-size:0.88rem;color:rgba(248,244,238,0.45);margin-bottom:24px;">€29 = miesto pri stole. Ak nezapadáš podľa krátkej prihlášky, peniaze späť do 72 hodín.</p>
 
     <p style="font-size:0.72rem;letter-spacing:2px;color:rgba(248,244,238,0.38);margin-bottom:28px;text-transform:uppercase;">
@@ -2177,7 +1826,7 @@
     </p>
 
     <div class="cta-facts">
-      <div class="cta-fact"><span class="cta-fact-dot"></span>22. jún 2026 &nbsp;·&nbsp; Wien, 1. Distrikt</div>
+      <div class="cta-fact"><span class="cta-fact-dot"></span>22. jún 2026 &nbsp;·&nbsp; Arcohotel HQ, Wien</div>
       <div class="cta-fact"><span class="cta-fact-dot"></span>30 miest &nbsp;·&nbsp; 15 mužov, 15 žien</div>
       <div class="cta-fact"><span class="cta-fact-dot"></span>€29 &nbsp;·&nbsp; Prihláška: 3 minúty</div>
     </div>
@@ -2202,8 +1851,8 @@
   <p class="footer-cities">Praha &nbsp;·&nbsp; Brno &nbsp;·&nbsp; Bratislava &nbsp;·&nbsp; Wien</p>
   <p>Česko-Slovenský Dating · Wien &nbsp;–&nbsp; Speed dating pre Slovákov a Čechov</p>
   <p style="margin-top:8px;">
-    <a href="#">Impressum</a> &nbsp;·&nbsp;
-    <a href="#">Ochrana údajov</a> &nbsp;·&nbsp;
+    <a href="impressum.html">Impressum</a> &nbsp;·&nbsp;
+    <a href="impressum.html#ochrana-udajov">Ochrana údajov</a> &nbsp;·&nbsp;
     <a href="mailto:info@cs-dating.wien">info@cs-dating.wien</a>
   </p>
   <p style="margin-top:11px; font-size:0.67rem; opacity:0.4;">
@@ -2232,6 +1881,11 @@
     }, { threshold: 0.3 });
     obs.observe(grid);
   })();
+  // Testimonial cards animate in on scroll
+  const tObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); tObs.unobserve(e.target); } });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.t-card').forEach(el => tObs.observe(el));
 </script>
 </body>
 </html>
