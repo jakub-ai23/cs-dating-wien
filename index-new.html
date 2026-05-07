@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Česko-Slovenský Dating · Wien — V tom istom jazyku. V tom istom kruhu.</title>
+  <meta name="description" content="Sick of dating apps und having nothing in common? Kuratovaný večer pre Slovákov a Čechov vo Viedni. 25–39. Vážne hľadanie partnera. Prvá edícia 22. júna 2026.">
+  <meta property="og:title" content="Česko-Slovenský Dating · Wien">
+  <meta property="og:description" content="V tom istom jazyku. V tom istom kruhu. Prvá edícia 22. júna 2026.">
+  <meta property="og:type" content="website">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink:           #1a1208;
+      --ink-mid:       #3d2e1c;
+      --ink-soft:      #6b5540;
+      --ink-faint:     #9c8570;
+      --ivory:         #f8f4ee;
+      --ivory-warm:    #f2ece2;
+      --ivory-deep:    #e9e0d3;
+      --burgundy:      #8b2252;
+      --burgundy-mid:  #a32e62;
+      --gold:          #b8912a;
+      --gold-light:    #d4aa4a;
+      --rule:          rgba(26,18,8,0.1);
+      --font-display:  'Playfair Display', Georgia, serif;
+      --font-body:     'Source Serif 4', Georgia, serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--ivory);
+      color: var(--ink);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--burgundy); text-decoration: none; transition: color 0.25s; }
+    a:hover { color: var(--burgundy-mid); }
+
+    /* ====================================================
+       LOGO ANIMATION
+    ==================================================== */
+    .logo-rotate {
+      transform-origin: center;
+      animation: logo-rotate 22s linear infinite;
+    }
+    @keyframes logo-rotate {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    @media (prefers-reduced-motion: reduce) { .logo-rotate { animation: none; } }
+
+    /* ====================================================
+       NAV
+    ==================================================== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 15px 48px;
+      background: rgba(248,244,238,0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-mark { width: 64px; height: 38px; flex-shrink: 0; }
+
+    .logo-text {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+    .logo-text span { color: var(--burgundy); }
+
+    .nav-right { display: flex; align-items: center; gap: 28px; }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a {
+      color: var(--ink-soft);
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    .nav-cta {
+      display: inline-block;
+      padding: 9px 22px;
+      background: var(--burgundy);
+      color: var(--ivory);
+      font-size: 0.72rem;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: background 0.25s;
+    }
+    .nav-cta:hover { background: var(--burgundy-mid); color: var(--ivory); }
+
+    /* ====================================================
+       LAYOUT PRIMITIVES
+    ==================================================== */
+    .wrap        { max-width: 960px; margin: 0 auto; padding: 0 48px; }
+    .wrap-narrow { max-width: 740px; margin: 0 auto; padding: 0 48px; }
+
+    section { padding: 96px 0; }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+    .section-eyebrow-num {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-style: italic;
+      color: var(--burgundy);
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+    .section-eyebrow-label {
+      font-size: 0.67rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      white-space: nowrap;
+    }
+    .section-eyebrow-rule { flex: 1; height: 1px; background: var(--rule); }
+
+    h2.section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.18;
+      color: var(--ink);
+      margin-bottom: 32px;
+    }
+    h2.section-title em { font-style: italic; color: var(--burgundy); }
+
+    .bg-warm { background: var(--ivory-warm); }
+
+    /* ====================================================
+       HERO
+    ==================================================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding-top: 64px;
+      position: relative;
+      overflow: hidden;
+      background: var(--ivory);
+    }
+
+    .hero-image-band {
+      width: 100%;
+      height: 52vh;
+      min-height: 300px;
+      max-height: 500px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-image-band img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 38%;
+      display: block;
+    }
+    /* Warm editorial overlay */
+    .hero-image-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(184,145,42,0.15);
+      z-index: 1;
+    }
+    .hero-image-band::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(248,244,238,0.95) 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      padding: 32px 48px 80px;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+    }
+
+    .masthead-rule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+    .masthead-rule::before,
+    .masthead-rule::after {
+      content: '';
+      flex: 1;
+      max-width: 90px;
+      height: 1px;
+      background: var(--rule);
+    }
+    .masthead-date {
+      font-size: 0.67rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      white-space: nowrap;
+    }
+
+    .hero-prequestion {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      color: var(--ink-soft);
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--ink);
+      letter-spacing: -0.5px;
+      margin-bottom: 0;
+    }
+    .hero h1 em { font-style: italic; color: var(--burgundy); }
+
+    /* Hero translations */
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-translations {
+      margin-top: 14px;
+      margin-bottom: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-items: center;
+    }
+    .hero-translation {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(0.78rem, 1.2vw, 0.95rem);
+      opacity: 0;
+      animation: fadeSlideIn 0.6s ease forwards;
+    }
+    .hero-translation:nth-child(1) { animation-delay: 0.6s;  color: rgba(107,85,64,0.55); }
+    .hero-translation:nth-child(2) { animation-delay: 1.2s;  color: rgba(107,85,64,0.65); }
+    .hero-translation:nth-child(3) { animation-delay: 1.9s;  color: rgba(107,85,64,0.82); }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-translation { animation: none; opacity: 1; }
+    }
+
+    .hero-hr {
+      width: 56px;
+      height: 2px;
+      background: var(--burgundy);
+      margin: 24px auto;
+      opacity: 0.55;
+    }
+
+    .hero-loss {
+      font-family: var(--font-display);
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      color: var(--ink-mid);
+      line-height: 2;
+      max-width: 500px;
+      margin: 0 auto 36px;
+    }
+    .hero-loss .loss-line  { display: block; }
+    .hero-loss .loss-punch { display: block; margin-top: 12px; color: var(--burgundy); font-style: italic; font-weight: 500; }
+
+    .hero-meta-strip {
+      display: inline-flex;
+      margin-bottom: 32px;
+      border: 1px solid var(--rule);
+      overflow: hidden;
+    }
+    .hero-meta-cell {
+      padding: 11px 24px;
+      border-right: 1px solid var(--rule);
+      font-size: 0.67rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-align: center;
+    }
+    .hero-meta-cell:last-child { border-right: none; }
+    .hero-meta-cell strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 2px;
+    }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .cta-soft-note {
+      display: block;
+      margin-top: 13px;
+      font-size: 0.77rem;
+      color: var(--ink-faint);
+      font-style: italic;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 15px 44px;
+      background: var(--burgundy);
+      color: var(--ivory);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-btn:hover {
+      background: var(--burgundy-mid);
+      color: var(--ivory);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 22px rgba(139,34,82,0.2);
+    }
+
+    .cta-btn-ghost {
+      display: inline-block;
+      padding: 14px 30px;
+      background: transparent;
+      border: 1px solid var(--ink-mid);
+      color: var(--ink-mid);
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .cta-btn-ghost:hover { background: var(--ink-mid); color: var(--ivory); }
+
+    /* ====================================================
+       PAIN — gender-split
+    ==================================================== */
+    .pain { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+
+    /* Two-column gender split */
+    .pain-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin-top: 0;
+    }
+
+    .pain-col {
+      background: var(--ivory);
+      overflow: hidden;
+    }
+
+    .pain-col-photo {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+    .pain-col-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+      filter: sepia(10%) saturate(85%) brightness(1.04);
+    }
+
+    .pain-col-tag {
+      display: inline-block;
+      font-size: 0.62rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 6px 14px;
+      margin: 20px 24px 0;
+    }
+    .pain-col.male   .pain-col-tag { background: var(--gold);     color: var(--ink); }
+    .pain-col.female .pain-col-tag { background: var(--burgundy); color: var(--ivory); }
+
+    .pain-col-body {
+      padding: 16px 24px 28px;
+      font-family: var(--font-display);
+      font-size: clamp(0.97rem, 1.55vw, 1.1rem);
+      color: var(--ink-mid);
+      line-height: 1.85;
+    }
+
+    /* Shared full-width closing row */
+    .pain-shared {
+      grid-column: 1 / -1;
+      background: var(--ivory);
+      padding: 28px 32px;
+      border-top: 2px solid var(--rule);
+    }
+
+    .pain-verdict {
+      margin-top: 16px;
+      padding-left: 20px;
+      border-left: 3px solid var(--burgundy);
+    }
+    .pain-verdict p {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .pain-verdict p strong { font-style: normal; color: var(--burgundy); }
+
+    .pain-shared-closer {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.7vw, 1.22rem);
+      color: var(--ink-mid);
+      line-height: 1.65;
+    }
+
+    .pull-quote {
+      margin: 42px 0;
+      padding: 0 0 0 26px;
+      border-left: 3px solid var(--burgundy);
+    }
+    .pull-quote p {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    .pull-quote p em { color: var(--burgundy); }
+
+    .section-closer {
+      margin-top: 32px;
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.7vw, 1.25rem);
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    @media (max-width: 768px) {
+      .pain-split { grid-template-columns: 1fr; }
+      .pain-shared { grid-column: 1; }
+    }
+
+    /* ====================================================
+       PYRAMID
+    ==================================================== */
+    .pyramid-intro-copy {
+      font-family: var(--font-display);
+      font-size: clamp(1.05rem, 1.75vw, 1.32rem);
+      color: var(--ink-mid);
+      line-height: 1.85;
+      max-width: 680px;
+      margin-bottom: 52px;
+    }
+    .pyramid-intro-copy strong { color: var(--ink); font-weight: 600; }
+
+    .pyramid-visual { max-width: 700px; margin: 0 auto 44px; }
+    .pyramid-svg-wrap { width: 100%; }
+    .pyramid-svg-wrap svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+    .pyramid-directive {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 16px;
+      padding: 0 4px;
+      gap: 20px;
+    }
+    .pyramid-directive-left,
+    .pyramid-directive-right {
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.4;
+      max-width: 220px;
+    }
+    .pyramid-directive-left  { color: var(--gold);      text-align: left; }
+    .pyramid-directive-right { color: var(--ink-faint); text-align: right; }
+
+    .pyramid-conclusion {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 26px 0;
+      text-align: center;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .pyramid-conclusion p {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 1.85vw, 1.42rem);
+      color: var(--ink-mid);
+      line-height: 1.55;
+    }
+    .pyramid-conclusion strong { color: var(--burgundy); font-weight: 600; }
+
+    .pyramid-source {
+      margin-top: 18px;
+      font-size: 0.73rem;
+      color: var(--ink-faint);
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* ====================================================
+       DIFFERENCE — Hormozi contrast stack
+    ==================================================== */
+    .contrast-stack { margin-top: 42px; display: flex; flex-direction: column; gap: 3px; }
+
+    .contrast-row {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      border: 1px solid var(--rule);
+      background: var(--ivory);
+    }
+    .contrast-row.highlight { border-color: rgba(139,34,82,0.28); }
+
+    .contrast-label {
+      padding: 22px 22px;
+      border-right: 1px solid var(--rule);
+      background: var(--ivory-warm);
+      display: flex;
+      align-items: center;
+    }
+    .contrast-row.highlight .contrast-label { background: var(--burgundy); border-color: var(--burgundy); }
+
+    .contrast-label-text {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .contrast-row.highlight .contrast-label-text { color: var(--ivory); }
+
+    .contrast-content { padding: 22px 26px; }
+    .contrast-content p {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.55vw, 1.18rem);
+      color: var(--ink-mid);
+      line-height: 1.6;
+    }
+    .contrast-content p em { font-style: italic; color: var(--ink-faint); }
+    .contrast-row.highlight .contrast-content p {
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .contrast-row.highlight .contrast-content p em { color: var(--burgundy); }
+
+    /* Photo strip */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 44px;
+    }
+    .photo-tile {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      position: relative;
+    }
+    .photo-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+      filter: sepia(12%) saturate(88%) brightness(1.03);
+    }
+    .photo-tile:hover img { transform: scale(1.03); }
+
+    /* ====================================================
+       FORMAT
+    ==================================================== */
+    .format-intro-copy {
+      font-family: var(--font-display);
+      font-size: clamp(1.05rem, 1.75vw, 1.32rem);
+      color: var(--ink-mid);
+      line-height: 1.85;
+      max-width: 680px;
+      margin-bottom: 44px;
+    }
+    .format-intro-copy strong { color: var(--ink); }
+
+    .format-grid {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      border: 1px solid var(--rule);
+      margin-bottom: 32px;
+    }
+    .format-col         { padding: 30px 26px; }
+    .format-col.apps    { background: var(--ivory-warm); opacity: 0.82; }
+    .format-col.us      { background: var(--ivory); border-top: 3px solid var(--burgundy); }
+    .format-col-divider { background: var(--rule); }
+
+    .format-col-label {
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: var(--ink-mid);
+    }
+    .format-col.us .format-col-label { color: var(--ink); }
+
+    .format-list { list-style: none; padding: 0; margin-bottom: 18px; }
+    .format-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+    .format-list li:last-child { border-bottom: none; }
+
+    .f-num {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 400;
+      color: var(--ink-soft);
+      min-width: 48px;
+      text-align: right;
+      line-height: 1;
+    }
+    .format-col.apps .f-num { color: var(--ink-faint); }
+    .format-col.us   .f-num { color: var(--burgundy); font-size: 1.75rem; }
+
+    .format-col-result {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.97rem;
+      padding-top: 14px;
+      border-top: 1px solid var(--rule);
+    }
+    .format-col.apps .format-col-result { color: var(--ink-faint); }
+    .format-col.us   .format-col-result { color: var(--burgundy); }
+
+    .format-bonus {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 26px 30px;
+      border: 1px solid rgba(184,145,42,0.2);
+      background: rgba(184,145,42,0.04);
+    }
+    .format-bonus-label {
+      font-size: 0.62rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 11px;
+    }
+    .format-bonus p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(0.97rem, 1.55vw, 1.12rem);
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+
+    /* ====================================================
+       FOUNDERS (plural — two-person layout)
+    ==================================================== */
+    .founders-grid {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 0;
+      margin-top: 44px;
+      align-items: start;
+    }
+
+    .founder-card { padding: 0 48px 0 0; }
+    .founder-card:last-child { padding: 0 0 0 48px; }
+
+    .founder-card-divider {
+      background: var(--rule);
+      margin-top: 20px;
+    }
+
+    /* Jakub — PNG cutout, no frame */
+    .founder-img-cutout {
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 3 / 4;
+      margin-bottom: 24px;
+      display: block;
+    }
+    .founder-img-cutout img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center top;
+      display: block;
+    }
+
+    /* Martina — elegant placeholder */
+    .founder-img-placeholder {
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 3 / 4;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      border: 1px dashed rgba(26,18,8,0.15);
+      background: var(--ivory-deep);
+    }
+    .founder-img-placeholder svg { opacity: 0.25; }
+    .founder-img-placeholder span {
+      font-size: 0.6rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+
+    .founder-name {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .founder-role-tag {
+      font-size: 0.68rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .founder-bio-text {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      line-height: 1.82;
+      color: var(--ink-mid);
+      margin-bottom: 16px;
+    }
+
+    .founder-sign {
+      margin-top: 18px;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--burgundy);
+    }
+
+    @media (max-width: 768px) {
+      .founders-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .founder-card { padding: 0; }
+      .founder-card:last-child { padding: 0; }
+      .founder-card-divider { display: none; }
+      .founder-img-cutout,
+      .founder-img-placeholder { max-width: 220px; }
+    }
+
+    /* ====================================================
+       HOW IT WORKS
+    ==================================================== */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--rule);
+      margin-top: 42px;
+    }
+    .step {
+      padding: 30px 24px;
+      border-right: 1px solid var(--rule);
+    }
+    .step:last-child { border-right: none; }
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: var(--burgundy);
+      opacity: 0.22;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .step h3 {
+      font-family: var(--font-display);
+      font-size: 1.12rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 11px;
+    }
+    .step p {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    /* ====================================================
+       QUOTE
+    ==================================================== */
+    .quote-section {
+      text-align: center;
+      padding: 96px 48px;
+      background: var(--ivory-warm);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .quote-mark {
+      font-family: var(--font-display);
+      font-size: 4.5rem;
+      color: var(--burgundy);
+      opacity: 0.16;
+      line-height: 0.6;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+      font-style: italic;
+      color: var(--ink);
+      max-width: 740px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+    .quote-author {
+      font-size: 0.74rem;
+      color: var(--ink-faint);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ====================================================
+       EVENT CARD
+    ==================================================== */
+    .event-invite {
+      max-width: 620px;
+      margin: 44px auto 0;
+      border: 1px solid var(--rule);
+      overflow: hidden;
+      background: var(--ivory);
+    }
+
+    .event-invite-header {
+      background: var(--burgundy);
+      padding: 17px 40px;
+      text-align: center;
+    }
+    .event-invite-header-sub {
+      font-size: 0.61rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: rgba(248,244,238,0.55);
+      margin-bottom: 4px;
+    }
+    .event-invite-header-title {
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 400;
+      color: var(--ivory);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .event-invite-body {
+      padding: 34px 40px;
+      text-align: center;
+    }
+    .event-date-big {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 8vw, 5.8rem);
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .event-date-sub {
+      font-size: 0.73rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 26px;
+      margin-top: 4px;
+    }
+
+    .event-meta-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      margin: 0 0 24px;
+    }
+    .e-cell {
+      padding: 16px 6px;
+      text-align: center;
+      border-right: 1px solid var(--rule);
+    }
+    .e-cell:last-child { border-right: none; }
+    .e-cell .e-label {
+      font-size: 0.57rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 5px;
+    }
+    .e-cell .e-value {
+      font-family: var(--font-display);
+      font-size: 1.28rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .e-cell .e-value.price { color: var(--burgundy); }
+
+    .event-scarcity {
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      margin-bottom: 18px;
+    }
+    .event-scarcity strong { color: var(--ink); }
+    .event-guarantee {
+      font-size: 0.77rem;
+      color: var(--ink-faint);
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    /* ====================================================
+       FAQ
+    ==================================================== */
+    .faq {
+      max-width: 760px;
+      margin: 42px auto 0;
+      border-top: 1px solid var(--rule);
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--rule);
+      padding: 23px 0;
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 16px;
+    }
+    .faq-num {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-style: italic;
+      color: var(--ink-faint);
+      padding-top: 4px;
+    }
+    .faq-q {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .faq-a {
+      font-size: 0.91rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    /* ====================================================
+       HERO — AUTHORITY STRIP
+    ==================================================== */
+    .hero-authority {
+      margin-top: 20px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--ink-faint);
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      border-top: 1px solid var(--rule);
+      padding-top: 16px;
+    }
+    .hero-authority em { color: var(--gold); font-style: normal; }
+
+    /* ====================================================
+       CULTURAL VALIDATION SECTION
+    ==================================================== */
+    .cultural-validation {
+      background: var(--ivory);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .cv-body {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 1.9vw, 1.42rem);
+      font-weight: 400;
+      line-height: 1.9;
+      color: var(--ink-mid);
+      max-width: 740px;
+      margin-bottom: 44px;
+    }
+    .cv-body em { font-style: italic; }
+    .cv-body strong { color: var(--ink); font-weight: 600; }
+
+    .cv-closer {
+      max-width: 740px;
+      padding: 28px 0;
+      border-top: 2px solid var(--rule);
+    }
+    .cv-closer-main {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.4vw, 1.85rem);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .cv-closer-here {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      color: var(--burgundy);
+    }
+
+    /* ====================================================
+       AUTONOMY BLOCK
+    ==================================================== */
+    .autonomy-block {
+      background: var(--ivory-warm);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+      padding: 88px 48px;
+    }
+    .autonomy-pre {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.7vw, 1.2rem);
+      color: var(--ink-faint);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .autonomy-main {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 28px;
+    }
+    .autonomy-main em { color: var(--burgundy); }
+    .autonomy-sub {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--ink-soft);
+      max-width: 460px;
+      margin: 0 auto 10px;
+      line-height: 1.7;
+    }
+    .autonomy-whisper {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--ink-faint);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+      .autonomy-block { padding: 68px 18px; }
+    }
+
+    /* ====================================================
+       FINAL CTA
+    ==================================================== */
+    .final-cta {
+      text-align: center;
+      padding: 100px 48px;
+      background: var(--ink);
+    }
+
+    .final-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+      font-weight: 400;
+      color: var(--ivory);
+      margin-bottom: 22px;
+      line-height: 1.22;
+    }
+    .final-cta h2 em { font-style: italic; color: var(--gold-light); }
+
+    .cta-facts {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+    .cta-fact {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: rgba(248,244,238,0.78);
+    }
+    .cta-fact-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--burgundy-mid);
+      flex-shrink: 0;
+    }
+
+    .cta-guarantee-block {
+      margin-top: 16px;
+      font-size: 0.8rem;
+      color: rgba(248,244,238,0.42);
+      font-style: italic;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-autonomy {
+      margin-top: 10px;
+      font-size: 0.7rem;
+      color: rgba(248,244,238,0.25);
+      letter-spacing: 1px;
+    }
+
+    .cta-btn-light {
+      display: inline-block;
+      padding: 15px 48px;
+      background: var(--ivory);
+      color: var(--ink);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .cta-btn-light:hover {
+      background: var(--ivory-warm);
+      color: var(--ink);
+      transform: translateY(-1px);
+    }
+
+    /* ====================================================
+       FOOTER
+    ==================================================== */
+    footer {
+      padding: 30px 48px;
+      background: var(--ink);
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(248,244,238,0.28);
+      border-top: 1px solid rgba(248,244,238,0.07);
+    }
+    .footer-cities {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: rgba(248,244,238,0.42);
+      letter-spacing: 4px;
+      margin-bottom: 8px;
+      font-size: 0.78rem;
+    }
+    footer a { color: rgba(248,244,238,0.28); }
+    footer a:hover { color: var(--ivory); }
+
+    /* ====================================================
+       RESPONSIVE
+    ==================================================== */
+    @media (max-width: 768px) {
+      nav { padding: 12px 18px; }
+      .nav-links { display: none; }
+
+      .wrap, .wrap-narrow { padding: 0 18px; }
+      section { padding: 68px 0; }
+
+      .hero-content { padding: 26px 18px 60px; }
+      .hero-meta-strip { flex-wrap: wrap; border: none; }
+      .hero-meta-cell {
+        border: none;
+        border-bottom: 1px solid var(--rule);
+        padding: 10px 16px;
+        min-width: 50%;
+        border-right: 1px solid var(--rule);
+      }
+      .hero-meta-cell:nth-child(even) { border-right: none; }
+      .hero-meta-cell:last-child,
+      .hero-meta-cell:nth-last-child(2) { border-bottom: none; }
+
+      .pull-quote { padding-left: 16px; }
+
+      .contrast-row { grid-template-columns: 1fr; }
+      .contrast-label { border-right: none; border-bottom: 1px solid rgba(248,244,238,0.12); }
+
+      .photo-strip { grid-template-columns: 1fr 1fr; }
+      .photo-strip .photo-tile:last-child { display: none; }
+
+      .format-grid { grid-template-columns: 1fr; }
+      .format-col-divider { height: 1px; width: 100%; }
+
+      .founder-grid { grid-template-columns: 1fr; gap: 28px; }
+      .founder-photo { width: 100%; max-width: 260px; margin: 0 auto; }
+
+      .steps { grid-template-columns: 1fr; }
+      .step { border-right: none; border-bottom: 1px solid var(--rule); }
+      .step:last-child { border-bottom: none; }
+
+      .quote-section { padding: 72px 18px; }
+
+      .event-invite-body { padding: 26px 18px; }
+      .event-meta-row { grid-template-columns: 1fr; }
+      .e-cell { border-right: none; border-bottom: 1px solid var(--rule); }
+      .e-cell:last-child { border-bottom: none; }
+
+      .final-cta { padding: 72px 18px; }
+      .cta-facts { text-align: center; align-items: center; }
+      footer { padding: 26px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ======================================================
+     NAV
+====================================================== -->
+<nav>
+  <a href="#" class="logo-link" aria-label="Česko-Slovenský Dating Wien">
+    <span class="logo-mark" aria-hidden="true">
+      <img src="logo-v2.svg" alt="" width="64" height="38" style="display:block">
+    </span>
+    <span class="logo-text">ČS <span>DATING</span></span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#preco">Prečo</a></li>
+      <li><a href="#zakladatelia">Zakladatelia</a></li>
+      <li><a href="#termin">Termín</a></li>
+    </ul>
+    <a href="#prihlaska" class="nav-cta">Prihlásiť sa</a>
+  </div>
+</nav>
+
+
+<!-- ======================================================
+     HERO — INTERRUPT
+====================================================== -->
+<section class="hero">
+
+  <div class="hero-image-band">
+    <img
+      src="https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=1400&q=80"
+      alt="Ľudia na spoločenskom večeri vo Viedni"
+      loading="eager"
+    >
+  </div>
+
+  <div class="hero-content">
+
+    <div class="masthead-rule">
+      <span class="masthead-date">Edícia&nbsp;I &nbsp;·&nbsp; Wien &nbsp;·&nbsp; 22.&nbsp;jún&nbsp;2026</span>
+    </div>
+
+    <p class="hero-prequestion">Sick of dating apps und having nothing in common?</p>
+
+    <h1>Online dostávaš jeden pokus.<br><em>Naživo dostávaš večer.</em></h1>
+
+    <div class="hero-translations" aria-label="Preklady hlavného hesla">
+      <span class="hero-translation">Unavený/-á z appiek na randenie a nemáš nič spoločné?</span>
+      <span class="hero-translation">Unavený/-á z datovacích appek a nemáš nic společného?</span>
+      <span class="hero-translation">Müde von Dating-Apps und hast du nichts gemeinsam?</span>
+    </div>
+
+    <div class="hero-hr"></div>
+
+    <div class="hero-meta-strip">
+      <div class="hero-meta-cell"><strong>30</strong>miest</div>
+      <div class="hero-meta-cell"><strong>15+15</strong>ženy · muži</div>
+      <div class="hero-meta-cell"><strong>€29</strong>vstup</div>
+      <div class="hero-meta-cell"><strong>22.&nbsp;6.</strong>2026</div>
+    </div>
+
+    <div class="cta-row">
+      <a href="#prihlaska" class="cta-btn">Prihlásiť sa</a>
+      <a href="#preco" class="cta-btn-ghost">Pozri si formát →</a>
+    </div>
+    <span class="cta-soft-note">3 minúty. Ak nezapadáš — €29 dostaneš späť.</span>
+
+    <p class="hero-authority">Hosťuje <em>Jakub Popluhar</em> — Slovák, 10+ rokov na Západe. Organizátor medzinárodných eventov (FRESH, európska športová asociácia). Po desiatkach speed-datingov vo Viedni postavil ten, ktorý mu sám chýbal.</p>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     CULTURAL VALIDATION — between hero and pain
+====================================================== -->
+<section class="cultural-validation" id="preco">
+  <div class="wrap">
+
+    <div class="section-eyebrow">
+      <span class="section-eyebrow-num">I.</span>
+      <span class="section-eyebrow-label">Skúšal/-a si to inak.</span>
+      <span class="section-eyebrow-rule"></span>
+    </div>
+
+    <h2 class="section-title">Vieš, ako to <em>dopadlo.</em></h2>
+
+    <div class="cv-body">
+      Žiješ vo Viedni dva roky. Možno päť. Možno desať.<br><br>
+      Skúšal/-a si to s Rakúšanom. S Nemcom z práce. S Talianom z apky.<br>
+      Niekedy to bolo fajn. Občas dobré. Raz aj dlho.<br><br>
+      Ale zakaždým ti chýbalo niečo, čo si nevedel/-a presne pomenovať.<br>
+      Vtip, ktorý nemusíš vysvetľovať.<br>
+      Pesnička, pri ktorej obaja viete druhú slohu.<br>
+      To, ako sa doma hovorí o rodine, peniazoch, deťoch.<br><br>
+      Nemusíš to už dokazovať. <strong>Vieš to.</strong>
+    </div>
+
+    <div class="cv-closer">
+      <p class="cv-closer-main">Otázka nie je či. Otázka je kde.</p>
+      <p class="cv-closer-here">Tu.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     PAIN — NAME THE ENEMY (gender split)
+====================================================== -->
+<section class="pain bg-warm" id="poznas-to">
+  <div class="wrap">
+
+    <div class="section-eyebrow">
+      <span class="section-eyebrow-num">II.</span>
+      <span class="section-eyebrow-label">Poznáš to?</span>
+      <span class="section-eyebrow-rule"></span>
+    </div>
+
+    <div class="pain-split">
+
+      <!-- Male column -->
+      <div class="pain-col male">
+        <div class="pain-col-photo">
+          <img
+            src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&q=80"
+            alt="Muž vo Viedni"
+            loading="lazy"
+          >
+        </div>
+        <span class="pain-col-tag">Pre mužov</span>
+        <div class="pain-col-body">
+          Konečne match. A ona naozaj odpíše.<br>
+          Píšete v angličtine. Tri dni. Ide to.<br><br>
+          Spravíš vtip. Taký, čo doma vždy zaberie.<br>
+          V texte — tri bodky. Ticho.<br>
+          Ráno: unmatch. Bez slova.<br><br>
+          Žiadny spoločný kamarát, koho by si sa spýtal, čo sa stalo.<br>
+          Doma by sa zasmiala. Lebo by ti videla do tváre.
+        </div>
+      </div>
+
+      <!-- Female column -->
+      <div class="pain-col female">
+        <div class="pain-col-photo">
+          <img
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80"
+            alt="Žena vo Viedni"
+            loading="lazy"
+          >
+        </div>
+        <span class="pain-col-tag">Pre ženy</span>
+        <!-- MARTINA FINALIZES -->
+        <div class="pain-col-body">
+          Inbox je plný. Väčšina je hluk.<br><br>
+          Píše ti niekto vtipný. Tri týždne textu — naživo iný človek.<br>
+          Píše vtipne. Naživo nemá čo povedať.<br><br>
+          A okrem toho: kto navrhuje termín. Kto platí prvú kávu.<br>
+          Či sa ozve. Či mu napíšeš prvá.<br>
+          Doma to neriešiš. Vo Viedni s nikým iným to riešiš zakaždým.<br><br>
+          Niečo nesedí. Nevieš to vždy presne pomenovať.<br>
+          Ale vieš to.
+        </div>
+      </div>
+
+      <!-- Shared closing row -->
+      <div class="pain-shared">
+        <p class="pain-shared-closer"><strong>Apky ťa odsúdia skôr, než sa ukážeš.</strong></p>
+        <div class="pain-verdict">
+          <p><strong>My ti dáme večer.</strong></p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     PYRAMID — THE INSIGHT
+====================================================== -->
+<section id="pyramida">
+  <div class="wrap">
+
+    <div class="section-eyebrow">
+      <span class="section-eyebrow-num">III.</span>
+      <span class="section-eyebrow-label">Prečo filtrujeme to, čo filtrujeme</span>
+      <span class="section-eyebrow-rule"></span>
+    </div>
+
+    <h2 class="section-title">Pyramída <em>dlhodobého vzťahu.</em></h2>
+
+    <div class="pyramid-intro-copy">
+      Online ťa filtrujú podľa fotky a piatich riadkov v bio.<br>
+      Naživo ťa ľudia vidia celého — výraz, tón, timing, energiu.<br><br>
+      John Gottman strávil 40 rokov v laboratóriu meraním vzťahov.<br>
+      Záver: <strong>dlhodobé vzťahy nestoja na chémii zo screenshotu.</strong><br>
+      Stoja na základe, ktorý uvidíš až keď tam s niekým sedíš.
+    </div>
+
+    <!-- SVG VISUAL PYRAMID -->
+    <div class="pyramid-visual">
+      <div class="pyramid-svg-wrap">
+        <svg viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg" aria-label="Pyramída dlhodobého vzťahu — 4 úrovne od základu po vrchol">
+
+          <!-- ── Tier I — BASE (widest, gold/burgundy highlight) ── -->
+          <!-- Filled trapezoid -->
+          <polygon points="10,450 690,450 614,336 86,336" fill="#f5edd8" stroke="#b8912a" stroke-width="1.8"/>
+          <!-- Gold accent left/right edges -->
+          <line x1="10"  y1="450" x2="86"  y2="336" stroke="#b8912a" stroke-width="2.5" opacity="0.55"/>
+          <line x1="690" y1="450" x2="614" y2="336" stroke="#b8912a" stroke-width="2.5" opacity="0.55"/>
+          <!-- Bottom fill bar (gold) -->
+          <rect x="10" y="443" width="680" height="7" fill="#b8912a" opacity="0.35" rx="1"/>
+
+          <!-- Tier I labels -->
+          <text x="350" y="378" font-family="'Playfair Display', Georgia, serif" font-size="14" font-weight="600" fill="#8b2252" text-anchor="middle" letter-spacing="0.8">I. SPOLOČNÝ JAZYK A KULTÚRA</text>
+          <text x="350" y="398" font-family="'Source Serif 4', Georgia, serif" font-size="11.5" fill="#6b5540" text-anchor="middle">Materinský jazyk · Detstvo · Rodinné rytmy</text>
+          <text x="350" y="418" font-family="'Playfair Display', Georgia, serif" font-size="10.5" font-style="italic" fill="#b8912a" text-anchor="middle">— tu začíname my —</text>
+
+          <!-- ── Tier II ── -->
+          <polygon points="86,336 614,336 538,224 162,224" fill="#f2ece2" stroke="rgba(26,18,8,0.09)" stroke-width="1.4"/>
+
+          <!-- Tier II labels -->
+          <text x="350" y="268" font-family="'Playfair Display', Georgia, serif" font-size="13" font-weight="600" fill="#3d2e1c" text-anchor="middle" letter-spacing="0.5">II. HODNOTY, VIERA, RODINA</text>
+          <text x="350" y="288" font-family="'Source Serif 4', Georgia, serif" font-size="11" fill="#9c8570" text-anchor="middle">Ambícia · Peniaze · Náboženstvo · Rodina</text>
+
+          <!-- ── Tier III ── -->
+          <polygon points="162,224 538,224 462,114 238,114" fill="#ece4d8" stroke="rgba(26,18,8,0.08)" stroke-width="1.4"/>
+
+          <!-- Tier III labels -->
+          <text x="350" y="157" font-family="'Playfair Display', Georgia, serif" font-size="12.5" font-weight="600" fill="#3d2e1c" text-anchor="middle" letter-spacing="0.3">III. EMOCIONÁLNE SPOJENIE</text>
+          <text x="350" y="176" font-family="'Source Serif 4', Georgia, serif" font-size="11" fill="#9c8570" text-anchor="middle">Dôvera · Zraniteľnosť · Oprava po hádke</text>
+
+          <!-- ── Tier IV — APEX ── -->
+          <polygon points="238,114 462,114 350,18" fill="#e4d9cc" stroke="rgba(26,18,8,0.07)" stroke-width="1.4"/>
+
+          <!-- Tier IV labels -->
+          <text x="350" y="68" font-family="'Playfair Display', Georgia, serif" font-size="12" font-weight="600" fill="#6b5540" text-anchor="middle">IV. SPOLOČNÝ SMER</text>
+          <text x="350" y="86" font-family="'Source Serif 4', Georgia, serif" font-size="10.5" fill="#9c8570" text-anchor="middle">Deti · Mesto · Budúcnosť</text>
+
+          <!-- Apps label + dashed arrow (right side, pointing DOWN) -->
+          <text x="674" y="155" font-family="'Source Serif 4', Georgia, serif" font-size="9.5" fill="#9c8570" text-anchor="middle" transform="rotate(90 674 155)">APKY FILTRUJÚ ZHORA ↓</text>
+          <line x1="674" y1="28" x2="674" y2="428" stroke="rgba(156,133,112,0.25)" stroke-width="1" stroke-dasharray="4,4"/>
+          <polygon points="669,424 679,424 674,434" fill="rgba(156,133,112,0.35)"/>
+
+          <!-- Our label + dashed arrow (left side, pointing UP) -->
+          <text x="26" y="155" font-family="'Source Serif 4', Georgia, serif" font-size="9.5" fill="#b8912a" text-anchor="middle" transform="rotate(-90 26 155)" opacity="0.85">MY KURATUJEME ZDOLA ↑</text>
+          <line x1="26" y1="428" x2="26" y2="28" stroke="rgba(184,145,42,0.3)" stroke-width="1" stroke-dasharray="4,4"/>
+          <polygon points="21,32 31,32 26,22" fill="rgba(184,145,42,0.45)"/>
+
+        </svg>
+      </div>
+
+      <div class="pyramid-directive">
+        <div class="pyramid-directive-left">↑ My kuratujeme zdola — jazykový základ ako prvý filter</div>
+        <div class="pyramid-directive-right">Apky optimalizujú zhora ↓ — fotka, chémia, swipe</div>
+      </div>
+    </div>
+
+    <div class="pyramid-conclusion">
+      <p>Apky optimalizujú na chémiu z fotky.<br><strong>My optimalizujeme na to, čo vidíš až naživo.</strong></p>
+    </div>
+
+    <p class="pyramid-source">Zdroj: The Gottman Institute (Sound Relationship House) &nbsp;·&nbsp; Esther Perel, <em>The State of Affairs</em> &amp; <em>Mating in Captivity</em></p>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     DIFFERENCE — THE CONTRAST
+====================================================== -->
+<section class="bg-warm" id="rozdiel">
+  <div class="wrap">
+
+    <div class="section-eyebrow">
+      <span class="section-eyebrow-num">IV.</span>
+      <span class="section-eyebrow-label">V čom je rozdiel</span>
+      <span class="section-eyebrow-rule"></span>
+    </div>
+
+    <h2 class="section-title">Nie ďalšie <em>speed dating.</em></h2>
+
+    <!-- Hormozi contrast stack -->
+    <div class="contrast-stack">
+      <div class="contrast-row">
+        <div class="contrast-label">
+          <span class="contrast-label-text">Apky</span>
+        </div>
+        <div class="contrast-content">
+          <p>900 swipov. 1 coffee date. <em>Ona ti nepíše späť.</em></p>
+        </div>
+      </div>
+
+      <div class="contrast-row">
+        <div class="contrast-label">
+          <span class="contrast-label-text">Bežné eventy</span>
+        </div>
+        <div class="contrast-content">
+          <p>Pekný večer. Tretí rozhovor — <em>vysvetľuješ halušky.</em> To nie je tvoj kruh.</p>
+        </div>
+      </div>
+
+      <div class="contrast-row highlight">
+        <div class="contrast-label">
+          <span class="contrast-label-text">ČS Dating</span>
+        </div>
+        <div class="contrast-content">
+          <p>30 ľudí. Jeden večer. <em>Nikto nevysvetľuje Vianoce.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-family:var(--font-display);font-style:italic;font-size:1rem;color:var(--burgundy);margin-top:20px;font-weight:500;">Toto je jediný takýto večer vo Viedni.</p>
+
+    <!-- 4-card difference grid -->
+    <div class="diff-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule);border:1px solid var(--rule);margin-top:44px;">
+
+      <div class="diff-card" style="padding:28px 26px;background:var(--ivory-warm);opacity:0.88;">
+        <div style="font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;">Apky</div>
+        <p style="font-family:var(--font-display);font-size:1rem;color:var(--ink-mid);line-height:1.7;">6 mesiacov. 200 matchov. 12 rozhovorov. 3 rande.<br>Jeden zlý vtip → unmatch. Žiadne druhé kolo.</p>
+      </div>
+
+      <div class="diff-card" style="padding:28px 26px;background:var(--ivory);border-top:3px solid var(--burgundy);">
+        <div style="font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--burgundy);margin-bottom:10px;">ČS Dating</div>
+        <p style="font-family:var(--font-display);font-size:1rem;color:var(--ink);font-weight:500;line-height:1.7;">8 ľudí. Naživo. 6 minút každý.<br>Vidíš tvár, počuješ tón, rozumieš kontextu.<br>Za jeden večer urobíš to, čo apka za 6 mesiacov.</p>
+      </div>
+
+      <div class="diff-card" style="padding:28px 26px;background:var(--ivory-warm);opacity:0.88;">
+        <div style="font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;">Dating s kýmkoľvek</div>
+        <p style="font-family:var(--font-display);font-size:1rem;color:var(--ink-mid);line-height:1.7;">Rakúšan, Nemec, Talian. Skúšal/-a si.<br>Tretí mesiac vysvetľuješ, čo sú halušky.<br>Šiesty — že rodina nie je „too much."<br>Deviaty — sa ti nechce.</p>
+      </div>
+
+      <div class="diff-card" style="padding:28px 26px;background:var(--ivory);border-top:3px solid var(--burgundy);">
+        <div style="font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--burgundy);margin-bottom:10px;">Medzi svojimi</div>
+        <p style="font-family:var(--font-display);font-size:1rem;color:var(--ink);font-weight:500;line-height:1.7;">Slováci a Česi vo Viedni, 25–39.<br>Vtipy fungujú. Spomienky netreba prekladať.<br>Hosťuje to Slovák, ktorý žije rovnaký príbeh.</p>
+      </div>
+
+    </div>
+
+    <!-- Atmosphere photos -->
+    <div class="photo-strip" style="margin-top:44px;">
+      <div class="photo-tile">
+        <img
+          src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&q=80"
+          alt="Ľudia na spoločenskom večeri"
+          loading="lazy"
+        >
+      </div>
+      <div class="photo-tile">
+        <img
+          src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=80"
+          alt="Pár v rozhovore na večeri"
+          loading="lazy"
+        >
+      </div>
+      <div class="photo-tile">
+        <img
+          src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80"
+          alt="Priateľská atmosféra na spoločenskom večeri"
+          loading="lazy"
+        >
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     FORMAT — THE PROOF OF METHOD
+====================================================== -->
+<section id="format">
+  <div class="wrap">
+
+    <div class="section-eyebrow">
+      <span class="section-eyebrow-num">V.</span>
+      <span class="section-eyebrow-label">Prečo speed dating</span>
+      <span class="section-eyebrow-rule"></span>
+    </div>
+
+    <h2 class="section-title">8 rande za jeden večer. <em>Inštinkt urobí zvyšok.</em></h2>
+
+    <div class="format-intro-copy">
+      Spomeň si na posledné Hinge rande.<br>
+      Do 30 sekúnd si vedel/-a.<br>
+      Bauchgefühl. <strong>Apky tento inštinkt nepoužívajú.</strong><br>
+      My ho dáme do práce 8-krát za jeden večer.
+    </div>
+
+    <div class="format-grid">
+      <div class="format-col apps">
+        <div class="format-col-label">Apky — za 1 mesiac</div>
+        <ul class="format-list">
+          <li><span class="f-num">900</span><span>swipov</span></li>
+          <li><span class="f-num">6+</span><span>týždňov textovania</span></li>
+          <li><span class="f-num">1</span><span>coffee date (ak sa to podarí)</span></li>
+          <li><span class="f-num">60</span><span>min. „Nice but…" Ghosting.</span></li>
+        </ul>
+        <p class="format-col-result">Stovky hodín. Jedno nič.</p>
+      </div>
+
+      <div class="format-col-divider"></div>
+
+      <div class="format-col us">
+        <div class="format-col-label">Jeden večer s nami</div>
+        <ul class="format-list">
+          <li><span class="f-num">1</span><span>večer</span></li>
+          <li><span class="f-num">8</span><span>krátkych rande (~6 min každé)</span></li>
+          <li><span class="f-num">15</span><span>nových ľudí — detstvo poznáš</span></li>
+          <li><span class="f-num">3h</span><span>a vieš s kým chceš pokračovať</span></li>
+        </ul>
+        <p class="format-col-result">3 hodiny. Vieš, s kým sa chceš stretnúť znova. Bez 6 mesiacov textovania.</p>
+      </div>
+    </div>
+
+    <div class="format-bonus">
+      <div class="format-bonus-label">Vedľajší produkt</div>
+      <p>Žiadne pľusko z toho večera? Stále odchádzaš so 14 Slovákmi a Čechmi vo Viedni, vekovo blízkymi, s podobnou cestou. Vo Viedni, kde si cudzinec — taká sieť má vlastnú hodnotu.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     FOUNDERS — TWO PEOPLE
+====================================================== -->
+<section class="bg-warm" id="zakladatelia">
+  <div class="wrap">
+
+    <div class="section-eyebrow">
+      <span class="section-eyebrow-num">VI.</span>
+      <span class="section-eyebrow-label">Kto za tým stojí</span>
+      <span class="section-eyebrow-rule"></span>
+    </div>
+
+    <h2 class="section-title">Ako sme <em>k tomu prišli.</em></h2>
+
+    <div class="founders-grid">
+
+      <!-- JAKUB -->
+      <div class="founder-card">
+        <div class="founder-img-cutout">
+          <img src="founder-jakub.png" alt="Jakub Popluhar">
+        </div>
+        <div class="founder-name">Jakub Popluhar</div>
+        <div class="founder-role-tag">Zakladateľ &nbsp;·&nbsp; Hostiteľ</div>
+        <p class="founder-bio-text">Som <strong>Jakub Popluhar</strong>. Slovák, 10+ rokov na Západe.</p>
+        <p class="founder-bio-text">Som event organizátor — viedol som medzinárodné športové eventy, európsku asociáciu, camp FRESH na Mallorke. Roky som vo Viedni hosťoval speed-datingy.</p>
+        <p class="founder-bio-text">A zakaždým som videl to isté: Slováci a Česi v miestnosti plnej Rakúšanov a Talianov, vtipkujúci v angličtine, odchádzajúci sami.</p>
+        <p class="founder-bio-text">Tak som postavil večer, ktorý mi sám chýbal.</p>
+        <div class="founder-sign">— Jakub</div>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="founder-card-divider"></div>
+
+      <!-- MARTINA -->
+      <div class="founder-card">
+        <div class="founder-img-placeholder">
+          <svg width="64" height="80" viewBox="0 0 64 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="22" r="16" fill="none" stroke="#1a1208" stroke-width="2"/>
+            <path d="M4,78 C4,52 60,52 60,78" fill="none" stroke="#1a1208" stroke-width="2"/>
+          </svg>
+          <span>Foto coming soon</span>
+        </div>
+        <div class="founder-name">Martina</div>
+        <div class="founder-role-tag">Operations &nbsp;·&nbsp; Co-founder</div>
+        <p class="founder-bio-text">Číta každú prihlášku. Skladá večer tak, aby mal správny pomer, správnych ľudí a správnu energiu.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     QUOTE
+====================================================== -->
+<section class="quote-section">
+  <span class="quote-mark" aria-hidden="true">"</span>
+  <p class="quote">
+    Apky nefiltrujú to, čo treba filtrovať. Toto je prvý raz, čo niekto urobil priestor presne pre nás — Slovákov a Čechov vo Viedni — ktorí si už dávno hovoríme, že by malo niečo také existovať.
+  </p>
+  <p class="quote-author">Skúšobná účastníčka &nbsp;·&nbsp; 31 &nbsp;·&nbsp; Wien</p>
+</section>
+
+
+<!-- ======================================================
+     TESTIMONIAL PLACEHOLDER
+====================================================== -->
+<!-- REAL QUOTE — doplniť po 22.6.2026 -->
+<section style="background:var(--ivory-warm);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:72px 0;text-align:center;">
+  <div class="wrap-narrow">
+    <span style="font-family:var(--font-display);font-size:4rem;color:var(--burgundy);opacity:0.15;line-height:0.5;display:block;margin-bottom:18px;" aria-hidden="true">"</span>
+    <div style="font-family:var(--font-display);font-style:italic;font-size:clamp(1.2rem,2.2vw,1.65rem);color:var(--ink);line-height:1.6;max-width:680px;margin:0 auto 18px;">
+      Apky nefiltrujú to, čo treba. Toto je prvý raz, čo niekto urobil priestor presne pre nás.
+    </div>
+    <p style="font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);">
+      <span style="font-family:var(--font-display);font-style:italic;">Prvé ohlasy</span> &nbsp;·&nbsp; — [doplniť po Edícii I]
+    </p>
+  </div>
+</section>
+
+
+<!-- ======================================================
+     EVENT CARD — THE GATE
+====================================================== -->
+<section id="termin">
+  <div class="wrap">
+
+    <div class="section-eyebrow">
+      <span class="section-eyebrow-num">VIII.</span>
+      <span class="section-eyebrow-label">Najbližšia edícia</span>
+      <span class="section-eyebrow-rule"></span>
+    </div>
+
+    <h2 class="section-title" style="text-align:center;">Prvá edícia. <em>Jeden termín.</em></h2>
+
+    <div class="event-invite">
+      <div class="event-invite-header">
+        <div class="event-invite-header-sub">Česko-Slovenský Dating · Wien</div>
+        <div class="event-invite-header-title">Edícia&nbsp;I &nbsp;·&nbsp; Pozvánka</div>
+      </div>
+      <div class="event-invite-body">
+        <div class="event-date-big">22</div>
+        <div class="event-date-sub">Jún 2026 &nbsp;·&nbsp; Pondelok večer</div>
+
+        <div class="event-meta-row">
+          <div class="e-cell">
+            <div class="e-label">Lokalita</div>
+            <div class="e-value">Wien, 1. okres</div>
+          </div>
+          <div class="e-cell">
+            <div class="e-label">Miesta</div>
+            <div class="e-value">30 (15+15)</div>
+          </div>
+          <div class="e-cell">
+            <div class="e-label">Cena</div>
+            <div class="e-value price">€29</div>
+          </div>
+        </div>
+
+        <p class="event-scarcity"><strong>30 miest. 15 mužov. 15 žien. Keď je obsadené, je obsadené.</strong></p>
+
+        <a href="#prihlaska" class="cta-btn">Prihlásiť sa na Edíciu I</a>
+
+        <p class="event-guarantee">Ak nezapadáš — €29 dostaneš späť do 72 hodín. Žiadne otázky.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     AUTONOMY BLOCK — "but you are free"
+====================================================== -->
+<section class="autonomy-block">
+  <p class="autonomy-pre">Samozrejme —</p>
+  <p class="autonomy-main">ty sa <em>rozhoduješ.</em></p>
+  <p class="autonomy-sub">Nikto ťa netlačí.</p>
+  <p class="autonomy-whisper">Ale ak ti niečo z tohto sedelo — 30 miest, 22. júna. Vieš, čo robiť.</p>
+</section>
+
+
+<!-- ======================================================
+     FAQ — after autonomy, before form
+====================================================== -->
+<section class="bg-warm" id="faq">
+  <div class="wrap">
+
+    <div class="section-eyebrow">
+      <span class="section-eyebrow-num">IX.</span>
+      <span class="section-eyebrow-label">Časté otázky</span>
+      <span class="section-eyebrow-rule"></span>
+    </div>
+
+    <h2 class="section-title">Čo by si mohol/-la <em>chcieť vedieť.</em></h2>
+
+    <div class="faq">
+      <div class="faq-item">
+        <span class="faq-num">01</span>
+        <div>
+          <div class="faq-q">V akom jazyku večer prebieha?</div>
+          <div class="faq-a">Slovensky a česky — podľa toho, ako sa pri stole dohodnete. Moderátor strieda oba jazyky.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-num">02</span>
+        <div>
+          <div class="faq-q">Prečo prihláška a nie len lístok?</div>
+          <div class="faq-a">Otvorené dvere = priemerný večer. Pomer 15+15, vekový rozsah, vážnosť zámeru — to robí rozdiel. Ak nezapadáš, €29 vraciame do 72 hodín bez otázok.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-num">03</span>
+        <div>
+          <div class="faq-q">Som Slovák/-čka žijúci/-a mimo Viedne. Môžem prísť?</div>
+          <div class="faq-a">Áno. Filter je jazyk + vek + vážnosť, nie miesto pobytu. Akurát budeš musieť do Viedne.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-num">04</span>
+        <div>
+          <div class="faq-q">Hľadám partnera, ale aj kontakty. Je to tu zlato?</div>
+          <div class="faq-a">Networking medzi svojimi je vedľajší efekt — nie zanedbateľný. Primárna optika večera je partnerstvo.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-num">05</span>
+        <div>
+          <div class="faq-q">Prečo €29? Speed dating vo Viedni stojí menej.</div>
+          <div class="faq-a">Mass-market: €19–25, otvorené dvere, žiadny starostlivý výber. Premium kuratované: €40+. €29 = starostlivý výber + lokalita v 1. okrese + drinky. Niečo medzi.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-num">06</span>
+        <div>
+          <div class="faq-q">Čo ak nikoho nestretnem?</div>
+          <div class="faq-a">Zažil/-a si večer so 14 Slovákmi a Čechmi vo Viedni, blízkymi vekom, s podobnou cestou. To nie je málo. To je sieť.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-num">07</span>
+        <div>
+          <div class="faq-q">Bude ďalšia edícia?</div>
+          <div class="faq-a">Plánujeme 3–4 edície do roka. Druhá pravdepodobne jeseň 2026. Limit je vedomý — každý večer dobre, nie každý mesiac priemerne.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     FINAL CTA — THE LEAP
+====================================================== -->
+<section class="final-cta" id="prihlaska">
+  <div class="wrap-narrow">
+
+    <div class="section-eyebrow" style="justify-content:center; margin-bottom:20px;">
+      <span class="section-eyebrow-num" style="color:rgba(248,244,238,0.38);">X.</span>
+      <span class="section-eyebrow-label" style="color:rgba(248,244,238,0.35);">Prihláška · Edícia I</span>
+      <span class="section-eyebrow-rule" style="background:rgba(248,244,238,0.1);"></span>
+    </div>
+
+    <h2>Rezervuj si miesto.</h2>
+
+    <p style="font-size:0.72rem;letter-spacing:2px;color:rgba(248,244,238,0.38);margin-bottom:28px;text-transform:uppercase;">
+      01 Vyplň prihlášku (3 min) &nbsp;·&nbsp; 02 Schválenie do 48h &nbsp;·&nbsp; 03 Príď 22. júna
+    </p>
+
+    <div class="cta-facts">
+      <div class="cta-fact"><span class="cta-fact-dot"></span>22. jún 2026 &nbsp;·&nbsp; Wien, 1. okres</div>
+      <div class="cta-fact"><span class="cta-fact-dot"></span>30 miest &nbsp;·&nbsp; 15 mužov, 15 žien</div>
+      <div class="cta-fact"><span class="cta-fact-dot"></span>€29 &nbsp;·&nbsp; Prihláška: 3 minúty</div>
+    </div>
+
+    <a href="https://tally.so/r/PLACEHOLDER" class="cta-btn-light" id="apply-link">Prihlásiť sa &nbsp;·&nbsp; €29</a>
+
+    <p class="cta-guarantee-block">Ak nezapadáš — €29 dostaneš späť do 72 hodín. Žiadne otázky.</p>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+<footer>
+  <p class="footer-cities">Praha &nbsp;·&nbsp; Brno &nbsp;·&nbsp; Bratislava &nbsp;·&nbsp; Wien</p>
+  <p>Česko-Slovenský Dating · Wien &nbsp;—&nbsp; Speed dating pre Slovákov a Čechov</p>
+  <p style="margin-top:8px;">
+    <a href="#">Impressum</a> &nbsp;·&nbsp;
+    <a href="#">Ochrana údajov</a> &nbsp;·&nbsp;
+    <a href="mailto:info@cs-dating.wien">info@cs-dating.wien</a>
+  </p>
+  <p style="margin-top:11px; font-size:0.67rem; opacity:0.4;">
+    © 2026 Česko-Slovenský Dating &nbsp;·&nbsp; Founded by Jakub Popluhar &nbsp;·&nbsp; Operations Martina
+  </p>
+</footer>
+
+</body>
+</html>
