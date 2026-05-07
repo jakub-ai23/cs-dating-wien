@@ -973,35 +973,38 @@
     ==================================================== */
     .faq {
       max-width: 760px;
-      margin: 42px auto 0;
+      margin: 48px auto 0;
       border-top: 1px solid var(--rule);
     }
     .faq-item {
       border-bottom: 1px solid var(--rule);
-      padding: 23px 0;
+      padding: 28px 0;
       display: grid;
-      grid-template-columns: 26px 1fr;
-      gap: 16px;
+      grid-template-columns: 32px 1fr;
+      gap: 18px;
+      transition: background 0.15s;
     }
+    .faq-item:hover .faq-q { color: var(--burgundy); }
     .faq-num {
       font-family: var(--font-display);
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-style: italic;
       color: var(--ink-faint);
-      padding-top: 4px;
+      padding-top: 5px;
     }
     .faq-q {
       font-family: var(--font-display);
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 500;
       color: var(--ink);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       line-height: 1.3;
+      transition: color 0.15s;
     }
     .faq-a {
-      font-size: 0.91rem;
+      font-size: 0.92rem;
       color: var(--ink-soft);
-      line-height: 1.75;
+      line-height: 1.8;
     }
 
     /* ====================================================
@@ -1011,12 +1014,12 @@
       margin-top: 20px;
       font-family: var(--font-display);
       font-style: italic;
-      font-size: 0.85rem;
-      color: var(--ink-faint);
+      font-size: 0.95rem;
+      color: var(--ink-mid);
       max-width: 580px;
       margin-left: auto;
       margin-right: auto;
-      line-height: 1.6;
+      line-height: 1.65;
       border-top: 1px solid var(--rule);
       padding-top: 16px;
     }
@@ -1330,6 +1333,137 @@
       0%,100% { box-shadow: 0 0 4px rgba(248,244,238,0.15); }
       50%     { box-shadow: 0 0 12px rgba(248,244,238,0.45); }
     }
+
+    /* ── LOGO BRIDGE ── */
+    .logo-bridge {
+      background: var(--ivory);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 80px 0;
+    }
+    .logo-bridge-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 64px;
+      align-items: center;
+    }
+    .logo-bridge-text .lb-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 18px;
+    }
+    .logo-bridge-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+    .logo-bridge-text h2 em {
+      font-style: italic;
+      color: var(--burgundy);
+    }
+    .logo-bridge-text p {
+      font-size: 1rem;
+      color: var(--ink-mid);
+      line-height: 1.8;
+      max-width: 480px;
+    }
+    .logo-bridge-visual {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-bridge-visual img {
+      width: 260px;
+      height: auto;
+      display: block;
+    }
+    @media (max-width: 680px) {
+      .logo-bridge-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+      .logo-bridge-text p { max-width: 100%; }
+      .logo-bridge-visual { justify-content: center; }
+      .logo-bridge-visual img { width: 180px; }
+    }
+
+    /* ── UPCOMING EVENTS ── */
+    .upcoming-events {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .upcoming-card {
+      border: 1px solid var(--rule);
+      padding: 28px 24px;
+      background: var(--ivory);
+      position: relative;
+    }
+    .upcoming-card.active {
+      border-color: var(--burgundy);
+      background: var(--ivory);
+    }
+    .upcoming-card.active::before {
+      content: 'Prihláška otvorená';
+      position: absolute;
+      top: -1px; right: -1px;
+      background: var(--burgundy);
+      color: var(--ivory);
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+    }
+    .upcoming-card.soon::before {
+      content: 'Čoskoro';
+      position: absolute;
+      top: -1px; right: -1px;
+      background: var(--ink-faint);
+      color: var(--ivory);
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+    }
+    .uc-date {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .upcoming-card.active .uc-date { color: var(--burgundy); }
+    .uc-month {
+      font-size: 0.7rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 16px;
+    }
+    .uc-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .uc-desc {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+    @media (max-width: 680px) {
+      .upcoming-events { grid-template-columns: 1fr; gap: 12px; }
+    }
   </style>
 </head>
 <body>
@@ -1341,7 +1475,7 @@
 <nav>
   <a href="#" class="logo-link" aria-label="Česko-Slovenský Dating Wien">
     <span class="logo-mark" aria-hidden="true">
-      <img src="logo-v2.svg" alt="" width="64" height="38" style="display:block">
+      <img src="images/logo-v2.svg" alt="" width="64" height="38" style="display:block">
     </span>
     <span class="logo-text">ČS <span>DATING</span></span>
   </a>
@@ -1363,7 +1497,7 @@
 
   <div class="hero-image-band">
     <img
-      src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1400&q=80"
+      src="images/hero.jpg"
       alt="Ľudia na spoločenskom večeri vo Viedni"
       loading="eager"
     >
@@ -1375,15 +1509,9 @@
       <span class="masthead-date">Edícia&nbsp;I &nbsp;·&nbsp; Wien &nbsp;·&nbsp; 22.&nbsp;jún&nbsp;2026</span>
     </div>
 
-    <p class="hero-prequestion">Sick of dating apps und having nothing in common?</p>
+    <p class="hero-prequestion">Mesiace na appke. Stovky swipov.<br>A stále nikto, s kým máš niečo spoločné.</p>
 
     <h1>Online dostávaš jeden pokus.<br><em>Naživo dostávaš večer.</em></h1>
-
-    <div class="hero-translations" aria-label="Preklady hlavného hesla">
-      <span class="hero-translation">Mesiac na appke. Stovky swipov. A stále nikto, s kým máš čo spoločné.</span>
-      <span class="hero-translation">Měsíc na appce. Stovky swipů. A pořád nikdo, s kým máš co společného.</span>
-      <span class="hero-translation">Müde von Dating-Apps und hast du nichts gemeinsam?</span>
-    </div>
 
     <div class="hero-hr"></div>
 
@@ -1422,9 +1550,9 @@
 
     <div class="cv-body">
       Žiješ vo Viedni dva roky. Možno päť. Možno desať.<br><br>
-      Skúšal si to s Rakúšankou. S Nemcom z práce. S Talianom z apky.<br>
-      Niekedy to bolo fajn. Občas dobré. Raz aj dlho.<br><br>
-      Ale zakaždým ti chýbalo niečo, čo si nevedel/-a presne pomenovať.<br>
+      Skúšal si to s Rakúšankou. S Nemkou z práce. S Taliankou z apky.<br>
+      Týždeň. Mesiac. Raz aj rok.<br><br>
+      Ale zakaždým ti chýbalo niečo, čo sa nedalo presne pomenovať.<br>
       Vtip, ktorý nemusíš vysvetľovať.<br>
       Pesnička, pri ktorej obaja viete druhú slohu.<br>
       To, ako sa doma hovorí o rodine, peniazoch, deťoch.<br><br>
@@ -1440,6 +1568,25 @@
     <div class="cv-closer">
       <p class="cv-closer-main">Otázka nie je či. Otázka je kde.</p>
       <p class="cv-closer-here">Tu.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================================================
+     LOGO BRIDGE — ČS concept intro
+====================================================== -->
+<section class="logo-bridge">
+  <div class="wrap logo-bridge-inner">
+
+    <div class="logo-bridge-text">
+      <div class="lb-eyebrow">Česko-Slovenský</div>
+      <h2>Dve krajiny.<br><em>Jeden spoločný svet.</em></h2>
+      <p>Keď Slovák a Čech sedí oproti sebe vo Viedni, nepotrebujú vysvetľovať, odkiaľ sú. Vedia to.<br>ČS Dating je postavený na práve tomto.</p>
+    </div>
+
+    <div class="logo-bridge-visual">
+      <img src="images/logo-v2-light.svg" alt="ČS Dating Wien — animované logo" width="260" height="156">
     </div>
 
   </div>
@@ -1473,12 +1620,12 @@
         <div class="pain-col-body">
           Konečne match. A ona naozaj odpíše.<br>
           Píšete v angličtine. Tri dni. Ide to.<br><br>
-          Spravíš vtip. Taký, čo doma vždy zaberie.<br>
+          Spravíš vtip. <strong>Taký, čo doma vždy zaberie.</strong><br>
           V texte – tri bodky. Ticho.<br>
-          Ráno: unmatch. Bez slova.<br>
-          (60 % ľudí bolo ghostnutých. Štatistika, nie výnimka.)<br><br>
+          Ráno: unmatch. Bez slova.<br><br>
           Žiadny spoločný kamarát, koho by si sa spýtal, čo sa stalo.<br>
-          Doma by sa zasmiala. Lebo by ti videla do tváre.
+          <strong>Doma by sa zasmiala. Lebo by ti videla do tváre.</strong><br><br>
+          <span style="font-size:0.82rem;color:var(--ink-faint);letter-spacing:0.5px;">60 % ľudí bolo ghostnutých. U žien 82 %. (Statista, 2023)</span>
         </div>
       </div>
 
@@ -1486,7 +1633,7 @@
       <div class="pain-col female">
         <div class="pain-col-photo">
           <img
-            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80"
+            src="images/photo-women-bar.jpg"
             alt="Žena vo Viedni"
             loading="lazy"
           >
@@ -1661,17 +1808,17 @@
 
       <div class="diff-card" style="padding:28px 26px;background:var(--ivory-warm);opacity:0.88;">
         <div style="font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;">Apky</div>
-        <p style="font-family:var(--font-display);font-size:1rem;color:var(--ink-mid);line-height:1.7;">6 mesiacov. Stovky swipov. 3 rande.<br>Jeden zlý vtip – unmatch. Žiadne druhé kolo.</p>
+        <p style="font-family:var(--font-display);font-size:1rem;color:var(--ink-mid);line-height:1.7;">6 mesiacov. 200 matchov. 12 rozhovorov. 3 rande. Jeden zlý vtip → unmatch. Žiadne druhé kolo.</p>
       </div>
 
       <div class="diff-card" style="padding:28px 26px;background:var(--ivory);border-top:3px solid var(--burgundy);">
         <div style="font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--burgundy);margin-bottom:10px;">ČS Dating</div>
-        <p style="font-family:var(--font-display);font-size:1rem;color:var(--ink);font-weight:500;line-height:1.7;">1 večer. 8 stretnutí. 6 minút každé.<br>Vidíš tvár, počuješ tón, rozumieš kontextu.<br>Za večer urobíš to, na čo apka potrebuje 6 mesiacov.</p>
+        <p style="font-family:var(--font-display);font-size:1rem;color:var(--ink);font-weight:500;line-height:1.7;">1 večer. 10 stretnutí. 6 minút každé.<br>Vidíš tvár, počuješ tón, rozumieš kontextu.<br>Za večer urobíš to, na čo apka potrebuje 6 mesiacov.</p>
       </div>
 
       <div class="diff-card" style="padding:28px 26px;background:var(--ivory-warm);opacity:0.88;">
         <div style="font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;">Dating s kýmkoľvek</div>
-        <p style="font-family:var(--font-display);font-size:1rem;color:var(--ink-mid);line-height:1.7;">Každý hovorí, že na kultúre nezáleží.<br>Tretí mesiac vysvetľuješ, čo sú halušky.<br>Šiesty — že rodina nie je „too much."<br>Deviaty — sa ti nechce.</p>
+        <p style="font-family:var(--font-display);font-size:1rem;color:var(--ink-mid);line-height:1.7;">Každý hovorí, že na kultúre nezáleží.<br>Tretí mesiac vysvetľuješ, čo sú halušky.<br>Šiesty — že rodina nie je „príliš veľa."<br>Deviaty — sa ti nechce.</p>
       </div>
 
       <div class="diff-card" style="padding:28px 26px;background:var(--ivory);border-top:3px solid var(--burgundy);">
@@ -1685,21 +1832,21 @@
     <div class="photo-strip" style="margin-top:44px;">
       <div class="photo-tile">
         <img
-          src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&q=80"
+          src="images/photo-date-candle.jpg"
           alt="Ľudia na spoločenskom večeri"
           loading="lazy"
         >
       </div>
       <div class="photo-tile">
         <img
-          src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=80"
+          src="images/photo-closeup.jpg"
           alt="Pár v rozhovore na večeri"
           loading="lazy"
         >
       </div>
       <div class="photo-tile">
         <img
-          src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80"
+          src="images/photo-group-vienna.jpg"
           alt="Priateľská atmosféra na spoločenskom večeri"
           loading="lazy"
         >
@@ -1722,25 +1869,23 @@
       <span class="section-eyebrow-rule"></span>
     </div>
 
-    <h2 class="section-title">8 rande za jeden večer. <em>Pocit urobí zvyšok.</em></h2>
+    <h2 class="section-title">10 rande za jeden večer. <em>Pocit urobí zvyšok.</em></h2>
 
     <div class="format-intro-copy">
-      Spomeň si na posledné Hinge rande.<br>
-      Do 30 sekúnd si vedel/-a.<br>
-      Bauchgefühl. <strong>Apky tento inštinkt nepoužívajú.</strong><br>
-      My ho dáme do práce 8-krát za jeden večer.
+      Po prvom rande do 30 sekúnd vieš. Niečo ti hovorí.<br>
+      <strong>Apky tento inštinkt nepoužívajú. My ho stavíme do stredu večera.</strong>
     </div>
 
     <div class="format-grid">
       <div class="format-col apps">
         <div class="format-col-label">Apky – za 1 mesiac</div>
         <ul class="format-list">
-          <li><span class="f-num">900</span><span>swipov</span></li>
+          <li><span class="f-num">900</span><span>swipov na 1 coffee date</span></li>
           <li><span class="f-num">6+</span><span>týždňov textovania</span></li>
-          <li><span class="f-num">1</span><span>coffee date (ak sa to podarí)</span></li>
-          <li><span class="f-num">60</span><span>min. „Nice but…" Ghosting.</span></li>
+          <li><span class="f-num">100+</span><span>správ pred prvým randením</span></li>
+          <li><span class="f-num">→</span><span>„Nice but…". Ghosting.</span></li>
         </ul>
-        <p class="format-col-result">Stovky hodín. Jedno nič.</p>
+        <p class="format-col-result">Stovky hodín pre jednu kávu.</p>
       </div>
 
       <div class="format-col-divider"></div>
@@ -1749,9 +1894,9 @@
         <div class="format-col-label">Jeden večer s nami</div>
         <ul class="format-list">
           <li><span class="f-num">1</span><span>večer</span></li>
-          <li><span class="f-num">8</span><span>krátkych rande (~6 min každé)</span></li>
-          <li><span class="f-num">15</span><span>nových ľudí – detstvo poznáš</span></li>
-          <li><span class="f-num">3h</span><span>a vieš s kým chceš pokračovať</span></li>
+          <li><span class="f-num">10</span><span>krátkych rande naživo</span></li>
+          <li><span class="f-num">~6</span><span>minút na rande</span></li>
+          <li><span class="f-num">15</span><span>ľudí, s ktorými zdieľaš jazyk, humor aj históriu</span></li>
         </ul>
         <p class="format-col-result">3 hodiny. Vieš, s kým sa chceš stretnúť znova. Bez 6 mesiacov textovania.</p>
       </div>
@@ -1759,7 +1904,9 @@
 
     <div class="format-bonus">
       <div class="format-bonus-label">Vedľajší produkt</div>
-      <p>Žiadne pľusko z toho večera? Stále odchádzaš so 14 Slovákmi a Čechmi vo Viedni, vekovo blízkymi, s podobnou cestou. Vo Viedni, kde si cudzinec – taká sieť má vlastnú hodnotu.</p>
+      <p>Žiadny match? Stále odchádzaš so 14 ľuďmi, s ktorými zdieľaš jazyk a históriu.<br>
+      Priatelia. Sieť. Ľudia, ktorých môžeš zavolať o rok na kávu — bez vysvetľovania.<br>
+      <strong>Vo Viedni — to nie je nula. To je vzácne.</strong></p>
     </div>
 
   </div>
@@ -1778,20 +1925,20 @@
       <span class="section-eyebrow-rule"></span>
     </div>
 
-    <h2 class="section-title">Ako sme <em>k tomu prišli.</em></h2>
+    <h2 class="section-title">Ľudia, <em>nie algoritmus.</em></h2>
 
     <div class="founders-grid">
 
       <!-- JAKUB -->
       <div class="founder-card">
         <div class="founder-img-cutout">
-          <img src="founder-jakub.png" alt="Jakub Popluhar">
+          <img src="images/founder-jakub.png" alt="Jakub Popluhar">
         </div>
         <div class="founder-name">Jakub Popluhar</div>
         <div class="founder-role-tag">Zakladateľ &nbsp;·&nbsp; Hostiteľ</div>
         <p class="founder-bio-text">Som <strong>Jakub Popluhar</strong>. Slovák, 10+ rokov na Západe.</p>
         <p class="founder-bio-text">Som event organizátor – viedol som medzinárodné športové eventy, európsku asociáciu, camp FRESH na Mallorke. Roky som vo Viedni hosťoval speed-datingy.</p>
-        <p class="founder-bio-text">A zakaždým som videl to isté: Slováci a Česi v miestnosti plnej Rakúšanov a Talianov. Vtipy nejdú. Každý odíde sám.</p>
+        <p class="founder-bio-text">A zakaždým som videl to isté: Slováci a Česi v miestnosti plnej Rakúšanov a Talianov – vtipy nefungujú, každý odíde sám.</p>
         <p class="founder-bio-text">Tak som postavil večer, ktorý mi sám chýbal.</p>
         <div class="founder-sign">– Jakub</div>
       </div>
@@ -1860,7 +2007,7 @@
       <span class="section-eyebrow-rule"></span>
     </div>
 
-    <h2 class="section-title" style="text-align:center;">Prvá edícia. <em>Jeden termín.</em></h2>
+    <h2 class="section-title" style="text-align:center;">Tri termíny. <em>Jeden rok.</em></h2>
 
     <div class="event-invite">
       <div class="event-invite-header">
@@ -1874,7 +2021,7 @@
         <div class="event-meta-row">
           <div class="e-cell">
             <div class="e-label">Lokalita</div>
-            <div class="e-value">Wien, 1. okres</div>
+            <div class="e-value">Wien, 1. Distrikt</div>
           </div>
           <div class="e-cell">
             <div class="e-label">Miesta</div>
@@ -1892,6 +2039,31 @@
 
         <p class="event-guarantee">Ak nezapadáš – €29 dostaneš späť do 72 hodín. Žiadne otázky.</p>
       </div>
+    </div>
+
+    <div class="upcoming-events">
+
+      <div class="upcoming-card active">
+        <div class="uc-date">22</div>
+        <div class="uc-month">Jún 2026 · Pondelok</div>
+        <div class="uc-title">Speed Dating · Edícia I</div>
+        <p class="uc-desc">30 miest. Wien, 1. Distrikt. Prvý kurátorský večer pre Slovákov a Čechov vo Viedni.</p>
+      </div>
+
+      <div class="upcoming-card soon">
+        <div class="uc-date">18</div>
+        <div class="uc-month">August 2026 · Utorok</div>
+        <div class="uc-title">Letný Evening</div>
+        <p class="uc-desc">Outdoor bar. Menej rande, viac rozhovorov. Pre tých, čo chcú najprv spoznať komunitu.</p>
+      </div>
+
+      <div class="upcoming-card soon">
+        <div class="uc-date">14</div>
+        <div class="uc-month">September 2026 · Pondelok</div>
+        <div class="uc-title">Speed Dating · Edícia II</div>
+        <p class="uc-desc">Rovnaký formát, nové tváre. Pre tých, čo v júni nestihli — alebo chcú znova.</p>
+      </div>
+
     </div>
 
   </div>
@@ -1956,21 +2128,25 @@
         <span class="faq-num">05</span>
         <div>
           <div class="faq-q">Prečo €29? Speed dating vo Viedni stojí menej.</div>
-          <div class="faq-a">Mass-market: €19–25, otvorené dvere, žiadny starostlivý výber. Premium kuratované: €40+. €29 = starostlivý výber + lokalita v 1. okrese + drinky. Niečo medzi.</div>
+          <div class="faq-a">Mass-market: €19–25, otvorené dvere, žiadny výber. My čítame každú prihlášku ručne. €29 = starostlivý výber + lokalita v 1. Distrikt + drinky. Toto nie je to isté.</div>
         </div>
       </div>
       <div class="faq-item">
         <span class="faq-num">06</span>
         <div>
           <div class="faq-q">Čo ak nikoho nestretnem?</div>
-          <div class="faq-a">Bol to večer s 14 Slovákmi a Čechmi vo Viedni, vekovo blízkymi, s podobnou cestou. To nie je málo. To je sieť.</div>
+          <div class="faq-a">Zažil si večer so 14 Slovákmi a Čechmi vo Viedni, blízkymi vekom, s podobnou cestou. To nie je málo. To je sieť.</div>
         </div>
       </div>
       <div class="faq-item">
         <span class="faq-num">07</span>
         <div>
+          <div class="faq-q">Ako fungujú matche po večeri?</div>
+          <div class="faq-a">Po evente dostaneš krátky formulár. Označíš, koho chceš stretnúť znova. Ak je záujem vzájomný, vymeníme kontakty — len medzi vami dvoma. Žiadne verejné zoznamy, žiadne nepohodlné situácie.</div>
+        </div>
+        <div class="faq-item">
           <div class="faq-q">Bude ďalšia edícia?</div>
-          <div class="faq-a">Plánujeme 3–4 edície do roka. Druhá pravdepodobne jeseň 2026. Limit je vedomý – každý večer dobre, nie každý mesiac priemerne.</div>
+          <div class="faq-a">Plánujeme 3–4 edície do roka. Druhá pravdepodobne jeseň 2026. Chceme robiť každý večer dobre, nie každý mesiac priemerne.</div>
         </div>
       </div>
     </div>
@@ -1993,7 +2169,7 @@
 
     <h2>Rezervuj si miesto.</h2>
 
-    <p style="font-size:1.05rem;color:rgba(248,244,238,0.75);line-height:1.7;margin-bottom:10px;">Júnový večer v 1. obvode. 30 ľudí, ktorí hovoria tvojím jazykom. Tri hodiny. Vieš s kým chceš pokračovať.</p>
+    <p style="font-size:1.05rem;color:rgba(248,244,238,0.75);line-height:1.7;margin-bottom:10px;">Júnový večer v 1. Distrikt. 30 ľudí, ktorí hovoria tvojím jazykom. Tri hodiny. Vieš s kým chceš pokračovať.</p>
     <p style="font-size:0.88rem;color:rgba(248,244,238,0.45);margin-bottom:24px;">€29 = miesto pri stole. Ak nezapadáš podľa krátkej prihlášky, peniaze späť do 72 hodín.</p>
 
     <p style="font-size:0.72rem;letter-spacing:2px;color:rgba(248,244,238,0.38);margin-bottom:28px;text-transform:uppercase;">
@@ -2001,7 +2177,7 @@
     </p>
 
     <div class="cta-facts">
-      <div class="cta-fact"><span class="cta-fact-dot"></span>22. jún 2026 &nbsp;·&nbsp; Wien, 1. okres</div>
+      <div class="cta-fact"><span class="cta-fact-dot"></span>22. jún 2026 &nbsp;·&nbsp; Wien, 1. Distrikt</div>
       <div class="cta-fact"><span class="cta-fact-dot"></span>30 miest &nbsp;·&nbsp; 15 mužov, 15 žien</div>
       <div class="cta-fact"><span class="cta-fact-dot"></span>€29 &nbsp;·&nbsp; Prihláška: 3 minúty</div>
     </div>
