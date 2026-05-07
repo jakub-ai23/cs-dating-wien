@@ -694,9 +694,83 @@
       .pyr-3 { width: 75%; }
       .pyr-2 { width: 88%; }
     }
+
+    /* ── GRAIN OVERLAY ── */
+    .grain {
+      position: fixed;
+      inset: -200%;
+      width: 400%;
+      height: 400%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.038;
+      mix-blend-mode: screen;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+      animation: grain 8s steps(10) infinite;
+    }
+    @keyframes grain {
+      0%   { transform: translate(0,0); }
+      10%  { transform: translate(-5%,-10%); }
+      20%  { transform: translate(-15%,5%); }
+      30%  { transform: translate(7%,-25%); }
+      40%  { transform: translate(-5%,25%); }
+      50%  { transform: translate(-15%,10%); }
+      60%  { transform: translate(15%,0%); }
+      70%  { transform: translate(0%,15%); }
+      80%  { transform: translate(3%,35%); }
+      90%  { transform: translate(-10%,10%); }
+      100% { transform: translate(0,0); }
+    }
+
+    /* ── SEAT GRID ── */
+    .seat-block {
+      margin: 0 auto 36px;
+      max-width: 500px;
+      text-align: center;
+    }
+    .seat-block-label {
+      font-size: 0.72rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .seat-block-label strong {
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .seat-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      justify-content: center;
+    }
+    .seat {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+    .seat.taken {
+      background: rgba(240,236,228,0.1);
+      border: 1px solid rgba(240,236,228,0.07);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .seat.taken.in { opacity: 1; }
+    .seat.open {
+      background: transparent;
+      border: 1.5px solid var(--gold);
+      box-shadow: 0 0 8px rgba(201,169,110,0.25);
+      animation: seat-pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes seat-pulse {
+      0%,100% { box-shadow: 0 0 5px rgba(201,169,110,0.2); }
+      50%     { box-shadow: 0 0 16px rgba(201,169,110,0.55); }
+    }
   </style>
 </head>
 <body>
+<div class="grain" aria-hidden="true"></div>
 
 <!-- NAV -->
 <nav>
@@ -1123,6 +1197,11 @@
   <p class="sub" style="margin-bottom:8px;opacity:0.7;">€29 = miesto pri stole. Ak nezapadáš podľa krátkej prihlášky, peniaze späť do 72 hodín.</p>
   <p style="font-size:0.72rem;letter-spacing:2px;color:var(--muted);margin-bottom:28px;text-transform:uppercase;">01 Vyplň prihlášku (3 min) · 02 Schválenie do 48h · 03 Príď 22. júna</p>
 
+  <div class="seat-block">
+    <div class="seat-block-label">22 prihlásených · <strong>8 miest zostáva</strong></div>
+    <div class="seat-grid" id="seatGrid"></div>
+  </div>
+
   <form class="signup-form" onsubmit="return false;">
     <div class="form-row">
       <div class="form-group">
@@ -1219,6 +1298,30 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Seat grid
+  (function() {
+    const grid = document.getElementById('seatGrid');
+    if (!grid) return;
+    const total = 30, taken = 22;
+    for (let i = 0; i < total; i++) {
+      const s = document.createElement('div');
+      s.className = i < taken ? 'seat taken' : 'seat open';
+      grid.appendChild(s);
+    }
+    const takenSeats = grid.querySelectorAll('.seat.taken');
+    const seatObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          takenSeats.forEach((s, i) => {
+            setTimeout(() => s.classList.add('in'), i * 55);
+          });
+          seatObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    seatObserver.observe(grid);
+  })();
 </script>
 </body>
 </html>
