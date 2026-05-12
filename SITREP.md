@@ -1,6 +1,6 @@
-# SITREP — ČS Dating Wien · Edícia I
+# SITREP — ČS Dating Wien · Edícia I — 2026-05-12 22:26
 
-**Last updated:** 2026-05-12 20:07
+**Last updated:** 2026-05-12 22:26
 **Status:** SHIPPABLE — page + form live, blocked only by venue confirmation
 **Edícia I:** Monday, 22 June 2026, 19:30–21:30, Wien 1. okres (venue TBD)
 **Capacity:** 20 (10 M + 10 F) · **Price:** €69 → €39 (first edition discount)
@@ -109,4 +109,4 @@ Email #2 — Accept (with venue) OR Reject + refund [DRAFTED]
 
 Edícia I is a P0 financial-gate-feeding mission. Filed under [REAL TEAM / Future Roundnet] expansion or stand-alone, depending on entity structure. Today's net minutes of work: significant — track on debrief.
 
-— Zoya / Jocko, 2026-05-12 20:07
+— Zoya / Jocko, 2026-05-12 22:26
