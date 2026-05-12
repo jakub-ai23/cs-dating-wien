@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="images/favicon.ico">
   <title>Česko-Slovenský Dating · Wien – Online dostávaš jeden pokus. Naživo dostávaš večer.</title>
   <meta name="description" content="Speed dating zameraný výlučne na Slovákov a Čechov žijúcich vo Viedni. 25–39. Vážne hľadanie partnera. Wien, 1. okres, 22. júna 2026.">
   <link rel="canonical" href="https://jakub-ai23.github.io/cs-dating-wien/" />
@@ -1822,7 +1827,7 @@
         <p class="event-scarcity"><strong>20 miest. 10 mužov. 10 žien. Keď je obsadené, je obsadené.</strong></p>
 
         <div class="seat-block is-light" style="margin: 18px auto 28px;">
-          <div class="seat-block-label">Prvá edícia · <strong>20 voľných miest</strong></div>
+          <div class="seat-block-label">Prvá edícia · <strong>19 voľných miest</strong></div>
           <div class="seat-grid" id="seatGridLight"></div>
         </div>
 
@@ -1834,37 +1839,14 @@
 
     <p class="host-line">Hosťuje <strong>Jakub Popluhar</strong>, organizátor medzinárodných eventov.<br>Po desiatkach speed-datingov vo Viedni zorganizoval ten, ktorý mu sám chýbal.</p>
 
+    <!-- Upcoming-events grid removed: single Edícia I card was redundant with the main event-invite block above. Restore the full grid when Edícia II is locked. -->
+    <!--
     <div class="upcoming-events">
-
-      <div class="upcoming-card active">
-        <div class="uc-photo"><img src="images/photo-closeup.jpg" alt=""></div>
-        <div class="uc-date">22</div>
-        <div class="uc-month">Jún 2026 · Pondelok</div>
-        <div class="uc-title">Speed Dating · Edícia I</div>
-        <p class="uc-desc">20 miest. Wien, 1. okres. Prvý speed dating zameraný výlučne na Slovákov a Čechov vo Viedni.</p>
-      </div>
-
-      <!-- Future events hidden until dates + venues confirmed. -->
-      <!-- Restore when Edícia II date is locked. -->
-      <!-- Was: Letný večer 18.8., Edícia II 14.9. — both unconfirmed -->
-      <!--
-      <div class="upcoming-card soon">
-        <div class="uc-photo"><img src="images/photo-group-vienna.jpg" alt=""></div>
-        <div class="uc-date">[TBD]</div>
-        <div class="uc-month">[Mesiac] 2026</div>
-        <div class="uc-title">Letný večer</div>
-        <p class="uc-desc">Outdoor bar. Menej rande, viac rozhovorov.</p>
-      </div>
-      <div class="upcoming-card soon">
-        <div class="uc-photo"><img src="images/photo-date-candle.jpg" alt=""></div>
-        <div class="uc-date">[TBD]</div>
-        <div class="uc-month">[Mesiac] 2026</div>
-        <div class="uc-title">Speed Dating · Edícia II</div>
-        <p class="uc-desc">Rovnaký formát, nové tváre.</p>
-      </div>
-      -->
-
+      <div class="upcoming-card active">…Edícia I…</div>
+      <div class="upcoming-card soon">…Letný večer…</div>
+      <div class="upcoming-card soon">…Edícia II…</div>
     </div>
+    -->
 
   </div>
 </section>
@@ -2033,7 +2015,7 @@
       01 Vyplň prihlášku (3 min) &nbsp;·&nbsp; 02 Overenie do 48h &nbsp;·&nbsp; 03 Príď 22. júna
     </p>
 
-    <a href="https://form.jotform.com/261314058164048" class="cta-btn-light" id="apply-link">Prihlásiť sa &nbsp;·&nbsp; <s style="opacity:0.55;margin-right:6px;">€69</s> €39</a>
+    <a href="https://pci.jotform.com/form/261314058164048" class="cta-btn-light" id="apply-link">Prihlásiť sa &nbsp;·&nbsp; <s style="opacity:0.55;margin-right:6px;">€69</s> €39</a>
 
     <p class="cta-guarantee-block">Ak po prihláške zistíme, že nezapadáš, €39 späť do 72 hodín. Žiadne otázky.<br>Ak na evente do 30 minút povieš, že to nie je pre teba, €39 späť na mieste.<br>Rozhodnutie je tvoje. — Jakub</p>
 
@@ -2062,7 +2044,7 @@
     const renderGrid = (id) => {
       const grid = document.getElementById(id);
       if (!grid) return;
-      const total = 20, taken = 0;
+      const total = 20, taken = 1;
       for (let i = 0; i < total; i++) {
         const s = document.createElement('div');
         s.className = i < taken ? 'seat taken' : 'seat open';

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <clipPath id="cz-clip"><circle cx="60" cy="50" r="32"/></clipPath>
+  </defs>
+  <!-- SK gold circle -->
+  <circle cx="40" cy="50" r="32" fill="rgba(201,169,110,0.35)" stroke="#b8924a" stroke-width="2.5"/>
+  <!-- CZ burgundy circle -->
+  <circle cx="60" cy="50" r="32" fill="rgba(139,34,82,0.22)" stroke="#8b2252" stroke-width="2.5"/>
+  <!-- Intersection deepens -->
+  <g clip-path="url(#cz-clip)">
+    <circle cx="40" cy="50" r="32" fill="rgba(139,34,82,0.32)"/>
+  </g>
+</svg>
