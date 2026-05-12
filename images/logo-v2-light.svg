@@ -27,7 +27,7 @@
   <g class="v2-cz">
     <circle cx="120" cy="60" r="44" fill="rgba(139,34,82,0.16)" stroke="#8b2252" stroke-width="1.5"/>
     <text class="v2-lbl" x="120" y="55" font-family="Cormorant Garamond,Georgia,serif" font-size="13" fill="#8b2252" letter-spacing="2" text-anchor="middle" font-weight="600">CZ</text>
-    <text class="v2-lbl" x="120" y="70" font-family="Inter,Arial,sans-serif" font-size="7" fill="rgba(139,34,82,0.55)" letter-spacing="1.5" text-anchor="middle">ČECHY</text>
+    <text class="v2-lbl" x="120" y="70" font-family="Inter,Arial,sans-serif" font-size="7" fill="rgba(139,34,82,0.55)" letter-spacing="1.5" text-anchor="middle">ČESKO</text>
   </g>
 
   <!-- Pulse ring -->

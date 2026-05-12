@@ -1,0 +1,255 @@
+/* ============================================================
+   ČS Dating Wien — Jotform Custom CSS
+   Brand: burgundy #8b2252 / gold #c9a96e / ivory #f8f4ee
+   Fonts: Cormorant Garamond (headings) + Inter (body)
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+/* ---------- BASE ---------- */
+body,
+.form-all {
+  background: #f8f4ee !important;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  color: #0d0d0d !important;
+}
+
+.form-all {
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 32px 40px;
+  border: 1px solid rgba(139, 34, 82, 0.12);
+  border-radius: 4px;
+  box-shadow: 0 6px 40px rgba(13, 13, 13, 0.06);
+}
+
+/* ---------- HEADINGS ---------- */
+.form-header-group .form-header,
+.form-header {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif !important;
+  font-weight: 600 !important;
+  font-size: 2.2rem !important;
+  letter-spacing: 0.005em;
+  color: #0d0d0d !important;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.form-header-group .form-subHeader,
+.form-subHeader {
+  font-family: "Inter", sans-serif !important;
+  font-size: 0.95rem !important;
+  color: #6b5540 !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.02em;
+  margin-bottom: 24px;
+}
+
+.form-section-header,
+.form-section-header h2,
+.form-section h2,
+.form-collapse-table {
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-weight: 600 !important;
+  font-size: 1.4rem !important;
+  color: #8b2252 !important;
+  border-bottom: 1px solid rgba(139, 34, 82, 0.18);
+  padding-bottom: 8px;
+  margin-top: 12px;
+}
+
+/* ---------- LABELS ---------- */
+.form-label,
+.form-label-top,
+.form-label-left {
+  font-family: "Inter", sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 0.92rem !important;
+  color: #0d0d0d !important;
+  letter-spacing: 0.01em;
+  margin-bottom: 6px;
+}
+
+.form-required {
+  color: #8b2252 !important;
+}
+
+.form-sub-label,
+.form-description {
+  font-size: 0.82rem !important;
+  color: #6b5540 !important;
+  font-style: italic;
+  margin-top: 4px;
+  line-height: 1.45;
+}
+
+/* ---------- INPUTS ---------- */
+.form-textbox,
+.form-textarea,
+.form-dropdown,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+textarea,
+select {
+  background: #ffffff !important;
+  border: 1px solid rgba(13, 13, 13, 0.15) !important;
+  border-radius: 3px !important;
+  padding: 10px 14px !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 0.95rem !important;
+  color: #0d0d0d !important;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.form-textbox:focus,
+.form-textarea:focus,
+.form-dropdown:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #8b2252 !important;
+  box-shadow: 0 0 0 3px rgba(139, 34, 82, 0.12) !important;
+  outline: none !important;
+}
+
+/* ---------- RADIO / CHECKBOX ---------- */
+.form-radio-item,
+.form-checkbox-item {
+  font-family: "Inter", sans-serif !important;
+  font-size: 0.93rem !important;
+  color: #0d0d0d !important;
+  margin: 6px 0;
+}
+
+.form-radio:checked + label,
+.form-checkbox:checked + label {
+  color: #8b2252 !important;
+  font-weight: 500;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #8b2252;
+}
+
+/* ---------- BUTTONS ---------- */
+.form-submit-button,
+button.form-submit-button,
+.form-pagebreak-next,
+.form-pagebreak-back {
+  background: #8b2252 !important;
+  color: #f8f4ee !important;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: none !important;
+  border-radius: 3px !important;
+  padding: 14px 32px !important;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.18s ease;
+  box-shadow: 0 4px 16px rgba(139, 34, 82, 0.18);
+}
+
+.form-submit-button:hover,
+button.form-submit-button:hover,
+.form-pagebreak-next:hover {
+  background: #6f1a41 !important;
+  transform: translateY(-1px);
+}
+
+/* ---------- PAYMENT PRODUCTS ---------- */
+.payment-product-listings,
+.form-payment-products,
+.form-product-item,
+.payment-product-listings .product-item {
+  background: #ffffff !important;
+  border: 1px solid rgba(139, 34, 82, 0.18) !important;
+  border-radius: 3px !important;
+  padding: 16px 20px !important;
+  margin-bottom: 10px !important;
+}
+
+.product-item .product-name,
+.payment-product-listings .product-name {
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-weight: 600 !important;
+  font-size: 1.15rem !important;
+  color: #0d0d0d !important;
+}
+
+.product-item .product-price,
+.payment-product-listings .product-price {
+  font-family: "Inter", sans-serif !important;
+  font-weight: 600 !important;
+  color: #8b2252 !important;
+  font-size: 1.05rem !important;
+}
+
+.product-item .product-description,
+.payment-product-listings .product-description {
+  font-size: 0.85rem !important;
+  color: #6b5540 !important;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+/* ---------- COUPON FIELD ---------- */
+.form-payment-coupon-input,
+.payment-coupon input,
+input[name*="coupon"] {
+  border: 1px dashed rgba(139, 34, 82, 0.4) !important;
+  background: rgba(139, 34, 82, 0.04) !important;
+}
+
+.form-payment-coupon-label,
+.payment-coupon-label {
+  font-style: italic !important;
+  color: #8b2252 !important;
+  font-size: 0.88rem !important;
+}
+
+/* ---------- TOTAL / PRICE ---------- */
+.form-payment-total,
+.payment-total,
+.total-price {
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+  color: #8b2252 !important;
+  border-top: 1px solid rgba(139, 34, 82, 0.18);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+/* ---------- ERRORS ---------- */
+.form-line-error,
+.form-error-message {
+  background: rgba(139, 34, 82, 0.06) !important;
+  border-left: 3px solid #8b2252 !important;
+  color: #8b2252 !important;
+  font-size: 0.85rem !important;
+  padding: 8px 12px;
+  border-radius: 0 3px 3px 0;
+}
+
+/* ---------- POWERED BY JOTFORM (de-emphasize) ---------- */
+.form-powered-jotform,
+.form-jotform-logo {
+  opacity: 0.3 !important;
+  transform: scale(0.85);
+}
+
+/* ---------- DIVIDERS / LINES ---------- */
+.form-line {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(13, 13, 13, 0.04);
+}
+
+.form-line:last-child {
+  border-bottom: none;
+}
