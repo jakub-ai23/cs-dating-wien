@@ -96,7 +96,7 @@
         "name": "Prečo prihláška a nie len lístok?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Otvorené dvere znamenajú priemerný večer. Pomer 10+10, vekový rozsah, vážnosť zámeru, to robí rozdiel. Ak nezapadáš, €39 vraciame do 72 hodín bez otázok."
+          "text": "Otvorené dvere znamenajú priemerný večer. Pomer 10+10, vekový rozsah, vážnosť zámeru, to robí rozdiel. Ak nezapadáš, plnú sumu vraciame do 72 hodín bez otázok."
         }
       },
       {
@@ -1178,6 +1178,157 @@
     }
 
     /* ====================================================
+       WELCOME DRINK BONUS — endowment-effect CTA enhancer
+       Ends 2026-06-01 00:00 Vienna time
+    ==================================================== */
+    .welcome-bonus {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto 14px;
+      padding: 8px 20px 11px;
+      background: rgba(139, 34, 82, 0.06);
+      border: 1px solid rgba(139, 34, 82, 0.18);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      letter-spacing: 0.3px;
+      color: var(--burgundy);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    .welcome-bonus {
+      align-items: center;
+    }
+    .welcome-bonus .wb-anchor {
+      font-size: 1.7em;
+      font-weight: 800;
+      color: var(--burgundy);
+      letter-spacing: 0.5px;
+      line-height: 1;
+    }
+    .welcome-bonus .wb-icon {
+      font-size: 1.15rem;
+      line-height: 1;
+      animation: wbBreathe 3.2s ease-in-out infinite;
+    }
+    .welcome-bonus .wb-sep {
+      display: inline-block;
+      width: 1px;
+      height: 1.3em;
+      background: rgba(139, 34, 82, 0.25);
+      margin: 0 2px;
+    }
+    .welcome-bonus .wb-countdown {
+      font-variant-numeric: tabular-nums;
+      color: var(--ink-soft);
+      font-weight: 400;
+      margin-left: 4px;
+      display: inline-block;
+      animation: wbCountdownBreathe 4.2s ease-in-out infinite;
+    }
+    @keyframes wbCountdownBreathe {
+      0%, 100% { opacity: 0.78; }
+      50%      { opacity: 1; }
+    }
+    .welcome-bonus .wb-countdown.wb-tick {
+      animation: wbCountdownTick 0.9s ease-out;
+    }
+    @keyframes wbCountdownTick {
+      0%   { color: var(--burgundy); opacity: 1; transform: translateY(0); }
+      40%  { color: var(--burgundy); opacity: 1; transform: translateY(-1px); }
+      100% { color: var(--ink-soft); opacity: 0.85; transform: translateY(0); }
+    }
+    .welcome-bonus .wb-bar {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background: rgba(139, 34, 82, 0.07);
+      overflow: hidden;
+    }
+    .welcome-bonus .wb-bar-fill {
+      height: 100%;
+      width: var(--bonus-progress, 100%);
+      background: linear-gradient(90deg, var(--burgundy), rgba(139, 34, 82, 0.45));
+      transition: width 1.5s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .welcome-bonus .wb-bar-fill::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 25%, rgba(248, 244, 238, 0.55) 50%, transparent 75%);
+      transform: translateX(-100%);
+      animation: wbShimmer 3.4s ease-in-out infinite;
+    }
+    @keyframes wbShimmer {
+      0%   { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    @keyframes wbBreathe {
+      0%, 100% { opacity: 0.85; transform: scale(1); }
+      50%      { opacity: 1;    transform: scale(1.08); }
+    }
+    .welcome-bonus.is-expired { display: none !important; }
+    .wb-cursor {
+      display: inline-block;
+      width: 1px;
+      margin-left: 2px;
+      vertical-align: -1px;
+      background: var(--burgundy);
+      animation: tw-blink 0.65s step-end infinite;
+      align-self: stretch;
+      max-height: 1em;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .welcome-bonus .wb-icon { animation: none; }
+      .welcome-bonus .wb-bar-fill::after { animation: none; }
+      .welcome-bonus .wb-countdown { animation: none; }
+    }
+
+    .pricing-bonus-badge {
+      display: inline-block;
+      margin: 14px 0 6px;
+      padding: 5px 12px;
+      background: rgba(139, 34, 82, 0.08);
+      border-radius: 999px;
+      font-size: 0.66rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      font-weight: 600;
+    }
+    .pricing-bonus-badge.is-expired { display: none !important; }
+
+    @media (max-width: 600px) {
+      .welcome-bonus {
+        font-size: 0.74rem;
+        padding: 10px 16px 13px;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 6px;
+        max-width: 94%;
+        line-height: 1.45;
+      }
+      .welcome-bonus .wb-anchor { font-size: 1.55em; }
+      .welcome-bonus .wb-icon { font-size: 1.05rem; }
+      .welcome-bonus .wb-sep { display: none; }
+      .welcome-bonus .wb-text {
+        text-align: center;
+        flex-basis: 100%;
+        margin-top: 2px;
+      }
+    }
+    @media (max-width: 380px) {
+      .welcome-bonus { font-size: 0.7rem; padding: 9px 12px 12px; }
+      .welcome-bonus .wb-anchor { font-size: 1.45em; }
+    }
+
+    /* ====================================================
        FOOTER
     ==================================================== */
     footer {
@@ -1512,8 +1663,16 @@
     <div class="hero-meta-strip hero-cascade">
       <div class="hero-meta-cell"><strong>20</strong>miest</div>
       <div class="hero-meta-cell"><strong>10+10</strong>ženy · muži</div>
-      <div class="hero-meta-cell"><strong><s style="opacity:0.55;color:rgba(139,34,82,0.55);">€69</s> €39</strong>vstup<br><small style="display:block;margin-top:4px;font-size:0.62rem;letter-spacing:1.5px;color:rgba(139,34,82,0.75);text-transform:uppercase;font-weight:500;">prvá edícia · 30 € off</small></div>
+      <div class="hero-meta-cell"><strong>Mystery</strong>location · Wien</div>
       <div class="hero-meta-cell"><strong>22.&nbsp;6.</strong>2026</div>
+    </div>
+
+    <div class="welcome-bonus hero-cascade" id="welcomeBonusHero">
+      <span class="wb-anchor">€69</span>
+      <span class="wb-icon">🍷</span>
+      <span class="wb-sep" aria-hidden="true"></span>
+      <span class="wb-text" id="wbHeroText"></span>
+      <div class="wb-bar"><div class="wb-bar-fill"></div></div>
     </div>
 
     <div class="cta-row hero-cascade">
@@ -1820,7 +1979,7 @@
           </div>
           <div class="e-cell">
             <div class="e-label">Cena</div>
-            <div class="e-value price"><s style="opacity:0.5;color:rgba(139,34,82,0.5);">€69</s> €39<br><small style="display:block;margin-top:6px;font-size:0.62rem;letter-spacing:1.5px;color:#8b2252;text-transform:uppercase;font-weight:500;">prvá edícia · 30 € off</small></div>
+            <div class="e-value price">€69<br><small style="display:block;margin-top:6px;font-size:0.62rem;letter-spacing:1.5px;color:#8b2252;text-transform:uppercase;font-weight:500;">kód <strong>EDITION1</strong> · −€30 + welcome drink</small></div>
           </div>
         </div>
 
@@ -1831,9 +1990,15 @@
           <div class="seat-grid" id="seatGridLight"></div>
         </div>
 
-        <a href="#prihlaska" class="cta-btn">Prihlásiť sa na Edíciu I</a>
+        <div class="welcome-bonus" id="welcomeBonusPricing" style="margin-bottom:18px;">
+          <span class="wb-icon">🍷</span>
+          <span>Kód EDITION1: −€30 + welcome drink<span class="wb-countdown" id="wbCountdownPricing"> — do 1. júna</span></span>
+          <div class="wb-bar"><div class="wb-bar-fill"></div></div>
+        </div>
 
-        <p class="event-guarantee">Ak nezapadáš, €39 dostaneš späť do 72 hodín. Žiadne otázky.</p>
+        <a href="#prihlaska" class="cta-btn" id="pricingCtaBtn">Prihlásiť sa · použi kód EDITION1</a>
+
+        <p class="event-guarantee">Ak nezapadáš, plnú sumu dostaneš späť do 72 hodín. Žiadne otázky.</p>
       </div>
     </div>
 
@@ -1893,7 +2058,7 @@
     </div>
 
     <p style="margin-top:36px;font-size:0.95rem;color:var(--ink-faint);max-width:600px;margin-left:auto;margin-right:auto;line-height:1.65;">
-      Ak nezapadáš podľa prihlášky, <strong style="color:#8b2252;">€39 späť do 72 hodín</strong>. Bez otázok. Lebo bez prísneho výberu je to len ďalší speed dating.
+      Ak nezapadáš podľa prihlášky, <strong style="color:#8b2252;">plnú sumu späť do 72 hodín</strong>. Bez otázok. Lebo bez prísneho výberu je to len ďalší speed dating.
     </p>
 
   </div>
@@ -1965,7 +2130,7 @@
         <span class="faq-num">02</span>
         <div>
           <div class="faq-q">Prečo prihláška a nie len lístok?</div>
-          <div class="faq-a">Otvorené dvere znamenajú priemerný večer. Pomer 10+10, vekový rozsah, vážnosť zámeru, to robí rozdiel. Ak nezapadáš, €39 vraciame do 72 hodín bez otázok.</div>
+          <div class="faq-a">Otvorené dvere znamenajú priemerný večer. Pomer 10+10, vekový rozsah, vážnosť zámeru, to robí rozdiel. Ak nezapadáš, plnú sumu vraciame do 72 hodín bez otázok.</div>
         </div>
       </div>
       <div class="faq-item">
@@ -2015,9 +2180,9 @@
       01 Vyplň prihlášku (3 min) &nbsp;·&nbsp; 02 Overenie do 48h &nbsp;·&nbsp; 03 Príď 22. júna
     </p>
 
-    <a href="https://pci.jotform.com/form/261314058164048" class="cta-btn-light" id="apply-link">Prihlásiť sa &nbsp;·&nbsp; <s style="opacity:0.55;margin-right:6px;">€69</s> €39</a>
+    <a href="https://pci.jotform.com/form/261314058164048" class="cta-btn-light" id="apply-link">Prihlásiť sa &nbsp;·&nbsp; €69 (kód EDITION1 · −€30)</a>
 
-    <p class="cta-guarantee-block">Ak po prihláške zistíme, že nezapadáš, €39 späť do 72 hodín. Žiadne otázky.<br>Ak na evente do 30 minút povieš, že to nie je pre teba, €39 späť na mieste.<br>Rozhodnutie je tvoje. — Jakub</p>
+    <p class="cta-guarantee-block">Ak po prihláške zistíme, že nezapadáš, plnú sumu späť do 72 hodín. Žiadne otázky.<br>Rozhodnutie je tvoje. — Jakub</p>
 
   </div>
 </section>
@@ -2072,9 +2237,9 @@
     if (!textEl || !cursor) return;
 
     let li = 0, ci = 0;
-    const CHAR  = 44;   // ms per character
-    const PAUSE = 340;  // pause between lines
-    const DONE  = 220;  // pause before cascade
+    const CHAR  = 28;   // ms per character
+    const PAUSE = 220;  // pause between lines
+    const DONE  = 140;  // pause before cascade
 
     function type() {
       if (ci < lines[li].length) {
@@ -2094,7 +2259,141 @@
       }
     }
 
-    setTimeout(type, 350);
+    setTimeout(type, 200);
+  })();
+
+  /* Hero welcome-bonus typewriter — fires when cascade reveals the pill */
+  window.__wbHeroTyping = true;
+  (function heroBonusTypewriter() {
+    const wrap = document.getElementById('welcomeBonusHero');
+    const text = document.getElementById('wbHeroText');
+    if (!wrap || !text) { window.__wbHeroTyping = false; return; }
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const PREFIX = 'Kód EDITION1 ti dá −€30 + welcome drink';
+    const CHAR_MS = 36;
+    const DEADLINE = new Date('2026-06-01T00:00:00+02:00').getTime();
+    function suffixNow() {
+      const ms = DEADLINE - Date.now();
+      if (ms <= 0) return '';
+      const d = Math.floor(ms / 86400000);
+      const h = Math.floor((ms % 86400000) / 3600000);
+      const m = Math.floor((ms % 3600000)  / 60000);
+      if (d > 1)        return ` — ešte ${d} dní ${h} h`;
+      else if (d === 1) return ` — ešte 1 deň ${h} h`;
+      else if (h > 0)   return ` — ešte ${h} h ${m} min`;
+      else if (m > 0)   return ` — posledných ${m} min`;
+      else              return ' — končí teraz';
+    }
+    // Empty text and add a cursor
+    text.textContent = '';
+    const cursor = document.createElement('span');
+    cursor.className = 'wb-cursor';
+    text.appendChild(cursor);
+
+    function finish() {
+      cursor.remove();
+      window.__wbHeroTyping = false;
+    }
+    function fastShow() {
+      const cnt = document.createElement('span');
+      cnt.className = 'wb-countdown';
+      cnt.id = 'wbCountdownHero';
+      cnt.textContent = suffixNow();
+      text.insertBefore(document.createTextNode(PREFIX), cursor);
+      text.insertBefore(cnt, cursor);
+      finish();
+    }
+    if (reduced) { fastShow(); return; }
+
+    let i = 0;
+    function typePrefix() {
+      if (i < PREFIX.length) {
+        text.insertBefore(document.createTextNode(PREFIX[i++]), cursor);
+        setTimeout(typePrefix, CHAR_MS);
+      } else {
+        // Now insert the live-countdown span and type its content
+        const cnt = document.createElement('span');
+        cnt.className = 'wb-countdown';
+        cnt.id = 'wbCountdownHero';
+        text.insertBefore(cnt, cursor);
+        const suffix = suffixNow();
+        let j = 0;
+        function typeSuffix() {
+          if (j < suffix.length) {
+            cnt.textContent += suffix[j++];
+            setTimeout(typeSuffix, CHAR_MS);
+          } else {
+            finish();
+          }
+        }
+        typeSuffix();
+      }
+    }
+    // Watch for .visible class on the wrap, then start
+    const obs = new MutationObserver(() => {
+      if (wrap.classList.contains('visible')) {
+        obs.disconnect();
+        /* Wait for the cascade slide-in (650ms transition) to fully settle
+           so the typewriter starts on the right baseline, not mid-slide. */
+        setTimeout(typePrefix, 720);
+      }
+    });
+    obs.observe(wrap, { attributes: true, attributeFilter: ['class'] });
+    // Safety fallback — if for some reason .visible never fires within 8s, just show
+    setTimeout(() => {
+      if (window.__wbHeroTyping && !wrap.classList.contains('visible')) {
+        obs.disconnect();
+        wrap.classList.add('visible');
+        fastShow();
+      }
+    }, 8000);
+  })();
+
+  /* Welcome-drink bonus countdown — early-bird window 2026-05-13 → 2026-06-01 Vienna */
+  (function welcomeDrinkCountdown() {
+    const WINDOW_START = new Date('2026-05-13T00:00:00+02:00').getTime();
+    const DEADLINE     = new Date('2026-06-01T00:00:00+02:00').getTime();
+    const TOTAL_MS     = DEADLINE - WINDOW_START;
+    const pairs = [
+      { wrap: 'welcomeBonusHero',    cnt: 'wbCountdownHero' },
+      { wrap: 'welcomeBonusPricing', cnt: 'wbCountdownPricing' }
+    ];
+    const pricingCta = document.getElementById('pricingCtaBtn');
+    const tick = () => {
+      const items = pairs.map(p => ({
+        wrap: document.getElementById(p.wrap),
+        cnt:  document.getElementById(p.cnt)
+      })).filter(p => p.wrap);
+      if (!items.length) return;
+      const now = Date.now();
+      const ms  = DEADLINE - now;
+      if (ms <= 0) {
+        items.forEach(p => p.wrap.classList.add('is-expired'));
+        if (pricingCta) pricingCta.textContent = 'Prihlásiť sa za €69';
+        return;
+      }
+      const d = Math.floor(ms / 86400000);
+      const h = Math.floor((ms % 86400000) / 3600000);
+      const m = Math.floor((ms % 3600000)  / 60000);
+      let txt;
+      if (d > 1)       txt = ` — ešte ${d} dní ${h} h`;
+      else if (d === 1) txt = ` — ešte 1 deň ${h} h`;
+      else if (h > 0)   txt = ` — ešte ${h} h ${m} min`;
+      else if (m > 0)   txt = ` — posledných ${m} min`;
+      else              txt = ' — končí teraz';
+      const pct = Math.max(0, Math.min(100, (ms / TOTAL_MS) * 100));
+      items.forEach(p => {
+        if (p.cnt && p.cnt.textContent !== txt) {
+          p.cnt.textContent = txt;
+          p.cnt.classList.remove('wb-tick');
+          void p.cnt.offsetWidth; /* force reflow so animation re-fires */
+          p.cnt.classList.add('wb-tick');
+        }
+        p.wrap.style.setProperty('--bonus-progress', pct.toFixed(2) + '%');
+      });
+    };
+    tick();
+    setInterval(tick, 60000);
   })();
 </script>
 </body>
