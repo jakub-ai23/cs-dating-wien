@@ -10,9 +10,9 @@ This document holds forward-looking decisions that don't belong on the public si
 
 ## Edition-by-edition evolution
 
-### Edition I — 22 June 2026 (Vienna, 1st district)
+### Edition I — 22 June 2026 (Vienna, mystery venue)
 - 20 spots (10 + 10)
-- €39 first-edition price (€69 standard)
+- €69 standard. Code **EDITION1** (valid until 1 June 2026) = −€30 + welcome drink → final €39
 - Mystery venue revealed 48 h before to confirmed guests
 - **Photos:** taken at event. May be used for marketing (social, website, next-edition promo). Soft consent — any attendee can request removal by email.
 - Manual review by Jakub + Martina
