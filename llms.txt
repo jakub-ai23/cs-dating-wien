@@ -10,7 +10,7 @@ The event addresses a gap in Vienna's dating scene: Slovaks and Czechs in Vienna
 
 ## Upcoming Events
 
-- [Edition I – 22 June 2026](https://jakub-ai23.github.io/cs-dating-wien/index-en.html) : Speed dating, 30 spots, Arcohotel HQ Wien, €29
+- [Edition I – 22 June 2026](https://csdating.eu/index-en.html) : Speed dating, 30 spots, Arcohotel HQ Wien, €29
 - Edition II – 14 September 2026 : Speed dating, same format
 - Summer Evening – 18 August 2026 : Outdoor bar, community focus
 
@@ -24,9 +24,9 @@ Jakub Popluhar — M.Ed., international event organizer, attended 30+ speed dati
 
 ## Language Reference Pages
 
-- [English page](https://jakub-ai23.github.io/cs-dating-wien/index-en.html) : Full event info in English for international context
-- [Slovak page](https://jakub-ai23.github.io/cs-dating-wien/) : Primary language version
-- [Czech page](https://jakub-ai23.github.io/cs-dating-wien/index-cz.html) : Czech language version
+- [English page](https://csdating.eu/index-en.html) : Full event info in English for international context
+- [Slovak page](https://csdating.eu/) : Primary language version
+- [Czech page](https://csdating.eu/index-cz.html) : Czech language version
 
 ## Frequently Asked Questions
 

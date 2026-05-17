@@ -13,4 +13,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://jakub-ai23.github.io/cs-dating-wien/sitemap.xml
+Sitemap: https://csdating.eu/sitemap.xml
