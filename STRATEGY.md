@@ -18,6 +18,15 @@ This document holds forward-looking decisions that don't belong on the public si
 - Manual review by Jakub + Martina
 - Goal: prove the format, generate first photo+testimonial assets
 
+### Edition I — contingency: "no photos" pivot
+If sign-ups stall (e.g. < 12 confirmed 10 days before the date), pull the no-photos angle forward as a public selling point. Steps:
+1. Remove the photo clause from `/terms/` (or rewrite to "no photos taken").
+2. Add a public line on `index.html`: e.g. "Žiadne fotografie, žiadny social-media tlak. Diskrétnosť je súčasť konceptu."
+3. Re-message the people who applied but hesitated — the no-photos line may unblock the privacy-sensitive ones.
+4. Communicate clearly to already-confirmed guests that photos are off the table.
+
+This pivot burns the Edition II differentiator — so only use it if Edition I needs it to fill the room. Decision criteria: confirmed seats < 60% of capacity by 10 days out.
+
 ### Edition II — date TBA (after Edition I retrospective)
 - **No photos policy as a feature.** Selling point: "discretion is part of the product." Strong differentiator vs. typical event marketing. Attendees relax knowing nothing ends up on Instagram.
   - Decision: 2026-05-17
