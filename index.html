@@ -1449,12 +1449,18 @@
       border-radius: 50%;
     }
     .seat.taken {
-      background: rgba(248,244,238,0.12);
-      border: 1px solid rgba(248,244,238,0.08);
-      opacity: 0;
-      transition: opacity 0.4s ease;
+      background: rgba(248,244,238,0.85);
+      border: 1px solid rgba(248,244,238,0.95);
+      opacity: 1;
+      position: relative;
     }
-    .seat.taken.in { opacity: 1; }
+    .seat.taken::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(248,244,238,0.35);
+    }
     .seat.open {
       background: transparent;
       border: 1.5px solid rgba(248,244,238,0.7);
@@ -1468,7 +1474,8 @@
     /* Light-theme variant (event card) */
     .seat-block.is-light .seat-block-label { color: rgba(13,13,13,0.45); }
     .seat-block.is-light .seat-block-label strong { color: #8b2252; font-weight:600; }
-    .seat-block.is-light .seat.taken { background: rgba(139,34,82,0.12); border: 1px solid rgba(139,34,82,0.18); }
+    .seat-block.is-light .seat.taken { background: var(--burgundy); border: 1px solid var(--burgundy); }
+    .seat-block.is-light .seat.taken::after { box-shadow: 0 0 12px rgba(139,34,82,0.5); }
     .seat-block.is-light .seat.open { background: transparent; border: 1.5px solid rgba(139,34,82,0.7); animation: seat-pulse-burgundy 2.4s ease-in-out infinite; }
     @keyframes seat-pulse-burgundy {
       0%,100% { box-shadow: 0 0 4px rgba(139,34,82,0.18); }
@@ -1986,7 +1993,7 @@
         <p class="event-scarcity"><strong>20 miest. 10 mužov. 10 žien. Keď je obsadené, je obsadené.</strong></p>
 
         <div class="seat-block is-light" style="margin: 18px auto 28px;">
-          <div class="seat-block-label">Prvá edícia · <strong>obmedzené miesta</strong></div>
+          <div class="seat-block-label">Prvá edícia · <strong>1 obsadené · 19 voľných</strong></div>
           <div class="seat-grid" id="seatGridLight"></div>
         </div>
 
@@ -2229,8 +2236,7 @@
   // Typewriter — hero interrupt
   (function() {
     const lines = [
-      'Mesiace na appke. Stovky swipov.',
-      'A stále nikto, s kým máš niečo spoločné.'
+      'Mesiace na appke. Stovky swipov. A stále nikto, s kým máš niečo spoločné.'
     ];
     const textEl  = document.getElementById('tw-text');
     const cursor  = document.getElementById('tw-cursor');
