@@ -1,9 +1,10 @@
-# SITREP — ČS Dating Wien · Edícia I — 2026-05-12 22:26
+# SITREP — ČS Dating Wien · Edícia I — 2026-05-17
 
-**Last updated:** 2026-05-12 22:26
-**Status:** SHIPPABLE — page + form live, blocked only by venue confirmation
-**Edícia I:** Monday, 22 June 2026, 19:30–21:30, Wien 1. okres (venue TBD)
-**Capacity:** 20 (10 M + 10 F) · **Price:** €69 → €39 (first edition discount)
+**Last updated:** 2026-05-17 17:57
+**Status:** **LIVE.** Site shipped in 3 languages, all legal pages, analytics streaming. Blocked only on venue confirmation and outreach send.
+**Edícia I:** Monday, 22. 6. 2026, 19:30–21:30, Wien (Mystery location)
+**Capacity:** 20 (10 men + 10 women) · **Pricing:** €69 standard · code **EDITION1** until 1. 6. 2026 = −€30 + welcome drink → €39
+**Live URL:** https://csdating.eu/
 
 ---
 
@@ -11,102 +12,133 @@
 
 | Surface | URL | State |
 |---|---|---|
-| Public landing SK | https://jakub-ai23.github.io/cs-dating-wien/ | ✅ Live |
-| Public landing CZ | https://jakub-ai23.github.io/cs-dating-wien/index-cz.html | ✅ Live |
-| Public landing EN | https://jakub-ai23.github.io/cs-dating-wien/index-en.html | ✅ Live |
-| Registration form (Jotform) | https://pci.jotform.com/form/261314058164048 | ✅ Live, Stripe connected |
-| Local preview server | http://localhost:8765/ | ✅ Running |
+| SK landing | `https://csdating.eu/` | ✅ Live |
+| CZ landing | `https://csdating.eu/cs/` | ✅ Live (clean URL, no `.html`) |
+| EN landing (UK) | `https://csdating.eu/en/` | ✅ Live |
+| SK legal set | `/impressum/`, `/privacy-policy/`, `/terms/` | ✅ Live |
+| CZ legal set | `/cs/impressum/`, `/cs/privacy-policy/`, `/cs/terms/` | ✅ Live |
+| EN legal set | `/en/impressum/`, `/en/privacy-policy/`, `/en/terms/` | ✅ Live |
+| Jotform application | `https://pci.jotform.com/form/261314058164048` | ✅ Live (confirmed working by commander) |
+| Stripe payment | Connected via Jotform | ✅ Live (confirmed working) |
+| Analytics beacon | All 12 pages → `deflifeos.popluhar.at/t.gif?site=csdating` | ✅ Firing, logged to permanent CSV |
 
-**Repo:** `jakub-ai23/cs-dating-wien` (private) on GitHub. Pages auto-deploys from `main`.
+**Repo:** `jakub-ai23/cs-dating-wien` (public) on GitHub. Pages auto-deploys from `main`. HTTPS enforced. CNAME locked.
+
+---
 
 ## Funnel state
 
 ```
-Landing page → "Prihlásiť sa" CTA
+csdating.eu/ (SK) | /cs/ (CZ) | /en/ (EN)
    ↓
-Jotform application (13 questions, ~3 min)
+"Prihlásiť sa" — top-right nav CTA goes to #termin (event card with seat grid)
    ↓
-LinkedIn or Instagram + identity verification
+Section VI "Prečo my" — Why us section users naturally see during scroll
    ↓
-Stripe payment €39 (or MORAVA = €0 for friends)
+Final CTA section #prihlaska
    ↓
-Auto-email #1: "Tvoja prihláška dorazila..." [DRAFTED, not yet pasted into Jotform Notifier]
+Jotform application (13 questions, ~3 min) — code EDITION1 → −€30 + welcome drink
+   ↓
+LinkedIn / Instagram + identity verification
+   ↓
+Stripe payment €39 (with code) or €69 (without)
+   ↓
+Auto-email #1 confirmation (live)
    ↓
 [Manual review by Jakub + Martina within 24h]
    ↓
-Email #2 — Accept (with venue) OR Reject + refund [DRAFTED]
+Email #2 — Accept (venue revealed) OR Reject + 72h refund
 ```
 
-## Hard blockers
+---
 
-1. **🔴 VENUE NOT CONFIRMED.** Cannot send Email #2 without address. 5 outreach drafts staged in Gmail (3 verified emails, 2 best-guess). Next move: send + follow up by phone.
-2. **🟡 DNS to csdating.eu.** Domain purchase + DNS setup at GoDaddy pending. Once done, Pages CNAME + repo settings + hard-coded URL update.
-3. **🟡 Stripe live test.** End-to-end €0.50 submission to verify webhook + email firing — not yet done.
-4. **🟡 Jotform Notifier email.** Auto-confirmation HTML drafted but not yet pasted into Jotform Settings → Emails → Notifier.
-5. **🟢 Jotform Trust Block.** Stripe-protected trust paragraph drafted, ready to paste; Stripe logo upload as separate Image element.
+## Pricing mechanic (anchor + claim, NOT anchor + drop)
 
-## Today's commits (latest 3 on `main`)
+- **Standard €69** dominantly displayed in hero pill and pricing card
+- **Voucher code EDITION1** (typed at Jotform Stripe checkout) = −€30 + welcome drink
+- Code expires **1. 6. 2026 00:00 CET**
+- Welcome-drink endowment pill: typewriter + live countdown + depleting bar (window 2026-05-13 → 2026-06-01)
+- After 1. 6. the pill auto-hides via JS and the CTA reverts to "Prihlásiť sa za €69"
 
-- `aeba7e5` — Favicon, Jotform PCI URL, scarcity 19/20, remove orphan upcoming-card
-- `dc91a09` — Translate CZ and EN landing pages to match current SK source
-- `2504419` — ČS Dating Edícia I: copy refinement, fabrication scrub, Jotform integration
+**Refund language unified:** "plnú sumu späť do 72 hodín" if vetted out by organizer. NO 30-min on-site refund (removed — incentivises tire-kickers per commander).
 
-## Open files / artifacts in `~/Projects/cs-dating-wien/`
+---
 
-- `SITREP.md` ← you are here
-- `index.html` / `index-cz.html` / `index-en.html` (authoritative pages)
-- `cz-sk-vienna/` (mirror folder, same content)
-- `jotform-trust-block.html` — Stripe-protected trust paragraph for paste
-- `jotform-custom.css` — burgundy theme override for Jotform Designer
-- `jotform-email-confirmation.md` — Email #1 (auto-confirm)
-- `jotform-email-acceptance.md` — Email #2 (manual send after approve)
-- `images/favicon.svg` (+ 16/32/192 PNG, apple-touch-icon, .ico)
-- `images/founder-martina.jpg`
-- `images/stripe-logo.svg|png`
-- `images/logo-static-union.svg|png` (clean logo for Jotform header)
+## Blockers (hard / soft)
 
-## Gmail drafts (15 total — clean up needed)
-
-✅ **Keep — 5 final German drafts** (no em/en dashes, no GitHub URL, phone +43 664 1386498):
-- Rosewood Vienna → `vienna.events@rosewoodhotels.com`
-- Hoxton / Cayo Coco → `hallo.cayococorooftop@thehox.com` (CC main hotel)
-- Sophie 7 → `leitung@sophie7.at`
-- Zeitgeist Vienna → `info@zeitgeist-vienna.com` (call to verify)
-- Meliá Vienna / Altia Skybar → `melia.vienna@melia.com` (call to verify)
-
-❌ **Delete — 10 obsolete drafts:**
-- 5 English versions (first attempt)
-- 5 German with em/en dashes + GitHub URL (second attempt)
-
-## Domains (planned)
-
-| Domain | Status | Purpose |
+| # | Blocker | Plan |
 |---|---|---|
-| `csdating.eu` | Buying via GoDaddy | Primary URL |
-| `slavicdating.eu` | Buying via GoDaddy | Defensive parking (€7/yr), future Slavic expansion |
-| `cs-dating.wien` | Considered, lower priority | Original plan, now superseded |
+| 🔴 1 | **Venue NOT confirmed.** Mystery framing buys time, but Email #2 can't go out without a real address. | Commander has appointments **next week** (after 2026-05-18). 5 outreach drafts staged in Gmail (Rosewood, Hoxton, Sophie 7, Zeitgeist, Meliá). |
+| 🟡 2 | **No paid sign-ups yet.** Site live but not promoted. | Outreach phase starts next session. WhatsApp messages drafted in this session, ready to send. |
+| 🟢 3 | **No-photos contingency.** Edition II differentiator can be pulled forward if Edition I stalls. | Captured in `STRATEGY.md`. Trigger: <12 confirmed seats by T-10 days. |
 
-## Decisions on record
+---
 
-- **Language:** Slovak primary, Czech + English mirrors maintained in lockstep
-- **Voice:** "vyberáme / prísny výber" — banned word `kuratovaný` permanently retired
-- **Capacity:** 20 only (10+10), no overbooking, no waitlist for Edícia I
-- **Refund:** Full refund within 72h if vetted-out OR if unhappy within 30 min on-site
-- **Friends:** Use MORAVA code at checkout = free; same form, same data quality
-- **Workflow automation:** NOT building Jotform Workflows for Edícia I (manual review, 20 entries = ~20 min total)
-- **External Apple Pay path:** Not building for Edícia I (Stripe Link enabled = 1-click for returning users is enough)
-- **Upcoming events grid:** Hidden until Edícia II date locked
+## What got built today (2026-05-17)
+
+**Site (11 commits, `cad02d2` → `819f519`):**
+- DNS wired csdating.eu via GoDaddy → GitHub Pages (typo + parking-record fixes)
+- 3 SK legal pages drafted (private organizer, NOT REAL TEAM Sport s.r.o.)
+- Pricing pivot to anchor+claim (3 iterations: strikethrough → both visible → code mechanic)
+- Welcome-drink pill: typewriter + countdown + depleting bar + breathing wine emoji + shimmer
+- 2 critic loops (27 + 4 issues found, all fixed)
+- CZ + EN translation via 2 parallel translator agents with 2-pass internal QA + critic loop
+- Clean URLs `/cs/`, `/en/` (folder/index.html pattern; old `index-cz.html` and `index-en.html` deprecated)
+- Mystery-venue framing locked everywhere (no "1. okres")
+- Analytics beacon on all 12 pages
+- Top-right nav CTA routes to `#termin` so users pass through "Why us" before form
+
+**Analytics retention system (commits in `~/Projects/ops`):**
+- Permanent CSV archive on VPS at `/root/analytics/archive/<site>/YYYY-MM.csv`
+- Privacy: IP + UA hashed with daily-stable salt, never raw
+- Mac mirror at `~/Projects/analytics-archive/` (auto-pulled by `sync-vps.sh`)
+- Hourly cron at `:05` past every hour
+- Backfill mode for historical access-log recovery (`--from-access-log`)
+- **955 rows backfilled**: csdating 10, futureroundnet 899, jakubpopluhar 46
+
+**Internal artifacts:**
+- `STRATEGY.md` — Edition II no-photos differentiator + Edition I fallback contingency
+- Mission report: `~/Projects/ops/mission-reports/2026-05-17-cs-dating-wien-launch-sprint.md`
+- Scene Protocol: `~/Projects/content/raw/2026-05-17-anchor-and-claim-vs-anchor-and-drop.md`
+- TODO.md "Analytics Expansion (indexed, not revised)" section — 10 capability areas parked
+
+---
 
 ## Next session — start here
 
-1. Check Gmail for venue replies. Follow up phone calls for the 2 best-guess emails.
-2. If a venue says yes → lock Email #2's `[VENUE NAME] / [ADRESA] / [U-Bahn info]` placeholders → open public outreach.
-3. Once `csdating.eu` is in your hands → say "wire the domain" and Claude does the rest.
-4. Paste the trust block + email #1 into Jotform Notifier (5 min).
-5. €0.50 test Stripe transaction.
+**Read first:**
+1. This SITREP
+2. `~/.claude/projects/-Users-mr-magico/memory/hot.md` (current state cache)
+3. Today's mission report addendum (analytics retention build)
+
+**Top priorities (in order):**
+
+1. **Venue follow-up.** Commander has appointments scheduled. After each, decide: lock venue, or escalate cold-call list. If a venue says yes → unlock Email #2's `[VENUE NAME] / [ADRESA] / [U-Bahn info]` placeholders.
+
+2. **Outreach send.** WhatsApp messages drafted in this session (M / F / forwardable / "Hey...Attacke!" variant) — commander has them. Identify first ~20 personal contacts and start sending. Track sends + replies somewhere lightweight (a count in this SITREP works for Edition I).
+
+3. **First sign-ups in the funnel.** Watch `~/Projects/analytics-archive/csdating/` for real visitor traffic + Jotform inbox for first applications. Use code `EDITION1` rate as the canary for whether the code mechanic is landing.
+
+4. **Stripe coupon `EDITION1` verification** (one-time check). Commander already added the code in Jotform — verify a test transaction (€0.50) goes through at €39 with the code typed in. Should already be working per commander, but never tested end-to-end with a real card.
+
+5. **Situation Room "Websites" panel** (P2 once parallel session lands). Per-site daily/weekly traffic, language split for csdating, switch behaviour. Parallel session owns `server.js` and `situation-room.html` — coordinate before touching.
+
+6. **Analytics Expansion items** (indexed, pull when needed): UTM redirects on csdating.eu like `csdating.eu/ig` → IG attribution, conversion-event beacons on Jotform thank-you + Stripe success, Microsoft Clarity layer. Full list in `~/.claude/projects/-Users-mr-magico/memory/TODO.md` under "Analytics Expansion".
+
+---
+
+## Decisions on record (today)
+
+- **D-0245** Anchor pricing at €69, code EDITION1 unlocks −€30 + welcome drink (until 1.6.)
+- **D-0246** Impressum entity = Jakub Popluhar private (Albertgasse 34/4, 1080 Wien). NOT REAL TEAM s.r.o.
+- **D-0247** Edition II no-photos as selling point; Edition I fallback contingency captured
+- **D-0248** Cancellation policy: 7-day cutoff, no 30-min on-site refund
+- **D-0249** Mystery venue framing locked (no "1. okres" anywhere)
+
+---
 
 ## North-star check
 
-Edícia I is a P0 financial-gate-feeding mission. Filed under [REAL TEAM / Future Roundnet] expansion or stand-alone, depending on entity structure. Today's net minutes of work: significant — track on debrief.
+Edícia I is a P0 financial-gate-feeding mission. Tonight the product is shippable in 3 languages with privacy-clean legal cover, working payment, permanent analytics. **The remaining gap is distribution.** Site quality is no longer the bottleneck. Outreach + venue is.
 
-— Zoya / Jocko, 2026-05-12 22:26
+— Zoya / Jocko, 2026-05-17 17:57
