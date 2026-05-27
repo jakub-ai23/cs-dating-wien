@@ -446,18 +446,17 @@
     .seat-block-label { font-size: 0.68rem; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(248,244,238,0.4); margin-bottom: 14px; }
     .seat-block-label strong { color: rgba(248,244,238,0.8); font-weight: 500; }
     .seat-grid { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; }
-    .seat { width: 18px; height: 18px; border-radius: 50%; }
-    .seat.taken { background: rgba(248,244,238,0.85); border: 1px solid rgba(248,244,238,0.95); opacity: 1; position: relative; }
-    .seat.taken::after { content: ''; position: absolute; inset: -3px; border-radius: 50%; box-shadow: 0 0 10px rgba(248,244,238,0.35); }
-    .seat.open { background: transparent; border: 1.5px solid rgba(248,244,238,0.7); animation: seat-pulse-light 2.4s ease-in-out infinite; }
-    @keyframes seat-pulse-light { 0%,100% { box-shadow: 0 0 4px rgba(248,244,238,0.15); } 50% { box-shadow: 0 0 12px rgba(248,244,238,0.45); } }
-
-    .seat-block.is-light .seat-block-label { color: rgba(13,13,13,0.45); }
-    .seat-block.is-light .seat-block-label strong { color: #8b2252; font-weight:600; }
-    .seat-block.is-light .seat.taken { background: var(--burgundy); border: 1px solid var(--burgundy); }
-    .seat-block.is-light .seat.taken::after { box-shadow: 0 0 12px rgba(139,34,82,0.5); }
-    .seat-block.is-light .seat.open { background: transparent; border: 1.5px solid rgba(139,34,82,0.7); animation: seat-pulse-burgundy 2.4s ease-in-out infinite; }
-    @keyframes seat-pulse-burgundy { 0%,100% { box-shadow: 0 0 4px rgba(139,34,82,0.18); } 50% { box-shadow: 0 0 12px rgba(139,34,82,0.5); } }
+    /* gendered figure icons — split men / women counters */
+    .seat-split { display: flex; flex-direction: column; gap: 18px; align-items: center; }
+    .seat-row { text-align: center; }
+    .seat-row-label { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(13,13,13,0.45); margin-bottom: 11px; }
+    .seat-row-label strong { color: var(--burgundy); font-weight: 600; }
+    .figure { width: 15px; height: 21px; display: block; }
+    .figure.taken.men   { fill: var(--gold); }
+    .figure.taken.women { fill: var(--burgundy); }
+    .figure.open { fill: rgba(13,13,13,0.05); stroke: rgba(13,13,13,0.30); stroke-width: 1; vector-effect: non-scaling-stroke; }
+    .figure.open.last { animation: fig-pulse 2.4s ease-in-out infinite; }
+    @keyframes fig-pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
 
     .logo-bridge { background: var(--ivory); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 80px 0; }
     .logo-bridge-inner { display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; }
@@ -824,8 +823,16 @@
         <p class="event-scarcity"><strong>20 míst. 10 mužů. 10 žen. Když je obsazeno, je obsazeno.</strong></p>
 
         <div class="seat-block is-light" style="margin: 18px auto 28px;">
-          <div class="seat-block-label">První edice · <strong>1 obsazené · 19 volných</strong></div>
-          <div class="seat-grid" id="seatGridLight"></div>
+          <div class="seat-split">
+            <div class="seat-row">
+              <div class="seat-row-label">Muži · <strong>7 z 10 obsazeno</strong></div>
+              <div class="seat-grid" id="seatGridMen"></div>
+            </div>
+            <div class="seat-row">
+              <div class="seat-row-label">Ženy · <strong>6 z 10 obsazeno</strong></div>
+              <div class="seat-grid" id="seatGridWomen"></div>
+            </div>
+          </div>
         </div>
 
         <div class="welcome-bonus" id="welcomeBonusPricing" style="margin-bottom:18px;">
@@ -1021,18 +1028,25 @@
 
 <script>
   (function() {
-    const renderGrid = (id) => {
+    // ── Seat counters: edit as real sign-ups land in Jotform. Numbers only go UP. ──
+    const PER_GENDER = 10, MEN_TAKEN = 7, WOMEN_TAKEN = 6;
+    const FIG = {
+      men:   '<svg viewBox="0 0 20 28" class="figure men {s}"><circle cx="10" cy="5" r="4.3"/><path d="M3.5 27 V15.5 a6.5 6.5 0 0 1 13 0 V27 Z"/></svg>',
+      women: '<svg viewBox="0 0 20 28" class="figure women {s}"><circle cx="10" cy="5" r="4.3"/><path d="M10 9.5 L3.5 27 H16.5 Z"/></svg>'
+    };
+    const renderRow = (id, gender, taken) => {
       const grid = document.getElementById(id);
       if (!grid) return;
-      const total = 20, taken = 1;
-      for (let i = 0; i < total; i++) {
-        const s = document.createElement('div');
-        s.className = i < taken ? 'seat taken' : 'seat open';
-        grid.appendChild(s);
+      let html = '';
+      for (let i = 0; i < PER_GENDER; i++) {
+        const open = i >= taken;
+        const state = open ? ('open' + (i === taken ? ' last' : '')) : 'taken';
+        html += FIG[gender].replace('{s}', state);
       }
+      grid.innerHTML = html;
     };
-    renderGrid('seatGrid');
-    renderGrid('seatGridLight');
+    renderRow('seatGridMen', 'men', MEN_TAKEN);
+    renderRow('seatGridWomen', 'women', WOMEN_TAKEN);
   })();
   const tObs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); tObs.unobserve(e.target); } });
