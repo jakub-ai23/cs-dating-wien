@@ -1,7 +1,13 @@
-# SITREP — ČS Dating Wien · Edícia I — 2026-05-17
+# SITREP — ČS Dating Wien · Edícia I — 2026-05-27
 
-**Last updated:** 2026-05-17 17:57
+**Last updated:** 2026-05-27 17:45
 **Status:** **LIVE.** Site shipped in 3 languages, all legal pages, analytics streaming. Blocked only on venue confirmation and outreach send.
+
+> **2026-05-27 update (commit `11ef384`):** Social-proof seat counter reworked. Old single 20-dot grid (1 taken / 19 open) read as *empty* — bad signal. Replaced with **two gendered figure rows: 7 men (gold) + 6 women (burgundy) of 10 each = 13/20 claimed.** Counts are **seeded** (commander aligned with Martina 27.05 — goal: unblock people who are waiting for others to commit first). Editable constants `MEN_TAKEN` / `WOMEN_TAKEN` in each `index.html` `<script>`. **Rule: public number only goes UP — reconcile with real Jotform sign-ups, never decrement.** Live on SK + CZ + EN. Root `CLAUDE.md` added (authoritative; legacy `cz-sk-vienna/CLAUDE.md` is stale). D-0250.
+>
+> **Commander update 27.05 (FACT, commander-stated):** Real applications already exist (count not given) — the seeded 13/20 is now backed by real sign-ups. **Promotion = live events** (Jakub promotes the edition in person). Commander considers the open blockers handled.
+>
+> ⚠️ **EDITION1 code expires 1 June 2026 (5 days).** Venue lock status not explicitly confirmed this session (UNKNOWN — verify before Email #2 can send).
 **Edícia I:** Monday, 22. 6. 2026, 19:30–21:30, Wien (Mystery location)
 **Capacity:** 20 (10 men + 10 women) · **Pricing:** €69 standard · code **EDITION1** until 1. 6. 2026 = −€30 + welcome drink → €39
 **Live URL:** https://csdating.eu/
