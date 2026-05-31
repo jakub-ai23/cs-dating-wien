@@ -1,8 +1,16 @@
 # SITREP — ČS Dating Wien · Edícia I — 2026-05-27
 
-**Last updated:** 2026-05-27 17:45
-**Status:** **LIVE.** Site shipped in 3 languages, all legal pages, analytics streaming. Blocked only on venue confirmation and outreach send.
+**Last updated:** 2026-05-31
+**Status:** **LIVE.** Site shipped in 3 languages, all legal pages, analytics streaming. 34 community-outreach emails out (29 May). Real funnel **6/20** (2 men / 4 women — men are the constraint). Blocked on venue + distribution.
 
+> **2026-05-31 update — Martina call + source-tracking system (Zoya/Jocko):**
+> - **Attribution system built.** Clean vanity links (`csdating.eu/fb`, `/ig`, `/eva`, `/jazz`, `/radicova`, `/qr`…) fire the beacon then bounce to the site — top-of-funnel click tracking with no UTM strings shown to users. Paired with **per-event promo codes** (bottom-of-funnel, typed at Jotform checkout) → clicks-to-signups conversion per event. Build script + mapping + codes live in the **private** `outreach/link-library.md` (gitignored). D-0262.
+> - **EDITION1 reframed:** the −€30 code is **permanent**; only the welcome-drink bonus expires 1 June. Site copy (3 langs) + auto-hide JS still need the rework so the discount stays and only the drink line drops. D-0263.
+> - **Welcome drink** → premium-group perk (Powerfrauen), not universal. D-0264.
+> - **Targeting:** engaged CZ-SK crowd (quiz nights, women's circles, Radičová alumni event Thu 4 Jun), NOT the negative "pivováčky" expat crowd. No paid FB ads yet (too costly at 6 likes). Martina building a backup FB Page.
+> - **Privacy guard:** added `.gitignore` — repo is **public + Pages-served**. ⚠️ OPEN RISK: `SITREP.md`/`CLAUDE.md`/`STRATEGY.md` are already tracked in the public repo = internal strategy is publicly readable on GitHub. Structural fix pending. D-0265.
+> - **Pending (Jakub):** create the 4 per-event Stripe codes (strings in the private `outreach/link-library.md`), send confirmation email #1 to the ~6 who paid, add "25-39?" form question, shorten form/site. Dashboard fbclid-classification patch **staged, awaiting deploy approval**.
+>
 > **2026-05-27 update (commit `11ef384`):** Social-proof seat counter reworked. Old single 20-dot grid (1 taken / 19 open) read as *empty* — bad signal. Replaced with **two gendered figure rows: 7 men (gold) + 6 women (burgundy) of 10 each = 13/20 claimed.** Counts are **seeded** (commander aligned with Martina 27.05 — goal: unblock people who are waiting for others to commit first). Editable constants `MEN_TAKEN` / `WOMEN_TAKEN` in each `index.html` `<script>`. **Rule: public number only goes UP — reconcile with real Jotform sign-ups, never decrement.** Live on SK + CZ + EN. Root `CLAUDE.md` added (authoritative; legacy `cz-sk-vienna/CLAUDE.md` is stale). D-0250.
 >
 > **Commander update 27.05 (FACT, commander-stated):** Real applications already exist (count not given) — the seeded 13/20 is now backed by real sign-ups. **Promotion = live events** (Jakub promotes the edition in person). Commander considers the open blockers handled.

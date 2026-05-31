@@ -19,6 +19,21 @@ A **P0 financial-gate mission** (feeds the €10K/month north-star pillar). The 
 
 ---
 
+## Team
+
+| Person | Role | Owns | Contact |
+|---|---|---|---|
+| **Jakub Popluhar** | Founder | Strategy, build, copy, site, analytics, impressum entity (private) | jakub@popluhar.at |
+| **Martina** | Business partner · Operations (intended public lead) | FB/social marketing, community + event scouting, applicant social-proof vetting, on-the-ground promo | `[NEED FROM YOU: surname, email, phone]` |
+
+- Both founders are **named and photographed** on the site (brand decision — no hiding behind a brand).
+- Manual applicant review = **Jakub + Martina** jointly within 24h (see funnel in SITREP).
+- **Role direction (from 29 May call):** Martina to become the public-facing lead/host; Jakub stays backstage as build/IT/automation + optional moderator. Not yet formalised.
+- `[NEED FROM YOU / VERIFY]`: Martina's full name, contact, and exact split of operational ownership (who owns venue, who owns vetting). Contact kept in the **untracked** `outreach/` notes, never in this tracked file.
+- Decisions are aligned with Martina before they ship. Log partner-level decisions in `SITREP.md` + the private `decisions.csv`.
+
+---
+
 ## Live Surfaces
 
 | Surface | URL |
@@ -31,6 +46,20 @@ A **P0 financial-gate mission** (feeds the €10K/month north-star pillar). The 
 | Analytics | 1×1 beacon on all 12 pages → `deflifeos.popluhar.at/t.gif?site=csdating` |
 
 **Repo:** `jakub-ai23/cs-dating-wien` (public). GitHub Pages auto-deploys from `main`. HTTPS enforced, CNAME locked. **Push to `main` = live deploy** — preview before every push.
+
+---
+
+## Cloud Routines (scheduled remote agents)
+
+This project runs scheduled remote agents on claude.ai. **Registry + full detail: `routines/README.md`.**
+Manage at https://claude.ai/code/routines.
+
+| Routine | Schedule | Mission |
+|---|---|---|
+| Outreach intel (`trig_01Bx1z7sihyxQiWbmrkCWg4T`) | daily 02:00 Europe/Vienna | Scan Gmail for replies to the community-outreach campaign, classify, auto-update `outreach/community-outreach.md` (its memory), and email Jakub a fire-ready follow-up. |
+
+Key principle: a routine has **no cross-run memory** — the tracker file IS its memory. Don't break the
+tracker's status column or the auto-push, or the routine starts double-reporting.
 
 ---
 

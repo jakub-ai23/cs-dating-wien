@@ -1,0 +1,20 @@
+# ─────────────────────────────────────────────────────────────
+# PRIVACY GUARD — this repo is PUBLIC and GitHub-Pages-published.
+# Anything matched here stays local and never reaches GitHub.
+# Added 2026-05-31 after the public-repo leak risk flagged in the
+# 29 May mission report (PII + n8n webhook token + promo codes).
+# ─────────────────────────────────────────────────────────────
+
+# Applicant PII (names live in here)
+claude-desktop-context.md
+
+# Routine config — holds the n8n webhook token
+routines/
+
+# Internal outreach: leads, SURF templates, community tracker,
+# and the promo-code / link library (financial codes — must stay private)
+outreach/
+
+# macOS noise
+.DS_Store
+**/.DS_Store
