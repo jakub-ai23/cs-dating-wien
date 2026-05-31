@@ -24,7 +24,7 @@ A **P0 financial-gate mission** (feeds the €10K/month north-star pillar). The 
 | Person | Role | Owns | Contact |
 |---|---|---|---|
 | **Jakub Popluhar** | Founder | Strategy, build, copy, site, analytics, impressum entity (private) | jakub@popluhar.at |
-| **Martina** | Business partner · Operations (intended public lead) | FB/social marketing, community + event scouting, applicant social-proof vetting, on-the-ground promo | `[NEED FROM YOU: surname, email, phone]` |
+| **Martina** | Business partner · Operations (intended public lead) | FB/social marketing, community + event scouting, applicant social-proof vetting, on-the-ground promo | full name + contact in private `outreach/` notes (kept out of this public file) |
 
 - Both founders are **named and photographed** on the site (brand decision — no hiding behind a brand).
 - Manual applicant review = **Jakub + Martina** jointly within 24h (see funnel in SITREP).
