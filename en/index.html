@@ -2085,9 +2085,9 @@
 
       <div class="founder-card">
         <div class="founder-photo">
-          <img src="/images/founder-martina.jpg" alt="Martina, co-founder of ČS Dating">
+          <img src="/images/founder-martina.jpg" alt="Martina Nováková, co-founder of ČS Dating">
         </div>
-        <div class="founder-name">Martina</div>
+        <div class="founder-name">Martina Nováková</div>
         <div class="founder-role">Co-founder · Operations</div>
         <p class="founder-bio">By day she watches over budgets, by evening she organises hikes, quizzes and events where boredom has no place. She loves order in numbers as much as in plans.</p>
       </div>
@@ -2177,6 +2177,11 @@
 
     <p class="cta-guarantee-block">If after your application we find you do not fit, the full amount back within 72 hours. No questions.<br>The decision is yours. Jakub</p>
 
+    <p style="margin-top:30px;font-size:0.92rem;color:rgba(248,244,238,0.62);line-height:1.6;">
+      Can't make this date?
+      <a href="https://form.jotform.com/261552386526058" onclick="openWaitlist(event)" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Be the first to hear about future editions and new age groups →</a>
+    </p>
+
   </div>
 </section>
 
@@ -2194,7 +2199,7 @@
     <a href="mailto:jakub@popluhar.at">jakub@popluhar.at</a>
   </p>
   <p style="margin-top:11px; font-size:0.67rem; opacity:0.4;">
-    © 2026 Czech-Slovak Dating &nbsp;·&nbsp; Founded by Jakub Popluhar &nbsp;·&nbsp; Operations Martina
+    © 2026 Czech-Slovak Dating &nbsp;·&nbsp; Founded by Jakub Popluhar &nbsp;·&nbsp; Operations Martina Nováková
   </p>
 </footer>
 
@@ -2394,6 +2399,50 @@
     tick();
     setInterval(tick, 60000);
   })();
+</script>
+<!-- ===== waitlist popup (lead capture — SK form) ===== -->
+<style>
+  .wl-overlay{position:fixed;inset:0;background:rgba(26,18,8,0.74);backdrop-filter:blur(3px);z-index:99999;display:none;align-items:center;justify-content:center;padding:18px;}
+  .wl-overlay.wl-show{display:flex;}
+  .wl-modal{position:relative;background:var(--ivory,#f8f4ee);border-radius:14px;max-width:480px;width:100%;max-height:92vh;overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,0.45);border-top:4px solid var(--gold,#b8912a);padding:30px 26px 16px;}
+  .wl-close{position:absolute;top:8px;right:14px;background:none;border:none;font-size:1.9rem;line-height:1;color:var(--ink,#1a1208);opacity:0.45;cursor:pointer;}
+  .wl-close:hover{opacity:1;}
+  .wl-title{font-family:var(--font-display,'Playfair Display',serif);color:var(--burgundy,#8b2252);font-size:1.5rem;margin:0 0 8px;padding-right:20px;}
+  .wl-sub{color:var(--ink,#1a1208);opacity:0.78;font-size:0.95rem;line-height:1.55;margin:0 0 14px;}
+  #wl-frame{width:100%;height:470px;border:none;display:block;}
+  @media(max-width:520px){#wl-frame{height:540px;}.wl-modal{padding:26px 18px 12px;}}
+</style>
+<div id="wl-overlay" class="wl-overlay" aria-hidden="true">
+  <div class="wl-modal" role="dialog" aria-modal="true" aria-label="Keep me posted">
+    <button class="wl-close" aria-label="Close" onclick="closeWaitlist()">&times;</button>
+    <h3 class="wl-title">Can't make this date?</h3>
+    <p class="wl-sub">Be the first to hear about future editions and new age groups. (Form in Slovak.)</p>
+    <iframe id="wl-frame" title="ČS Dating — Keep me posted" data-src="https://form.jotform.com/261552386526058" scrolling="auto"></iframe>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='wl_seen_v1', loaded=false;
+  function doOpen(){
+    var f=document.getElementById('wl-frame');
+    if(f && !loaded){ f.src=f.getAttribute('data-src'); loaded=true; }
+    document.getElementById('wl-overlay').classList.add('wl-show');
+  }
+  window.openWaitlist=function(e){ if(e)e.preventDefault(); doOpen(); };
+  window.closeWaitlist=function(){ document.getElementById('wl-overlay').classList.remove('wl-show'); };
+  document.addEventListener('click',function(e){ if(e.target && e.target.id==='wl-overlay') window.closeWaitlist(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') window.closeWaitlist(); });
+  var seen=false; try{seen=!!localStorage.getItem(KEY);}catch(e){}
+  if(seen) return;
+  var fired=false;
+  function autoOpen(){ if(fired) return; fired=true; try{localStorage.setItem(KEY,'1');}catch(e){} doOpen(); }
+  document.addEventListener('mouseout',function(e){ if(e.clientY<=0 && !e.relatedTarget) autoOpen(); });
+  var isTouch=('ontouchstart' in window)||navigator.maxTouchPoints>0;
+  if(isTouch){
+    setTimeout(autoOpen,25000);
+    window.addEventListener('scroll',function onS(){ var sc=(window.scrollY+window.innerHeight)/document.body.scrollHeight; if(sc>=0.6){ autoOpen(); window.removeEventListener('scroll',onS); } });
+  }
+})();
 </script>
 <!-- analytics beacon --><script>(function(){try{var i=new Image(1,1);i.src="https://deflifeos.popluhar.at/t.gif?site=csdating&path="+encodeURIComponent(location.pathname+location.search)+"&ref="+encodeURIComponent(document.referrer);}catch(e){}})();</script>
 </body>
