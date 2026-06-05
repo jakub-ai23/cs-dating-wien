@@ -8,6 +8,12 @@
 # Applicant PII (names live in here)
 claude-desktop-context.md
 
+# Internal strategy / handover docs — funnel numbers, tactics, decisions.
+# Untracked 2026-06-05 (D-0265 structural fix). History not scrubbed by choice.
+SITREP.md
+STRATEGY.md
+CLAUDE.md
+
 # Routine config — holds the n8n webhook token
 routines/
 
