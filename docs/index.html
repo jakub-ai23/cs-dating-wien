@@ -1973,11 +1973,11 @@
         <div class="seat-block is-light" style="margin: 18px auto 28px;">
           <div class="seat-split">
             <div class="seat-row">
-              <div class="seat-row-label">Muži · <strong>7 z 10 obsadených</strong></div>
+              <div class="seat-row-label">Muži · <strong>6 z 10 obsadených</strong></div>
               <div class="seat-grid" id="seatGridMen"></div>
             </div>
             <div class="seat-row">
-              <div class="seat-row-label">Ženy · <strong>6 z 10 obsadených</strong></div>
+              <div class="seat-row-label">Ženy · <strong>7 z 10 obsadených</strong></div>
               <div class="seat-grid" id="seatGridWomen"></div>
             </div>
           </div>
@@ -1985,7 +1985,7 @@
 
         <div class="welcome-bonus" id="welcomeBonusPricing" style="margin-bottom:18px;">
           <span class="wb-icon">🍷</span>
-          <span>Kód EDITION1: −€30 + welcome drink<span class="wb-countdown" id="wbCountdownPricing"> — do 1. júna</span></span>
+          <span>Kód EDITION1: −€30 + welcome drink<span class="wb-countdown" id="wbCountdownPricing"> — do 22. júna</span></span>
           <div class="wb-bar"><div class="wb-bar-fill"></div></div>
         </div>
 
@@ -2207,7 +2207,7 @@
 <script>
   (function() {
     // ── Seat counters: edit as real sign-ups land in Jotform. Numbers only go UP. ──
-    const PER_GENDER = 10, MEN_TAKEN = 7, WOMEN_TAKEN = 6;
+    const PER_GENDER = 10, MEN_TAKEN = 6, WOMEN_TAKEN = 7;
     const FIG = {
       men:   '<svg viewBox="0 0 20 28" class="figure men {s}"><circle cx="10" cy="5" r="4.3"/><path d="M3.5 27 V15.5 a6.5 6.5 0 0 1 13 0 V27 Z"/></svg>',
       women: '<svg viewBox="0 0 20 28" class="figure women {s}"><circle cx="10" cy="5" r="4.3"/><path d="M10 9.5 L3.5 27 H16.5 Z"/></svg>'
@@ -2276,7 +2276,7 @@
     const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const PREFIX = 'Kód EDITION1 ti dá −€30 + welcome drink';
     const CHAR_MS = 36;
-    const DEADLINE = new Date('2026-06-01T00:00:00+02:00').getTime();
+    const DEADLINE = new Date('2026-06-22T19:00:00+02:00').getTime();
     function suffixNow() {
       const ms = DEADLINE - Date.now();
       if (ms <= 0) return '';
@@ -2357,7 +2357,7 @@
   /* Welcome-drink bonus countdown — early-bird window 2026-05-13 → 2026-06-01 Vienna */
   (function welcomeDrinkCountdown() {
     const WINDOW_START = new Date('2026-05-13T00:00:00+02:00').getTime();
-    const DEADLINE     = new Date('2026-06-01T00:00:00+02:00').getTime();
+    const DEADLINE     = new Date('2026-06-22T19:00:00+02:00').getTime();
     const TOTAL_MS     = DEADLINE - WINDOW_START;
     const pairs = [
       { wrap: 'welcomeBonusHero',    cnt: 'wbCountdownHero' },
