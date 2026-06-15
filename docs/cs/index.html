@@ -328,7 +328,41 @@
     .e-cell:last-child { border-right: none; }
     .e-cell .e-label { font-size: 0.57rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 5px; }
     .e-cell .e-value { font-family: var(--font-display); font-size: 1.28rem; font-weight: 500; color: var(--ink); }
-    .e-cell .e-value.price { color: var(--burgundy); }
+    .e-cell .e-value.price { color: var(--burgundy); line-height: 1.05; }
+    .e-cell .e-value.price .price-old {
+      font-size: 0.92rem;
+      font-weight: 400;
+      color: var(--ink-faint);
+      text-decoration: line-through;
+      text-decoration-color: var(--burgundy);
+      margin-right: 7px;
+      vertical-align: middle;
+    }
+    .e-cell .e-value.price .price-new {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--burgundy);
+      vertical-align: middle;
+    }
+    .e-cell .e-value.price .price-code {
+      display: block;
+      margin-top: 9px;
+      font-size: 0.64rem;
+      letter-spacing: 1.4px;
+      line-height: 1.5;
+      color: var(--burgundy);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .e-cell .e-value.price .price-code strong {
+      display: inline-block;
+      background: rgba(139, 34, 82, 0.12);
+      border: 1px solid rgba(139, 34, 82, 0.22);
+      padding: 2px 8px;
+      border-radius: 5px;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
     .event-scarcity { font-size: 0.8rem; color: var(--ink-soft); margin-bottom: 18px; }
     .event-scarcity strong { color: var(--ink); }
     .event-guarantee { font-size: 0.77rem; color: var(--ink-faint); margin-top: 12px; font-style: italic; }
@@ -540,7 +574,7 @@
     </div>
 
     <div class="welcome-bonus hero-cascade" id="welcomeBonusHero">
-      <span class="wb-anchor">€69</span>
+      <span class="wb-anchor"><s>€69</s></span>
       <span class="wb-icon">🍷</span>
       <span class="wb-sep" aria-hidden="true"></span>
       <span class="wb-text" id="wbHeroText"></span>
@@ -815,7 +849,7 @@
           </div>
           <div class="e-cell">
             <div class="e-label">Cena</div>
-            <div class="e-value price">€69<br><small style="display:block;margin-top:6px;font-size:0.62rem;letter-spacing:1.5px;color:#8b2252;text-transform:uppercase;font-weight:500;">kód <strong>EDITION1</strong> · −€30 + welcome drink = €39</small></div>
+            <div class="e-value price"><s class="price-old">€69</s><span class="price-new">€39</span><small class="price-code">kód <strong>EDITION1</strong> · −€30 + welcome drink</small></div>
           </div>
         </div>
 
@@ -1098,7 +1132,7 @@
     const text = document.getElementById('wbHeroText');
     if (!wrap || !text) { window.__wbHeroTyping = false; return; }
     const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const PREFIX = 'Kód EDITION1 ti dá −€30 + welcome drink';
+    const PREFIX = 'S kódem EDITION1 jen €39';
     const CHAR_MS = 36;
     const DEADLINE = new Date('2026-06-22T19:00:00+02:00').getTime();
     function suffixNow() {
@@ -1123,12 +1157,7 @@
       window.__wbHeroTyping = false;
     }
     function fastShow() {
-      const cnt = document.createElement('span');
-      cnt.className = 'wb-countdown';
-      cnt.id = 'wbCountdownHero';
-      cnt.textContent = suffixNow();
       text.insertBefore(document.createTextNode(PREFIX), cursor);
-      text.insertBefore(cnt, cursor);
       finish();
     }
     if (reduced) { fastShow(); return; }
@@ -1139,21 +1168,7 @@
         text.insertBefore(document.createTextNode(PREFIX[i++]), cursor);
         setTimeout(typePrefix, CHAR_MS);
       } else {
-        const cnt = document.createElement('span');
-        cnt.className = 'wb-countdown';
-        cnt.id = 'wbCountdownHero';
-        text.insertBefore(cnt, cursor);
-        const suffix = suffixNow();
-        let j = 0;
-        function typeSuffix() {
-          if (j < suffix.length) {
-            cnt.textContent += suffix[j++];
-            setTimeout(typeSuffix, CHAR_MS);
-          } else {
-            finish();
-          }
-        }
-        typeSuffix();
+        finish();
       }
     }
     const obs = new MutationObserver(() => {
