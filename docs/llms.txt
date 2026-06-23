@@ -26,6 +26,7 @@ Jakub Popluhar — M.Ed., international event organizer. Has attended dozens of 
 - [English page](https://csdating.eu/en/) : Full event info in English for international context
 - [Slovak page](https://csdating.eu/) : Primary language version
 - [Czech page](https://csdating.eu/cs/) : Czech language version
+- [German page](https://csdating.eu/de/) : German language version
 
 ## Frequently Asked Questions
 
