@@ -21,6 +21,9 @@ routines/
 # and the promo-code / link library (financial codes — must stay private)
 outreach/
 
+# Internal market/demographics research tied to private strategy (keep local)
+research/
+
 # macOS noise
 .DS_Store
 **/.DS_Store
