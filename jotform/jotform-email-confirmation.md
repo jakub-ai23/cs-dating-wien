@@ -57,7 +57,7 @@ Tvoja prihláška dorazila. Ozveme sa do 24 hodín.
   <hr style="border:none;border-top:1px solid rgba(139,34,82,0.18);margin:24px 0;">
 
   <p style="font-size:0.78rem;color:#6b5540;line-height:1.55;margin:0;">
-    <strong>Prečo overenie?</strong> Prísny výber účastníkov je dôvod, prečo to funguje. Vyberáme podľa veku (25–39), pôvodu (SK/CZ), zámeru a profesionálneho profilu (LinkedIn). Ak nezapadáš, €39 ti vrátime do 72 hodín. Bez otázok.
+    <strong>Prečo overenie?</strong> Prísny výber účastníkov je dôvod, prečo to funguje. Vyberáme podľa veku, česko-slovenských koreňov (stačí jazyk a kultúra — nie pas), zámeru a profesionálneho profilu (LinkedIn). Ak nezapadáš, €39 ti vrátime do 72 hodín. Bez otázok.
   </p>
 
   <p style="font-size:0.74rem;color:#6b5540;margin:18px 0 0;letter-spacing:0.5px;">
@@ -92,7 +92,7 @@ Jakub & Martina
 
 —
 
-Prečo overenie? Prísny výber účastníkov je dôvod, prečo to funguje. Vyberáme podľa veku (25–39), pôvodu (SK/CZ), zámeru a profesionálneho profilu (LinkedIn). Ak nezapadáš, €39 ti vrátime do 72 hodín. Bez otázok.
+Prečo overenie? Prísny výber účastníkov je dôvod, prečo to funguje. Vyberáme podľa veku, česko-slovenských koreňov (stačí jazyk a kultúra — nie pas), zámeru a profesionálneho profilu (LinkedIn). Ak nezapadáš, €39 ti vrátime do 72 hodín. Bez otázok.
 ```
 
 ---
