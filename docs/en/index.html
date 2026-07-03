@@ -1704,6 +1704,74 @@
 <!-- ======================================================
      CULTURAL VALIDATION — between hero and pain
 ====================================================== -->
+<section id="kviz" style="background:var(--ivory-warm);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:80px 0;">
+  <style>
+    .kz-wrap { max-width:920px; margin:0 auto; padding:0 24px; }
+    .kz-head { text-align:center; max-width:700px; margin:0 auto; }
+    .kz-eyebrow { font-size:0.68rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+    .kz-h2 { font-family:var(--font-display); font-weight:600; font-size:2.1rem; color:var(--ink); margin-bottom:16px; }
+    .kz-h2 em { font-style:italic; color:var(--burgundy); }
+    .kz-intro { color:var(--ink-soft); font-size:1.05rem; line-height:1.7; }
+    .kz-intro strong { color:var(--ink); }
+    .kz-meta { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin:26px 0 6px; }
+    .kz-meta div { font-size:0.82rem; color:var(--ink-soft); }
+    .kz-meta strong { display:block; font-family:var(--font-display); font-size:1.2rem; color:var(--ink); }
+    .kz-tbd { color:var(--gold); font-weight:600; }
+    .kz-table { max-width:560px; margin:36px auto 0; border:1px solid var(--rule); background:var(--ivory); }
+    .kz-row { display:flex; justify-content:space-between; align-items:center; padding:16px 24px; border-bottom:1px solid var(--rule); }
+    .kz-row:last-child { border-bottom:none; }
+    .kz-pax { font-size:1rem; color:var(--ink); }
+    .kz-pax small { display:block; font-size:0.76rem; color:var(--ink-faint); }
+    .kz-buy { display:inline-flex; align-items:center; gap:10px; background:var(--burgundy); color:var(--ivory); padding:10px 18px; border-radius:2px; font-size:0.9rem; white-space:nowrap; }
+    .kz-buy:hover { background:var(--burgundy-mid); color:var(--ivory); }
+    .kz-buy .a { font-family:var(--font-display); font-size:1.25rem; color:var(--ivory); }
+    .kz-note { text-align:center; font-size:0.85rem; color:var(--ink-faint); margin-top:14px; }
+    .kz-prize { max-width:680px; margin:30px auto 0; text-align:center; background:var(--ivory-deep); border:1px solid var(--rule); padding:26px; }
+    .kz-prize p { color:var(--ink-soft); margin-top:6px; }
+    .kz-buy-box { max-width:420px; margin:36px auto 0; text-align:center; }
+    .kz-select-label { display:block; font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:var(--ink-soft); margin-bottom:10px; }
+    .kz-select-wrap { position:relative; }
+    .kz-select { width:100%; appearance:none; -webkit-appearance:none; background:var(--ivory); border:1px solid var(--rule); border-radius:2px; padding:14px 42px 14px 18px; font-family:inherit; font-size:1rem; color:var(--ink); cursor:pointer; }
+    .kz-select-wrap::after { content:'\25be'; position:absolute; right:18px; top:50%; transform:translateY(-50%); pointer-events:none; color:var(--burgundy); font-size:0.9rem; }
+    .kz-buy-lg { display:flex; justify-content:center; width:100%; margin-top:16px; padding:16px 24px; font-size:1rem; box-sizing:border-box; }
+    .kz-discount-hint { font-size:0.8rem; color:var(--ink-faint); margin-top:12px; }
+    @media (max-width:680px){ .kz-h2 { font-size:1.7rem; } }
+  </style>
+  <div class="kz-wrap">
+    <div class="kz-head">
+      <div class="kz-eyebrow">We hear you</div>
+      <h2 class="kz-h2">Quiz Night. <em>Not just for singles.</em></h2>
+      <p class="kz-intro">At Edícia I you asked for more events, not just speed dating. So we are putting on a <strong>quiz night for the whole Czechoslovak crowd in Vienna</strong>. Come alone, with a friend, or as a team. It is not just about dating, it is about meeting your people. No age limit, you play for prizes.</p>
+      <div class="kz-meta">
+        <div><strong>8 Aug 2026</strong>Saturday</div>
+        <div><strong>Wien</strong><span class="kz-tbd">venue TBD</span></div>
+        <div><strong>No limit</strong>age and number</div>
+      </div>
+    </div>
+
+    <div class="kz-buy-box">
+      <label class="kz-select-label" for="kzCount">How many are you?</label>
+      <div class="kz-select-wrap">
+        <select id="kzCount" class="kz-select" onchange="var o=this.options[this.selectedIndex];document.getElementById('kzBuy').href=o.dataset.href;document.getElementById('kzPrice').textContent='€'+o.dataset.price;">
+          <option data-price="10" data-href="https://buy.stripe.com/14AbJ0fLk8UQd58dff33W07">1 person · solo player — €10</option>
+          <option data-price="18" data-href="https://buy.stripe.com/6oUaEWcz84EA8OS4IJ33W08">2 people · pair — €18</option>
+          <option data-price="25" data-href="https://buy.stripe.com/dRm9ASar00ok7KO3EF33W09">3 people · small team — €25</option>
+          <option data-price="30" data-href="https://buy.stripe.com/7sY4gycz8efa2qu7UV33W0a">4 people · full team — €30</option>
+        </select>
+      </div>
+      <a id="kzBuy" class="kz-buy kz-buy-lg" href="https://buy.stripe.com/14AbJ0fLk8UQd58dff33W07"><span class="a" id="kzPrice">€10</span> Buy →</a>
+      <p class="kz-discount-hint">The bigger the team, the cheaper per person (4 = €7.50/pp).</p>
+    </div>
+    <p class="kz-note">Price for the whole team, not per person. You pay directly via Stripe, your spot is reserved immediately. <span class="kz-tbd">[time and exact venue TBD]</span></p>
+
+    <div class="kz-prize">
+      <div style="font-size:1.8rem;">🏆</div>
+      <p><strong>You play for prizes.</strong> For the winners a speed-dating entry, physical prizes and Czechoslovak surprises. <span class="kz-tbd">[prizes TBD]</span></p>
+    </div>
+  </div>
+</section>
+
+
 <section class="cultural-validation" id="preco">
   <div class="wrap">
 
@@ -1754,60 +1822,6 @@
 <!-- ======================================================
      KVÍZ-VEČER — community event, direct buy (on-page)
 ====================================================== -->
-<section id="kviz" style="background:var(--ivory-warm);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:80px 0;">
-  <style>
-    .kz-wrap { max-width:920px; margin:0 auto; padding:0 24px; }
-    .kz-head { text-align:center; max-width:700px; margin:0 auto; }
-    .kz-eyebrow { font-size:0.68rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
-    .kz-h2 { font-family:var(--font-display); font-weight:600; font-size:2.1rem; color:var(--ink); margin-bottom:16px; }
-    .kz-h2 em { font-style:italic; color:var(--burgundy); }
-    .kz-intro { color:var(--ink-soft); font-size:1.05rem; line-height:1.7; }
-    .kz-intro strong { color:var(--ink); }
-    .kz-meta { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin:26px 0 6px; }
-    .kz-meta div { font-size:0.82rem; color:var(--ink-soft); }
-    .kz-meta strong { display:block; font-family:var(--font-display); font-size:1.2rem; color:var(--ink); }
-    .kz-tbd { color:var(--gold); font-weight:600; }
-    .kz-table { max-width:560px; margin:36px auto 0; border:1px solid var(--rule); background:var(--ivory); }
-    .kz-row { display:flex; justify-content:space-between; align-items:center; padding:16px 24px; border-bottom:1px solid var(--rule); }
-    .kz-row:last-child { border-bottom:none; }
-    .kz-pax { font-size:1rem; color:var(--ink); }
-    .kz-pax small { display:block; font-size:0.76rem; color:var(--ink-faint); }
-    .kz-buy { display:inline-flex; align-items:center; gap:10px; background:var(--burgundy); color:var(--ivory); padding:10px 18px; border-radius:2px; font-size:0.9rem; white-space:nowrap; }
-    .kz-buy:hover { background:var(--burgundy-mid); color:var(--ivory); }
-    .kz-buy .a { font-family:var(--font-display); font-size:1.25rem; color:var(--ivory); }
-    .kz-note { text-align:center; font-size:0.85rem; color:var(--ink-faint); margin-top:14px; }
-    .kz-prize { max-width:680px; margin:30px auto 0; text-align:center; background:var(--ivory-deep); border:1px solid var(--rule); padding:26px; }
-    .kz-prize p { color:var(--ink-soft); margin-top:6px; }
-    @media (max-width:680px){ .kz-h2 { font-size:1.7rem; } }
-  </style>
-  <div class="kz-wrap">
-    <div class="kz-head">
-      <div class="kz-eyebrow">We hear you</div>
-      <h2 class="kz-h2">Quiz Night. <em>Not just for singles.</em></h2>
-      <p class="kz-intro">At Edícia I you asked for more events, not just speed dating. So we are putting on a <strong>quiz night for the whole Czechoslovak crowd in Vienna</strong>. Come alone, with a friend, or as a team. It is not just about dating, it is about meeting your people. No age limit, you play for prizes.</p>
-      <div class="kz-meta">
-        <div><strong>8 Aug 2026</strong>Saturday</div>
-        <div><strong>Wien</strong><span class="kz-tbd">venue TBD</span></div>
-        <div><strong>No limit</strong>age and number</div>
-      </div>
-    </div>
-
-    <div class="kz-table">
-      <div class="kz-row"><div class="kz-pax">1 person<small>solo player</small></div><a class="kz-buy" href="https://buy.stripe.com/14AbJ0fLk8UQd58dff33W07"><span class="a">€10</span> Buy</a></div>
-      <div class="kz-row"><div class="kz-pax">2 people<small>pair</small></div><a class="kz-buy" href="https://buy.stripe.com/6oUaEWcz84EA8OS4IJ33W08"><span class="a">€18</span> Buy</a></div>
-      <div class="kz-row"><div class="kz-pax">3 people<small>small team</small></div><a class="kz-buy" href="https://buy.stripe.com/dRm9ASar00ok7KO3EF33W09"><span class="a">€25</span> Buy</a></div>
-      <div class="kz-row"><div class="kz-pax">4 people<small>full team</small></div><a class="kz-buy" href="https://buy.stripe.com/7sY4gycz8efa2qu7UV33W0a"><span class="a">€30</span> Buy</a></div>
-    </div>
-    <p class="kz-note">Price for the whole team, not per person. You pay directly via Stripe, your spot is reserved immediately. <span class="kz-tbd">[time and exact venue TBD]</span></p>
-
-    <div class="kz-prize">
-      <div style="font-size:1.8rem;">🏆</div>
-      <p><strong>You play for prizes.</strong> For the winners a speed-dating entry, physical prizes and Czechoslovak surprises. <span class="kz-tbd">[prizes TBD]</span></p>
-    </div>
-  </div>
-</section>
-
-
 <!-- ======================================================
      PAIN — NAME THE ENEMY (gender split)
 ====================================================== -->
