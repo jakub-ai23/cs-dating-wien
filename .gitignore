@@ -13,6 +13,9 @@ claude-desktop-context.md
 SITREP.md
 STRATEGY.md
 CLAUDE.md
+TODO.md
+geo-audit-*.md
+nationality-text-changes-proposal.md
 
 # Routine config — holds the n8n webhook token
 routines/
@@ -23,6 +26,9 @@ outreach/
 
 # Internal market/demographics research tied to private strategy (keep local)
 research/
+
+# Internal translation working files + preview screenshots (served pages live in docs/)
+translation/
 
 # macOS noise
 .DS_Store
