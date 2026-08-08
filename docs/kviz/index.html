@@ -247,6 +247,29 @@
   .modes button.on { background: var(--burgundy); border-color: var(--burgundy); }
   .modes small { display: block; opacity: .6; font-size: .78rem; margin-top: .3rem; }
 
+  /* Countdown, laeuft auf jeder Frage-Folie */
+  #timer {
+    position: fixed; top: 3vh; right: 2.6vw; z-index: 15;
+    display: none; align-items: center; justify-content: center;
+    width: 4.6rem; height: 4.6rem; border-radius: 50%;
+    border: 2px solid rgba(184,145,42,.45);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.9rem; font-weight: 600; color: var(--gold-soft);
+    background: rgba(26,18,8,.55);
+    transition: color .3s, border-color .3s, background .3s;
+  }
+  #timer.on { display: flex; }
+  #timer.warn { color: #e8c96b; border-color: rgba(184,145,42,.9); }
+  #timer.out {
+    color: #fff; background: var(--burgundy); border-color: var(--burgundy);
+    animation: buzz .5s ease 3;
+  }
+  @keyframes buzz {
+    0%, 100% { transform: none; }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+  }
+
   /* Fusszeile */
   #bar {
     position: fixed; left: 0; right: 0; bottom: 0; height: 4px;
@@ -279,8 +302,9 @@
 </head>
 <body>
 <div id="stage"></div>
+<div id="timer">45</div>
 <div id="bar"><div></div></div>
-<div id="hint">← → ďalej · Enter odhalí odpoveď · O režim: <span id="mode-label"></span> · F celá obrazovka · H pomoc</div>
+<div id="hint">← → ďalej · Enter odhalí odpoveď · O režim: <span id="mode-label"></span> · R časomiera · F celá obrazovka · H pomoc</div>
 <div id="counter"></div>
 <div id="help"><div>
   <kbd>→ / medzerník</kbd> ďalší snímok<br>
@@ -289,6 +313,8 @@
   <kbd>F</kbd> celá obrazovka<br>
   <kbd>Home</kbd> na začiatok<br>
   <kbd>O</kbd> prepnúť režim odpovedí<br>
+  <kbd>R</kbd> časomiera odznova<br>
+  <kbd>T</kbd> pauza alebo pokračovať<br>
   <kbd>H / Esc</kbd> zavrieť túto nápovedu
 </div></div>
 
@@ -417,12 +443,63 @@ function rebuild(keepSlide) {
   show(pos);
 }
 
+// ── Countdown ────────────────────────────────────────────────
+const SECS = 45;
+const tEl = document.getElementById('timer');
+let tLeft = SECS, tId = null, audioCtx = null;
+
+function beep(freq, ms) {
+  try {
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+    o.frequency.value = freq; o.type = 'sine';
+    g.gain.setValueAtTime(0.14, audioCtx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + ms / 1000);
+    o.connect(g).connect(audioCtx.destination);
+    o.start(); o.stop(audioCtx.currentTime + ms / 1000);
+  } catch (e) { /* ohne Ton weiterlaufen, der Countdown ist sichtbar */ }
+}
+
+function paint() {
+  tEl.textContent = tLeft;
+  tEl.classList.toggle('warn', tLeft <= 10 && tLeft > 0);
+  tEl.classList.toggle('out', tLeft === 0);
+}
+
+function stopTimer() { if (tId) { clearInterval(tId); tId = null; } }
+
+function startTimer() {
+  stopTimer();
+  tLeft = SECS; paint();
+  tId = setInterval(() => {
+    tLeft--; paint();
+    if (tLeft === 10) beep(660, 90);
+    if (tLeft <= 0) { stopTimer(); beep(330, 550); }
+  }, 1000);
+}
+
+function startTimer2() {
+  stopTimer();
+  tId = setInterval(() => {
+    tLeft--; paint();
+    if (tLeft === 10) beep(660, 90);
+    if (tLeft <= 0) { stopTimer(); beep(330, 550); }
+  }, 1000);
+}
+
 function show(p) {
   pos = Math.max(0, Math.min(visible.length - 1, p));
   const active = visible[pos];
   slides.forEach((el, k) => el.classList.toggle('active', k === active));
   document.querySelector('#bar div').style.width = ((pos + 1) / visible.length * 100) + '%';
   document.getElementById('counter').textContent = (pos + 1) + ' / ' + visible.length;
+
+  // Uhr laeuft nur auf Frage-Folien und startet bei jeder neu
+  const timed = isQ(active);
+  tEl.classList.toggle('on', timed);
+  tEl.classList.remove('warn', 'out');
+  stopTimer();
+  if (timed) startTimer();
 }
 
 // V rezime 'end' sa odpoved pri otazke neodhaluje vobec.
@@ -456,6 +533,10 @@ document.addEventListener('keydown', e => {
     case 'f': case 'F':
       if (document.fullscreenElement) document.exitFullscreen();
       else document.documentElement.requestFullscreen();
+      break;
+    case 'r': case 'R': if (isQ(visible[pos])) startTimer(); break;
+    case 't': case 'T':
+      if (isQ(visible[pos])) { if (tId) stopTimer(); else if (tLeft > 0) startTimer2(); }
       break;
     case 'h': case 'H': help.classList.toggle('on'); break;
     case 'o': case 'O': setMode(mode === 'end' ? 'inline' : 'end'); break;
