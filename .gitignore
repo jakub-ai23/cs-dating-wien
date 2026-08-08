@@ -12,6 +12,11 @@ claude-desktop-context.md
 # Untracked 2026-06-05 (D-0265 structural fix). History not scrubbed by choice.
 sessions/
 SITREP.md
+# Backups der internen Dateien. Der exakte Name oben deckt sie NICHT ab, und eine
+# SITREP-Kopie enthaelt dieselbe interne Lage wie das Original. 2026-08-08.
+SITREP.md.*
+*.bak
+*.bak-*
 STRATEGY.md
 CLAUDE.md
 TODO.md

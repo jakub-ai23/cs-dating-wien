@@ -5,302 +5,181 @@
 <title>ČS Dating · Poukážka na drink</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --burgundy:#8b2252;
-    --gold:#b8912a;
-    --ink:#1a1208;
-    --ink-soft:#6b5540;
-    --ivory:#f8f4ee;
-  }
+  :root{ --burgundy:#8b2252; --gold:#b8912a; --ink:#1a1208; --ink-soft:#6b5540; --ivory:#f8f4ee; }
   *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 
-  /* ---------- A4 sheet, 10 cards (2 x 5), standard 85 x 54 mm ---------- */
   @page{ size:A4 portrait; margin:8mm; }
   body{ background:#d8d3ca; font-family:'Inter',sans-serif; padding:8mm; }
+
   .sheet{
     width:194mm; margin:0 auto;
     display:grid; grid-template-columns:repeat(2,85mm); grid-auto-rows:54mm;
     gap:7mm 8mm; justify-content:center;
   }
+  .sheet + .sheet{ margin-top:10mm; }
+  @media print{ .sheet + .sheet{ break-before:page; margin-top:0; } }
 
-  /* ---------- the card ---------- */
   .card{
     position:relative; overflow:hidden;
-    background:var(--ivory);
-    border:0.4mm solid var(--burgundy);
-    padding:5mm 5.5mm;
-    display:flex; flex-direction:column; justify-content:space-between;
-    color:var(--ink);
+    background:var(--ivory); border:0.4mm solid var(--burgundy);
+    padding:5mm 5.5mm; color:var(--ink);
+    display:flex; flex-direction:column;
+    outline:0.2mm dashed rgba(0,0,0,0.18); outline-offset:2.6mm;
   }
-  /* thin gold inner rule, the "ticket" feel */
-  .card::after{
-    content:""; position:absolute; inset:1.6mm;
-    border:0.25mm solid rgba(184,145,42,0.45);
-    pointer-events:none;
-  }
-  /* burgundy corner wedge */
-  .card::before{
-    content:""; position:absolute; top:0; right:0;
+  .card::after{ content:""; position:absolute; inset:1.6mm;
+    border:0.25mm solid rgba(184,145,42,0.45); pointer-events:none; }
+
+  .front{ justify-content:space-between; }
+  .front::before{ content:""; position:absolute; top:0; right:0;
     border-width:0 9mm 9mm 0; border-style:solid;
-    border-color:transparent var(--burgundy) transparent transparent;
-  }
-
-  .top{ display:flex; justify-content:space-between; align-items:flex-start; }
-  .mark{
-    font-family:'Cormorant Garamond',Georgia,serif;
-    font-size:8.5pt; font-weight:600; letter-spacing:2.2px; text-transform:uppercase;
-    color:var(--ink);
-  }
+    border-color:transparent var(--burgundy) transparent transparent; }
+  .mark{ font-family:'Cormorant Garamond',Georgia,serif; font-size:8.5pt; font-weight:600;
+    letter-spacing:2.2px; text-transform:uppercase; color:var(--ink); }
   .mark span{ color:var(--burgundy); }
-  .sub{
-    font-size:5pt; letter-spacing:1.5px; text-transform:uppercase;
-    color:var(--ink-soft); margin-top:1mm;
-  }
-
-  .middle{ text-align:center; margin-top:-1mm; }
+  .middle{ text-align:center; }
   .glyph{ font-size:13pt; color:var(--gold); line-height:1; }
-  .headline{
-    font-family:'Cormorant Garamond',Georgia,serif;
-    font-size:19pt; font-weight:600; line-height:1.05;
-    color:var(--burgundy); margin-top:0.8mm;
-  }
+  .headline{ font-family:'Cormorant Garamond',Georgia,serif; font-size:21pt; font-weight:600;
+    line-height:1.05; color:var(--burgundy); margin-top:1mm; }
   .headline em{ font-style:italic; font-weight:500; }
-  .kicker{
-    font-size:5.6pt; letter-spacing:2.6px; text-transform:uppercase;
-    color:var(--ink-soft); margin-top:1.6mm;
-  }
+  .kicker{ font-size:5.8pt; letter-spacing:2.6px; text-transform:uppercase;
+    color:var(--ink-soft); margin-top:2mm; }
+  .foot{ font-size:5pt; letter-spacing:1.5px; text-transform:uppercase;
+    color:var(--ink-soft); text-align:center; }
 
-  .bottom{ display:flex; justify-content:space-between; align-items:flex-end; gap:3mm; }
-  .field{ flex:1; }
-  .field-line{ border-bottom:0.25mm solid rgba(26,18,8,0.35); height:4.2mm; }
-  .field-label{
-    font-size:4.6pt; letter-spacing:1.4px; text-transform:uppercase;
-    color:var(--ink-soft); margin-top:0.8mm;
-  }
-  .site{
-    font-size:5pt; letter-spacing:1.2px; text-transform:uppercase;
-    color:var(--burgundy); white-space:nowrap; padding-bottom:0.6mm;
-  }
-
-  /* cut guides, screen + print */
-  .card{ outline:0.2mm dashed rgba(0,0,0,0.18); outline-offset:2.6mm; }
+  .back{ align-items:center; justify-content:center; gap:2.5mm; }
+  .qr-wrap{ background:#fff; padding:1.6mm; border:0.25mm solid rgba(139,34,82,0.25); }
+  .qr{ display:block; width:20mm; height:20mm; }
+  .back-url{ font-size:6.4pt; letter-spacing:2.4px; text-transform:uppercase;
+    color:var(--burgundy); font-weight:600; }
 
   @media print{
     body{ background:#fff; padding:0; }
     .no-print{ display:none !important; }
     .card{ outline:0.2mm dashed #bbb; outline-offset:2.6mm; }
   }
-  .no-print{
-    max-width:194mm; margin:0 auto 6mm; font-size:9pt; color:#3a3229;
-    background:#fff; border-left:3px solid var(--burgundy); padding:10px 14px; line-height:1.6;
-  }
+  .no-print{ max-width:194mm; margin:0 auto 6mm; font-size:9pt; color:#3a3229; background:#fff;
+    border-left:3px solid var(--burgundy); padding:10px 14px; line-height:1.6; }
   .no-print strong{ color:var(--burgundy); }
+  .no-print code{ background:#f2ece2; padding:1px 5px; }
 </style>
 </head>
 <body>
 
 <div class="no-print">
-  <strong>Tlač:</strong> Cmd+P → Format A4, Margins <em>None/Default</em>, Scale <strong>100 %</strong>, „Print backgrounds" einschalten → Save as PDF.
-  8 Karten pro Blatt, Standard-Visitenkartenformat 85 × 54 mm. Schneiden entlang der gestrichelten Hilfslinien, dann laminieren.
-  Die zwei Linien unten sind zum Handausfüllen: Name des Gewinners und Datum.
+  <strong>Beidseitig drucken.</strong> Cmd+P &rarr; A4 &middot; Scale <strong>100&nbsp;%</strong> &middot;
+  &bdquo;Print backgrounds&ldquo; an &middot; <strong>Two-Sided: Long-Edge binding</strong> &rarr; Save as PDF.
+  Seite 1 = Vorderseiten, Seite 2 = R&uuml;ckseiten. 8 Gutscheine pro Blatt, 85 &times; 54 mm.
+  Entlang der gestrichelten Linien schneiden, dann laminieren. QR f&uuml;hrt auf <code>csdating.eu</code>.
 </div>
 
 <div class="sheet">
+  <div class="card front">
+    <div class="mark">ČS <span>Dating</span></div>
+    <div class="middle">
+      <div class="glyph">✦</div>
+      <div class="headline">Drink <em>na nás</em></div>
+      <div class="kicker">Poukážka · 1 nápoj</div>
+    </div>
+    <div class="foot">Wien</div>
+  </div>
+  <div class="card front">
+    <div class="mark">ČS <span>Dating</span></div>
+    <div class="middle">
+      <div class="glyph">✦</div>
+      <div class="headline">Drink <em>na nás</em></div>
+      <div class="kicker">Poukážka · 1 nápoj</div>
+    </div>
+    <div class="foot">Wien</div>
+  </div>
+  <div class="card front">
+    <div class="mark">ČS <span>Dating</span></div>
+    <div class="middle">
+      <div class="glyph">✦</div>
+      <div class="headline">Drink <em>na nás</em></div>
+      <div class="kicker">Poukážka · 1 nápoj</div>
+    </div>
+    <div class="foot">Wien</div>
+  </div>
+  <div class="card front">
+    <div class="mark">ČS <span>Dating</span></div>
+    <div class="middle">
+      <div class="glyph">✦</div>
+      <div class="headline">Drink <em>na nás</em></div>
+      <div class="kicker">Poukážka · 1 nápoj</div>
+    </div>
+    <div class="foot">Wien</div>
+  </div>
+  <div class="card front">
+    <div class="mark">ČS <span>Dating</span></div>
+    <div class="middle">
+      <div class="glyph">✦</div>
+      <div class="headline">Drink <em>na nás</em></div>
+      <div class="kicker">Poukážka · 1 nápoj</div>
+    </div>
+    <div class="foot">Wien</div>
+  </div>
+  <div class="card front">
+    <div class="mark">ČS <span>Dating</span></div>
+    <div class="middle">
+      <div class="glyph">✦</div>
+      <div class="headline">Drink <em>na nás</em></div>
+      <div class="kicker">Poukážka · 1 nápoj</div>
+    </div>
+    <div class="foot">Wien</div>
+  </div>
+  <div class="card front">
+    <div class="mark">ČS <span>Dating</span></div>
+    <div class="middle">
+      <div class="glyph">✦</div>
+      <div class="headline">Drink <em>na nás</em></div>
+      <div class="kicker">Poukážka · 1 nápoj</div>
+    </div>
+    <div class="foot">Wien</div>
+  </div>
+  <div class="card front">
+    <div class="mark">ČS <span>Dating</span></div>
+    <div class="middle">
+      <div class="glyph">✦</div>
+      <div class="headline">Drink <em>na nás</em></div>
+      <div class="kicker">Poukážka · 1 nápoj</div>
+    </div>
+    <div class="foot">Wien</div>
+  </div>
+</div>
 
-  <!-- card template x10 -->
-  <div class="card">
-    <div class="top">
-      <div>
-        <div class="mark">ČS <span>Dating</span></div>
-        <div class="sub">Wien</div>
-      </div>
-    </div>
-    <div class="middle">
-      <div class="glyph">✦</div>
-      <div class="headline">Drink <em>na nás</em></div>
-      <div class="kicker">Poukážka · 1 nápoj</div>
-    </div>
-    <div class="bottom">
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Meno</div>
-      </div>
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Platí do</div>
-      </div>
-      <div class="site">csdating.eu</div>
-    </div>
+<div class="sheet">
+  <div class="card back">
+    <div class="qr-wrap"><img class="qr" src="data:image/png;base64,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" alt="csdating.eu"></div>
+    <div class="back-url">csdating.eu</div>
   </div>
-  <div class="card">
-    <div class="top">
-      <div>
-        <div class="mark">ČS <span>Dating</span></div>
-        <div class="sub">Wien</div>
-      </div>
-    </div>
-    <div class="middle">
-      <div class="glyph">✦</div>
-      <div class="headline">Drink <em>na nás</em></div>
-      <div class="kicker">Poukážka · 1 nápoj</div>
-    </div>
-    <div class="bottom">
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Meno</div>
-      </div>
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Platí do</div>
-      </div>
-      <div class="site">csdating.eu</div>
-    </div>
+  <div class="card back">
+    <div class="qr-wrap"><img class="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAIAAABEtEjdAAAHR0lEQVR42u3d0Y2bYBCF0UtEJU5HTivpwmklJaUWUsMKaYeZOed9tTbgT794ucfn9Q7P9vvf33af+c/PXyXft+r/us48zQ+XAEDcARB3AMQdAHEHQNwBxB0AcQdA3AEQdwDEHUDcARB3AMQdAHEHQNwBEHcAcQdA3AF4jjPLtj3TcOsyy3ZfO16rqs/c8TeoG9/zXDm5A8RrGQDEHQBxB0DcARB3AHEHQNwBEHcAxB0AcQcQdwDEHQBxB0DcARB3AMQdQNwBEHcAMmNDNcs2RTtuP3bc9ty2v1r1fT3Ps7vh5A4Qr2UAEHcAxB0AcQdA3AHEHQBxB0DcARB3AMQdQNwBEHcAxB0AcQdA3AEQdwBxB0DcAYgNVcigPVK7vji5AyDuAIg7AOIOIO4AiDsA4g6AuAMg7gDiDoC4AyDuAIg7AOIOgLgDiDsA4g6AuAMg7gDEhirZsM95Zwd12/4qTu4AiDsA4g6AuAMg7gDiDoC4AyDuAIg7AOIOgLgDiDsA4g6AuAMg7gCIO4C4AyDuAIg7ABm+odpxn5OM3kHt+H23/QZ1w8kdQNwBEHcAxB0AcQdA3AEQdwBxB0DcARB3AMQdAHEHEHcAxB0AcQdA3AEQdwDEHUDcAci6DdWq7UdiBzVz9lervu+2zVgndwDEHQBxB0DcARB3AMQdQNwBEHcAxB0AcQdA3AHEHQBxB0DcARB3AMQdAHEHEHcAxB2AMmfVbiSxg5o5O6jbuM5O7gCIOwDiDoC4A4g7AOIOgLgDIO4AiDuAuAMg7gCIOwDiDoC4AyDuAOIOgLgDIO4AiDsAX3B8Xu9028mMvcrYbp1zjzpuxvr9Pv8eObkDxGsZAMQdAHEHQNwBEHcAcQdA3AEQdwDEHQBxBxB3AMQdAHEHQNwBEHcAxB1A3AEQdwAyY0M1yzYnt21dulaxZerZaPtcObkDxGsZAMQdAHEHQNwBEHcAcQdA3AEQdwDEHQBxBxB3AMQdAHEHQNwBEHcAxB1A3AEQdwBiQzX2V0dzrZ5/ndNwu9Xz7OQOEK9lABB3AMQdAHEHQNwBEHcAcQdA3AEQdwDEHQBxBxB3AMQdAHEHQNwBEHcAxB1A3AHo6Oy4R1ql4/e1dTn72ai6vx1/v9v2V53cAeK1DADiDoC4AyDuAIg7gLgDIO4AiDsA4g6AuAOIOwDiDoC4AyDuAIg7AOIOIO4AiDsAz3Fc1xXbnrHBOOQz2/b0bEz6HTm5AyDuAOIOgLgDIO4AiDsA4g4g7gCIOwDiDoC4AyDuAIg7gLgDIO4AiDsA4g6AuAOIOwBDHJ/XO912FNNwc3LbDqpd0NnP5LbfUcf/6+QOEK9lABB3AMQdAHEHQNwBxB0AcQdA3AEQdwDEHUDcARB3AMQdAHEHQNwBEHcAcQdA3AHIjA3VjhubabjP2ZH9VTzPtc+VkztAvJYBQNwBEHcAxB0AcQcQdwDEHQBxB0DcARB3AHEHQNwBEHcAxB0AcQdA3AHEHQBxB+A5zizbMq3a9qz6v1X7jVX3qOr7Vn3mbc9Vx99g1bPh5A4Qr2UAEHcAxB0AcQdA3AHEHQBxB0DcARB3AMQdQNwBEHcAxB0AcQdA3AEQdwBxB0DcAYgN1W0bjFU7mR33SN1f9yh2m2//rZM7QLyWAUDcARB3AMQdAHEHEHcAxB0AcQdA3AEQdwBxB0DcARB3AMQdAHEHQNwBxB0AcQfgOY7rulyF2H7MkE3RbfcoRZuxrpWTOwDiDoC4AyDuAOIOgLgDIO4AiDsA4g4g7gCIOwDiDoC4AyDuAIg7gLgDIO4AiDsA4g7AFxyf19tVeLiq/caqvcpt19lG7uz/6+QOgLgDIO4A4g6AuAMg7gCIOwDiDoC4A4g7AOIOgLgDIO4AiDuAuAMg7gCIOwDiDoC4A5AzyzYn03DrsuP/7biT2XHLNPZmPVdO7gDxWgYAcQdA3AEQdwDEHUDcARB3AMQdAHEHQNwBEHcAcQdA3AEQdwDEHQBxBxB3AMQdgIzeUE3Dbc/YjH38Dqpr5TfoHjm5AyDuAOIOgLgDIO4AiDsA4g4g7gCIOwDiDoC4AyDuAIg7gLgDIO4AiDsA4g6AuAOIOwCxocoKVbuRtltnX6uqz7zt2XByBxB3AMQdAHEHQNwBEHcAcQdA3AEQdwDEHQBxBxB3lwBA3AEQdwDEHQBxB0DcAcQdAHEHIDZUITZF73/mjv/X/f2ez+zkDhCvZQAQdwDEHQBxB0DcAcQdAHEHQNwBEHcAxB1A3AEQdwDEHQBxB0DcARB3AHEHQNwBiA3VjvuNWbYpekfVXuW2HdQ737fjHqleObkDxGsZAMQdAHEHQNwBEHcAxB1A3AEQdwDEHQBxB0DcAcQdAHEHQNwBEHcAxB0AcQcQdwCybUN1245iR1Ubm1m2k1l1ne2gzt7mdXIHQNwBxB0AcQdA3AEQdwDEHUDcARB3AMQdAHEHQNwBEHcAcQdA3AEQdwDEHQBxBxB3AIb4D9WUdPQriGXYAAAAAElFTkSuQmCC" alt="csdating.eu"></div>
+    <div class="back-url">csdating.eu</div>
   </div>
-  <div class="card">
-    <div class="top">
-      <div>
-        <div class="mark">ČS <span>Dating</span></div>
-        <div class="sub">Wien</div>
-      </div>
-    </div>
-    <div class="middle">
-      <div class="glyph">✦</div>
-      <div class="headline">Drink <em>na nás</em></div>
-      <div class="kicker">Poukážka · 1 nápoj</div>
-    </div>
-    <div class="bottom">
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Meno</div>
-      </div>
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Platí do</div>
-      </div>
-      <div class="site">csdating.eu</div>
-    </div>
+  <div class="card back">
+    <div class="qr-wrap"><img class="qr" src="data:image/png;base64,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" alt="csdating.eu"></div>
+    <div class="back-url">csdating.eu</div>
   </div>
-  <div class="card">
-    <div class="top">
-      <div>
-        <div class="mark">ČS <span>Dating</span></div>
-        <div class="sub">Wien</div>
-      </div>
-    </div>
-    <div class="middle">
-      <div class="glyph">✦</div>
-      <div class="headline">Drink <em>na nás</em></div>
-      <div class="kicker">Poukážka · 1 nápoj</div>
-    </div>
-    <div class="bottom">
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Meno</div>
-      </div>
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Platí do</div>
-      </div>
-      <div class="site">csdating.eu</div>
-    </div>
+  <div class="card back">
+    <div class="qr-wrap"><img class="qr" src="data:image/png;base64,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" alt="csdating.eu"></div>
+    <div class="back-url">csdating.eu</div>
   </div>
-  <div class="card">
-    <div class="top">
-      <div>
-        <div class="mark">ČS <span>Dating</span></div>
-        <div class="sub">Wien</div>
-      </div>
-    </div>
-    <div class="middle">
-      <div class="glyph">✦</div>
-      <div class="headline">Drink <em>na nás</em></div>
-      <div class="kicker">Poukážka · 1 nápoj</div>
-    </div>
-    <div class="bottom">
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Meno</div>
-      </div>
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Platí do</div>
-      </div>
-      <div class="site">csdating.eu</div>
-    </div>
+  <div class="card back">
+    <div class="qr-wrap"><img class="qr" src="data:image/png;base64,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" alt="csdating.eu"></div>
+    <div class="back-url">csdating.eu</div>
   </div>
-  <div class="card">
-    <div class="top">
-      <div>
-        <div class="mark">ČS <span>Dating</span></div>
-        <div class="sub">Wien</div>
-      </div>
-    </div>
-    <div class="middle">
-      <div class="glyph">✦</div>
-      <div class="headline">Drink <em>na nás</em></div>
-      <div class="kicker">Poukážka · 1 nápoj</div>
-    </div>
-    <div class="bottom">
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Meno</div>
-      </div>
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Platí do</div>
-      </div>
-      <div class="site">csdating.eu</div>
-    </div>
+  <div class="card back">
+    <div class="qr-wrap"><img class="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAIAAABEtEjdAAAHR0lEQVR42u3d0Y2bYBCF0UtEJU5HTivpwmklJaUWUsMKaYeZOed9tTbgT794ucfn9Q7P9vvf33af+c/PXyXft+r/us48zQ+XAEDcARB3AMQdAHEHQNwBxB0AcQdA3AEQdwDEHUDcARB3AMQdAHEHQNwBEHcAcQdA3AF4jjPLtj3TcOsyy3ZfO16rqs/c8TeoG9/zXDm5A8RrGQDEHQBxB0DcARB3AHEHQNwBEHcAxB0AcQcQdwDEHQBxB0DcARB3AMQdQNwBEHcAMmNDNcs2RTtuP3bc9ty2v1r1fT3Ps7vh5A4Qr2UAEHcAxB0AcQdA3AHEHQBxB0DcARB3AMQdQNwBEHcAxB0AcQdA3AEQdwBxB0DcAYgNVcigPVK7vji5AyDuAIg7AOIOIO4AiDsA4g6AuAMg7gDiDoC4AyDuAIg7AOIOgLgDiDsA4g6AuAMg7gDEhirZsM95Zwd12/4qTu4AiDsA4g6AuAMg7gDiDoC4AyDuAIg7AOIOgLgDiDsA4g6AuAMg7gCIO4C4AyDuAIg7ABm+odpxn5OM3kHt+H23/QZ1w8kdQNwBEHcAxB0AcQdA3AEQdwBxB0DcARB3AMQdAHEHEHcAxB0AcQdA3AEQdwDEHUDcAci6DdWq7UdiBzVz9lervu+2zVgndwDEHQBxB0DcARB3AMQdQNwBEHcAxB0AcQdA3AHEHQBxB0DcARB3AMQdAHEHEHcAxB2AMmfVbiSxg5o5O6jbuM5O7gCIOwDiDoC4A4g7AOIOgLgDIO4AiDuAuAMg7gCIOwDiDoC4AyDuAOIOgLgDIO4AiDsAX3B8Xu9028mMvcrYbp1zjzpuxvr9Pv8eObkDxGsZAMQdAHEHQNwBEHcAcQdA3AEQdwDEHQBxBxB3AMQdAHEHQNwBEHcAxB1A3AEQdwAyY0M1yzYnt21dulaxZerZaPtcObkDxGsZAMQdAHEHQNwBEHcAcQdA3AEQdwDEHQBxBxB3AMQdAHEHQNwBEHcAxB1A3AEQdwBiQzX2V0dzrZ5/ndNwu9Xz7OQOEK9lABB3AMQdAHEHQNwBEHcAcQdA3AEQdwDEHQBxBxB3AMQdAHEHQNwBEHcAxB1A3AHo6Oy4R1ql4/e1dTn72ai6vx1/v9v2V53cAeK1DADiDoC4AyDuAIg7gLgDIO4AiDsA4g6AuAOIOwDiDoC4AyDuAIg7AOIOIO4AiDsAz3Fc1xXbnrHBOOQz2/b0bEz6HTm5AyDuAOIOgLgDIO4AiDsA4g4g7gCIOwDiDoC4AyDuAIg7gLgDIO4AiDsA4g6AuAOIOwBDHJ/XO912FNNwc3LbDqpd0NnP5LbfUcf/6+QOEK9lABB3AMQdAHEHQNwBxB0AcQdA3AEQdwDEHUDcARB3AMQdAHEHQNwBEHcAcQdA3AHIjA3VjhubabjP2ZH9VTzPtc+VkztAvJYBQNwBEHcAxB0AcQcQdwDEHQBxB0DcARB3AHEHQNwBEHcAxB0AcQdA3AHEHQBxB+A5zizbMq3a9qz6v1X7jVX3qOr7Vn3mbc9Vx99g1bPh5A4Qr2UAEHcAxB0AcQdA3AHEHQBxB0DcARB3AMQdQNwBEHcAxB0AcQdA3AEQdwBxB0DcAYgN1W0bjFU7mR33SN1f9yh2m2//rZM7QLyWAUDcARB3AMQdAHEHEHcAxB0AcQdA3AEQdwBxB0DcARB3AMQdAHEHQNwBxB0AcQfgOY7rulyF2H7MkE3RbfcoRZuxrpWTOwDiDoC4AyDuAOIOgLgDIO4AiDsA4g4g7gCIOwDiDoC4AyDuAIg7gLgDIO4AiDsA4g7AFxyf19tVeLiq/caqvcpt19lG7uz/6+QOgLgDIO4A4g6AuAMg7gCIOwDiDoC4A4g7AOIOgLgDIO4AiDuAuAMg7gCIOwDiDoC4A5AzyzYn03DrsuP/7biT2XHLNPZmPVdO7gDxWgYAcQdA3AEQdwDEHUDcARB3AMQdAHEHQNwBEHcAcQdA3AEQdwDEHQBxBxB3AMQdgIzeUE3Dbc/YjH38Dqpr5TfoHjm5AyDuAOIOgLgDIO4AiDsA4g4g7gCIOwDiDoC4AyDuAIg7gLgDIO4AiDsA4g6AuAOIOwCxocoKVbuRtltnX6uqz7zt2XByBxB3AMQdAHEHQNwBEHcAcQdA3AEQdwDEHQBxBxB3lwBA3AEQdwDEHQBxB0DcAcQdAHEHIDZUITZF73/mjv/X/f2ez+zkDhCvZQAQdwDEHQBxB0DcAcQdAHEHQNwBEHcAxB1A3AEQdwDEHQBxB0DcARB3AHEHQNwBiA3VjvuNWbYpekfVXuW2HdQ737fjHqleObkDxGsZAMQdAHEHQNwBEHcAxB1A3AEQdwDEHQBxB0DcAcQdAHEHQNwBEHcAxB0AcQcQdwCybUN1245iR1Ubm1m2k1l1ne2gzt7mdXIHQNwBxB0AcQdA3AEQdwDEHUDcARB3AMQdAHEHQNwBEHcAcQdA3AEQdwDEHQBxBxB3AIb4D9WUdPQriGXYAAAAAElFTkSuQmCC" alt="csdating.eu"></div>
+    <div class="back-url">csdating.eu</div>
   </div>
-  <div class="card">
-    <div class="top">
-      <div>
-        <div class="mark">ČS <span>Dating</span></div>
-        <div class="sub">Wien</div>
-      </div>
-    </div>
-    <div class="middle">
-      <div class="glyph">✦</div>
-      <div class="headline">Drink <em>na nás</em></div>
-      <div class="kicker">Poukážka · 1 nápoj</div>
-    </div>
-    <div class="bottom">
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Meno</div>
-      </div>
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Platí do</div>
-      </div>
-      <div class="site">csdating.eu</div>
-    </div>
+  <div class="card back">
+    <div class="qr-wrap"><img class="qr" src="data:image/png;base64,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" alt="csdating.eu"></div>
+    <div class="back-url">csdating.eu</div>
   </div>
-  <div class="card">
-    <div class="top">
-      <div>
-        <div class="mark">ČS <span>Dating</span></div>
-        <div class="sub">Wien</div>
-      </div>
-    </div>
-    <div class="middle">
-      <div class="glyph">✦</div>
-      <div class="headline">Drink <em>na nás</em></div>
-      <div class="kicker">Poukážka · 1 nápoj</div>
-    </div>
-    <div class="bottom">
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Meno</div>
-      </div>
-      <div class="field">
-        <div class="field-line"></div>
-        <div class="field-label">Platí do</div>
-      </div>
-      <div class="site">csdating.eu</div>
-    </div>
+  <div class="card back">
+    <div class="qr-wrap"><img class="qr" src="data:image/png;base64,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" alt="csdating.eu"></div>
+    <div class="back-url">csdating.eu</div>
   </div>
-
 </div>
 
 </body>
