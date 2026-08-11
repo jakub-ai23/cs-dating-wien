@@ -1,22 +1,26 @@
 # ČS Dating Wien
 
-> ČS Dating Wien is Vienna's curated speed dating event for people with Slovak and Czech roots, plus a community quiz night. Edition II takes place on Monday, 12 October 2026, 19:30–21:30 at a mystery venue in Vienna (exact location announced 48 hours before to confirmed guests). 16 spots (8 men, 8 women), ages 30–45. Entry: €69. A community Quiz Night takes place earlier, on Saturday 8 August 2026, open to everyone (singles and groups of friends), no age limit, group pricing from €10. Organizer: Jakub Popluhar, M.Ed., based in Vienna.
+> ČS Dating Wien is Vienna's curated speed dating event for people with Slovak and Czech roots, plus community evenings. The next event is Edition II, which takes place on Monday, 12 October 2026, 19:30–21:30 at a mystery venue in Vienna (exact location announced 48 hours before to confirmed guests). 16 spots (8 men, 8 women), ages 30–45. Entry: €69, reduced to €39 with code EDITION2 until 31 August 2026. A community Quiz Night was held earlier, on Saturday 8 August 2026, with 13 guests; it is over. Organizer: Jakub Popluhar, M.Ed., based in Vienna.
 
 ## About
 
 ČS Dating Wien brings together people with Slovak and Czech roots in Vienna for in-person, curated evenings. The speed-dating format runs several short rounds; matches are arranged privately after the event. Events are conducted in Slovak and Czech. No German or English required.
 
-The project addresses a gap in Vienna's dating scene: People with Slovak and Czech roots in Vienna (tens of thousands of people) have no dedicated venue for meeting partners and friends who share their language and cultural background. Edition I (22 June 2026) was successfully completed with strong participant feedback (average rating 5.0/5).
+The project addresses a gap in Vienna's dating scene: People with Slovak and Czech roots in Vienna (tens of thousands of people) have no dedicated venue for meeting partners and friends who share their language and cultural background. Edition I (22 June 2026) was successfully completed with 11 guests and strong participant feedback (average rating 5.0/5). A community Quiz Night followed on 8 August 2026 with 13 guests.
 
 ## Upcoming Events
 
-- [Quiz Night – 8 August 2026](https://csdating.eu/#kviz) : Czechoslovak community quiz night in Vienna. Open to all, singles and groups of friends/teams. No age limit. Group pricing: 1 person €10, 2 people €18, 3 people €25, 4 people €30. Direct purchase via Stripe. In Slovak and Czech.
-- [Edition II – 12 October 2026](https://csdating.eu/) : Speed dating, 16 spots (8 men, 8 women), ages 30–45, Vienna mystery venue, €69. Application with manual review.
+- [Edition II – 12 October 2026](https://csdating.eu/#prihlas) : Speed dating, 16 spots (8 men, 8 women), ages 30–45, Vienna mystery venue, €69 (€39 with code EDITION2 until 31 August 2026). Application with manual review. Registration open.
+
+## Past Events
+
+- Edition I, 22 June 2026, Vienna : first speed-dating evening, 11 guests, 4 ratings averaging 5.0/5.
+- Quiz Night, 8 August 2026, nineOfive Vienna : Czechoslovak community quiz night, 13 guests, seven rounds, open to all ages, teams welcome.
 
 ## Pricing
 
 - Speed dating (Edition II): €69 standard entry. Full refund within 72 hours if the applicant does not match the criteria.
-- Quiz Night: group price per team — €10 (1), €18 (2), €25 (3), €30 (4). Paid directly online; spot reserved immediately.
+- Code EDITION2 reduces Edition II entry to €39 until 31 August 2026.
 
 ## Organizer
 
@@ -24,10 +28,10 @@ Jakub Popluhar — M.Ed., international event organizer. Has attended dozens of 
 
 ## Language Reference Pages
 
-- [Slovak page](https://csdating.eu/) : Primary language version (includes the Quiz Night)
-- [Czech page](https://csdating.eu/cs/) : Czech language version (includes the Quiz Night)
-- [German page](https://csdating.eu/de/) : German language version (speed dating only)
-- [English page](https://csdating.eu/en/) : English language version (speed dating only)
+- [Slovak page](https://csdating.eu/) : Primary language version
+- [Czech page](https://csdating.eu/cs/) : Czech language version
+- [German page](https://csdating.eu/de/) : German language version
+- [English page](https://csdating.eu/en/) : English language version
 
 ## Frequently Asked Questions
 
@@ -36,9 +40,6 @@ A: Slovak and Czech. The MC alternates both languages. No German required.
 
 Q: Who can attend the speed dating?
 A: People with Slovak and Czech roots living in Vienna, ages 30–45, seriously looking for a relationship. Born in Bratislava, Brno, or Vienna — it does not matter as long as you share the language and culture.
-
-Q: Who can attend the Quiz Night?
-A: Anyone — singles and groups of friends or teams. No age limit. It is a community evening, not only dating.
 
 Q: Is there a refund policy?
 A: Speed dating: full refund within 72 hours if the application does not match criteria. Other cancellation rules: see csdating.eu/terms/.

@@ -590,62 +590,100 @@
 </section>
 
 
-<section id="kviz" style="background:var(--ivory-warm);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:80px 0;">
+<!-- ======================================================
+     PRIHLASKA / SIGNUP — Edicia II centrepiece
+     (replaced the Kviz-vecer sale block on 2026-08-11; the quiz is past)
+====================================================== -->
+<section id="prihlas" style="background:var(--ivory-warm);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:80px 0;">
   <style>
-    .kz-wrap { max-width:920px; margin:0 auto; padding:0 24px; }
-    .kz-head { text-align:center; max-width:700px; margin:0 auto; }
-    .kz-eyebrow { font-size:0.68rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
-    .kz-h2 { font-family:var(--font-display); font-weight:600; font-size:2.1rem; color:var(--ink); margin-bottom:16px; }
-    .kz-h2 em { font-style:italic; color:var(--burgundy); }
-    .kz-intro { color:var(--ink-soft); font-size:1.05rem; line-height:1.7; }
-    .kz-intro strong { color:var(--ink); }
-    .kz-meta { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin:26px 0 6px; }
-    .kz-meta div { font-size:0.82rem; color:var(--ink-soft); }
-    .kz-meta strong { display:block; font-family:var(--font-display); font-size:1.2rem; color:var(--ink); }
-    .kz-tbd { color:var(--gold); font-weight:600; }
-    .kz-table { max-width:560px; margin:36px auto 0; border:1px solid var(--rule); background:var(--ivory); }
-    .kz-row { display:flex; justify-content:space-between; align-items:center; padding:16px 24px; border-bottom:1px solid var(--rule); }
-    .kz-row:last-child { border-bottom:none; }
-    .kz-pax { font-size:1rem; color:var(--ink); }
-    .kz-pax small { display:block; font-size:0.76rem; color:var(--ink-faint); }
-    .kz-buy { display:inline-flex; align-items:center; gap:10px; background:var(--burgundy); color:var(--ivory); padding:10px 18px; border-radius:2px; font-size:0.9rem; white-space:nowrap; }
-    .kz-buy:hover { background:var(--burgundy-mid); color:var(--ivory); }
-    .kz-buy .a { font-family:var(--font-display); font-size:1.25rem; color:var(--ivory); }
-    .kz-note { text-align:center; font-size:0.85rem; color:var(--ink-faint); margin-top:14px; }
-    .kz-prize { max-width:680px; margin:30px auto 0; text-align:center; background:var(--ivory-deep); border:1px solid var(--rule); padding:26px; }
-    .kz-prize p { color:var(--ink-soft); margin-top:6px; }
-    .kz-buy-box { max-width:420px; margin:36px auto 0; text-align:center; }
-    .kz-select-label { display:block; font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:var(--ink-soft); margin-bottom:10px; }
-    .kz-select-wrap { position:relative; }
-    .kz-select { width:100%; appearance:none; -webkit-appearance:none; background:var(--ivory); border:1px solid var(--rule); border-radius:2px; padding:14px 42px 14px 18px; font-family:inherit; font-size:1rem; color:var(--ink); cursor:pointer; }
-    .kz-select-wrap::after { content:'\25be'; position:absolute; right:18px; top:50%; transform:translateY(-50%); pointer-events:none; color:var(--burgundy); font-size:0.9rem; }
-    .kz-buy-lg { display:flex; justify-content:center; width:100%; margin-top:16px; padding:16px 24px; font-size:1rem; box-sizing:border-box; }
-    .kz-discount-hint { font-size:0.8rem; color:var(--ink-faint); margin-top:12px; }
-    @media (max-width:680px){ .kz-h2 { font-size:1.7rem; } }
+    .sg-wrap { max-width:920px; margin:0 auto; padding:0 24px; }
+    .sg-head { text-align:center; max-width:700px; margin:0 auto; }
+    .sg-eyebrow { font-size:0.68rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+    .sg-h2 { font-family:var(--font-display); font-weight:600; font-size:2.1rem; color:var(--ink); margin-bottom:16px; }
+    .sg-h2 em { font-style:italic; color:var(--burgundy); }
+    .sg-intro { color:var(--ink-soft); font-size:1.05rem; line-height:1.7; }
+    .sg-intro strong { color:var(--ink); }
+    .sg-meta { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin:26px 0 6px; }
+    .sg-meta div { font-size:0.82rem; color:var(--ink-soft); }
+    .sg-meta strong { display:block; font-family:var(--font-display); font-size:1.2rem; color:var(--ink); }
+    .sg-cta-box { max-width:420px; margin:34px auto 0; text-align:center; }
+    .sg-cta { display:flex; justify-content:center; align-items:center; gap:8px; width:100%; box-sizing:border-box; background:var(--burgundy); color:var(--ivory); padding:16px 24px; border-radius:2px; font-size:1rem; }
+    .sg-cta:hover { background:var(--burgundy-mid); color:var(--ivory); }
+    .sg-cta s { opacity:0.55; }
+    .sg-hint { font-size:0.8rem; color:var(--ink-faint); margin-top:12px; }
+    .sg-note { text-align:center; max-width:560px; margin:16px auto 0; font-size:0.85rem; color:var(--ink-faint); }
+    @media (max-width:680px){ .sg-h2 { font-size:1.7rem; } }
   </style>
-  <div class="kz-wrap">
-    <div class="kz-head">
-      <div class="kz-eyebrow">Posloucháme vás</div>
-      <h2 class="kz-h2">Kvíz-večer. <em>Nejen pro singles.</em></h2>
-      <p class="kz-intro">Na Edícii I jste si přáli více akcí, nejen speed-dating. Tak děláme <strong>kvíz-večer pro celou československou partu ve Vídni</strong>. Přijď sám, s kamarádem nebo s týmem. Není to jen o randění, je to o tom poznat svoje lidi. Žádný věkový limit, hrajete o ceny.</p>
-      <div class="kz-meta">
-        <div><strong>8. 8. 2026</strong>sobota</div>
-        <div><strong>19:00</strong>start</div>
-        <div><strong>Wien</strong>centrum</div>
-        <div><strong>Bez limitu</strong>věk i počet</div>
+  <div class="sg-wrap">
+    <div class="sg-head">
+      <div class="sg-eyebrow">Přihlášení je otevřené</div>
+      <h2 class="sg-h2">Edice II. <em>Místo si držíš tady.</em></h2>
+      <p class="sg-intro">Speed-dating večer pro Slováky a Čechy ve Vídni, 30 až 45 let. <strong>16 míst, 8 mužů a 8 žen.</strong> Přihláška trvá tři minuty a čteme ji osobně.</p>
+      <div class="sg-meta">
+        <div><strong>12. 10. 2026</strong>pondělí</div>
+        <div><strong>19:30</strong>start</div>
+        <div><strong>Wien</strong>tajné místo</div>
+        <div><strong>16 míst</strong>8 + 8</div>
       </div>
     </div>
 
-    <div class="kz-buy-box">
-      <a class="kz-buy kz-buy-lg" href="https://buy.stripe.com/14AbJ0fLk8UQd58dff33W07"><span class="a">€10</span> Koupit →</a>
-      <p class="kz-discount-hint">Jeden lístek platí pro dva. Kamaráda bereš s sebou zdarma.</p>
+    <div class="sg-cta-box">
+      <a class="sg-cta" href="https://pci.jotform.com/form/261763961718367">Přihlásit se za <s>€69</s>€39</a>
+      <p class="sg-hint">Kód <strong>EDITION2</strong> platí do 31. srpna. Potom €69.</p>
     </div>
-    <p class="kz-note">Lístek stojí €10 a platí pro dvě osoby. Platit se dá i v hotovosti na místě, jen nám napiš na info@csdating.eu, ať víme připravit stůl. Podnik je v centru Vídně, přesnou adresu ti pošleme e-mailem.</p>
+    <p class="sg-note">Pokud po ověření nezapadáš, plnou částku dostaneš zpět do 72 hodin. Žádné otázky.</p>
+  </div>
+</section>
 
-    <div class="kz-prize">
-      <div style="font-size:1.8rem;">🏆</div>
-      <p><strong>Hrajete o ceny.</strong></p>
+
+<!-- ======================================================
+     ZA NAMI / PAST EVENTS — proof, straight under the signup
+====================================================== -->
+<section id="za-nami" style="padding:76px 0;">
+  <style>
+    .pe-wrap { max-width:920px; margin:0 auto; padding:0 24px; }
+    .pe-head { text-align:center; max-width:640px; margin:0 auto 40px; }
+    .pe-eyebrow { font-size:0.68rem; letter-spacing:3px; text-transform:uppercase; color:var(--ink-faint); margin-bottom:14px; }
+    .pe-h2 { font-family:var(--font-display); font-weight:600; font-size:2rem; color:var(--ink); }
+    .pe-h2 em { font-style:italic; color:var(--burgundy); }
+    .pe-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; align-items:stretch; }
+    .pe-card { display:flex; flex-direction:column; border:1px solid var(--rule); background:var(--ivory-warm); padding:30px 26px; }
+    .pe-pill { align-self:flex-start; font-size:0.6rem; letter-spacing:2px; text-transform:uppercase; padding:5px 12px; border-radius:2px; background:var(--ivory-deep); color:var(--ink-soft); margin-bottom:18px; }
+    .pe-name { font-family:var(--font-display); font-weight:600; font-size:1.85rem; line-height:1.05; color:var(--ink); margin-bottom:7px; }
+    .pe-when { font-size:0.74rem; letter-spacing:1.5px; text-transform:uppercase; color:var(--ink-faint); margin-bottom:16px; }
+    .pe-desc { font-size:0.88rem; color:var(--ink-soft); line-height:1.62; }
+    .pe-stat { margin-top:18px; padding-top:16px; border-top:1px solid var(--rule); font-size:0.78rem; letter-spacing:1.5px; text-transform:uppercase; color:var(--burgundy); }
+    .pe-quote { margin-top:auto; padding-top:16px; font-family:var(--font-display); font-style:italic; font-size:0.92rem; color:var(--ink-soft); line-height:1.6; }
+    .pe-quote cite { display:block; margin-top:8px; font-style:normal; font-size:0.64rem; letter-spacing:1.5px; text-transform:uppercase; color:var(--ink-faint); }
+    .pe-closer { text-align:center; margin:38px auto 0; max-width:620px; font-size:0.98rem; color:var(--ink-soft); line-height:1.7; }
+    .pe-closer a { display:inline-block; margin-top:10px; color:var(--burgundy); text-decoration:underline; text-underline-offset:4px; font-size:0.95rem; }
+    @media (max-width:680px){ .pe-grid { grid-template-columns:1fr; } .pe-h2 { font-size:1.6rem; } }
+  </style>
+  <div class="pe-wrap">
+    <div class="pe-head">
+      <div class="pe-eyebrow">Za námi</div>
+      <h2 class="pe-h2">Tohle už <em>proběhlo.</em></h2>
     </div>
+
+    <div class="pe-grid">
+      <article class="pe-card">
+        <span class="pe-pill">✓ Za námi</span>
+        <div class="pe-name">Edícia I</div>
+        <div class="pe-when">22. červen 2026 · Wien</div>
+        <p class="pe-desc">První speed-dating večer. 11 hostů, vyrovnaná čísla muž a žena, první matche.</p>
+        <div class="pe-stat">4 hodnocení · průměr 5,0 / 5</div>
+        <div class="pe-quote">„Super akcia a nápad pre cz/sk singles.“<cite>— účastník, 29</cite></div>
+      </article>
+      <article class="pe-card">
+        <span class="pe-pill">✓ Za námi</span>
+        <div class="pe-name">Kvíz-večer</div>
+        <div class="pe-when">8. srpen 2026 · nineOfive, Wien</div>
+        <p class="pe-desc">Večer pro celou československou partu, nejen pro singles. Sedm kol otázek, týmy u stolu, hrálo se o ceny.</p>
+        <div class="pe-stat">13 lidí · bez věkového limitu</div>
+      </article>
+    </div>
+
+    <p class="pe-closer">Další večer je Edice II, 12. října. Šestnáct míst, přihlášení je otevřené.<br><a href="https://pci.jotform.com/form/261763961718367">Přihlásit se →</a></p>
   </div>
 </section>
 
@@ -994,18 +1032,18 @@
         <div class="tl-desc">První speed-dating večer. 11 hostů, vyrovnaná čísla muž / žena, první matche. Hodnocení 4× 5,0 / 5.</div>
         <div class="tl-quote">„Super akcia a nápad pre cz/sk singles.“<cite>— účastník, 29</cite></div>
       </div>
-      <div class="tl-card is-open">
-        <span class="tl-pill open">Přihlášení otevřené</span>
+      <div class="tl-card is-done">
+        <span class="tl-pill done">✓ Za námi</span>
         <div class="tl-name">Kvíz-večer</div>
         <div class="tl-when">8. srpen 2026 · Wien</div>
-        <div class="tl-desc">Něco nového: ptali jste se po více akcích, tady je. Otevřené pro všechny, i s partou. Bez věkového limitu, hrajete o ceny.</div>
-        <div class="tl-link"><a href="#kviz">Detaily a koupě →</a></div>
+        <div class="tl-desc">Kvíz pro celou československou partu, nejen pro singles. 13 lidí, sedm kol, hrálo se o ceny.</div>
       </div>
-      <div class="tl-card is-flag">
-        <span class="tl-pill flag">Hlavní edice</span>
+      <div class="tl-card is-open">
+        <span class="tl-pill open">Přihlášení otevřené</span>
         <div class="tl-name">Edícia II</div>
         <div class="tl-when">12. říjen 2026 · Wien</div>
         <div class="tl-desc">Další speed-dating večer. 30–45 let, 16 míst (8 + 8). Vážné hledání partnera. S kódem EDITION2 €39 do 31. srpna, potom €69.</div>
+        <div class="tl-link"><a href="#prihlas">Přihlásit se →</a></div>
       </div>
     </div>
 
