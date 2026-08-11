@@ -225,28 +225,52 @@
     }
     .nav-cta:hover { background: var(--burgundy-mid); color: var(--ivory); }
 
-    .lang-toggle {
+    .lang-dd { position: relative; }
+    .lang-dd summary {
+      list-style: none;
+      cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 0;
+      gap: 7px;
+      padding: 5px 10px;
       border: 1px solid var(--rule);
-      overflow: hidden;
-    }
-    .lang-toggle a {
-      padding: 6px 13px;
       font-size: 1rem;
-      letter-spacing: 0;
+      line-height: 1;
       color: var(--ink-faint);
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .lang-dd summary::-webkit-details-marker { display: none; }
+    .lang-dd summary::marker { content: ""; }
+    .lang-dd summary:hover { background: var(--ivory-warm); border-color: var(--ink-faint); }
+    .lang-dd-caret { font-size: 0.6rem; color: var(--ink-faint); transition: transform 0.15s; }
+    .lang-dd[open] .lang-dd-caret { transform: rotate(180deg); }
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      z-index: 200;
+      min-width: 170px;
+      margin: 0;
+      padding: 4px 0;
+      list-style: none;
+      background: var(--ivory);
+      border: 1px solid var(--rule);
+      box-shadow: 0 10px 26px rgba(26, 18, 8, 0.12);
+    }
+    .lang-menu a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
       text-decoration: none;
+      white-space: nowrap;
       transition: background 0.15s, color 0.15s;
-      border-right: 1px solid var(--rule);
     }
-    .lang-toggle a:last-child { border-right: none; }
-    .lang-toggle a.active {
-      background: var(--ink);
-      color: var(--ivory);
-    }
-    .lang-toggle a:not(.active):hover { background: var(--ivory-warm); color: var(--ink); }
+    .lang-menu a:hover { background: var(--ivory-warm); color: var(--ink); }
+    .lang-menu a.is-current { color: var(--burgundy); }
+    .lang-menu .lang-flag { font-size: 1rem; line-height: 1; }
 
     /* ====================================================
        LAYOUT PRIMITIVES
@@ -1649,14 +1673,31 @@
       <li><a href="#preco">Why</a></li>
       <li><a href="#termin">Date</a></li>
     </ul>
-    <div class="lang-toggle">
-      <a href="/" title="Slovensky">🇸🇰</a>
-      <a href="/cs/" title="Česky">🇨🇿</a>
-      <a href="/de/" title="Deutsch">🇩🇪</a>
-    </div>
+    <details class="lang-dd">
+      <summary aria-label="Language"><span class="lang-flag">🇬🇧</span><span class="lang-dd-caret" aria-hidden="true">▾</span></summary>
+      <ul class="lang-menu">
+        <li><a href="/"><span class="lang-flag">🇸🇰</span>Slovensky</a></li>
+        <li><a href="/cs/"><span class="lang-flag">🇨🇿</span>Čeština</a></li>
+        <li><a href="/de/"><span class="lang-flag">🇦🇹</span>Deutsch</a></li>
+        <li><a href="/en/" class="is-current" aria-current="page"><span class="lang-flag">🇬🇧</span>English</a></li>
+      </ul>
+    </details>
     <a href="https://pci.jotform.com/form/261763961718367" class="nav-cta">Apply</a>
   </div>
 </nav>
+<script>
+  /* Language dropdown: close on outside click or Escape. */
+  (function () {
+    var dd = document.querySelector('.lang-dd');
+    if (!dd) return;
+    document.addEventListener('click', function (e) {
+      if (dd.open && !dd.contains(e.target)) dd.open = false;
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && dd.open) dd.open = false;
+    });
+  })();
+</script>
 
 
 <!-- ======================================================
