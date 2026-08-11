@@ -4,7 +4,7 @@ Sent MANUALLY (or via Jotform Workflow Approve branch) after you review and appr
 
 ---
 
-## Subject (recommended): `Si vnútri. ČS Dating Wien · 22. júna 2026`
+## Subject (recommended): `Si vnútri. ČS Dating Wien · 12. októbra 2026`
 
 ---
 
@@ -17,15 +17,15 @@ Sent MANUALLY (or via Jotform Workflow Approve branch) after you review and appr
 
   <p style="font-size:0.96rem;margin:0 0 14px;">Ahoj {firstName},</p>
 
-  <p style="font-size:0.96rem;margin:0 0 14px;">Prešli sme tvoju prihlášku a tešíme sa, že ťa <strong>22. júna 2026</strong> uvidíme pri stole.</p>
+  <p style="font-size:0.96rem;margin:0 0 14px;">Prešli sme tvoju prihlášku a tešíme sa, že ťa <strong>12. októbra 2026</strong> uvidíme pri stole.</p>
 
   <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;font-weight:600;color:#8b2252;margin:24px 0 10px;">Detaily večera</h3>
 
   <table style="width:100%;border-collapse:collapse;font-size:0.94rem;">
-    <tr><td style="padding:8px 0;color:#6b5540;width:30%;">Dátum</td><td style="padding:8px 0;"><strong>Pondelok, 22. júna 2026</strong></td></tr>
+    <tr><td style="padding:8px 0;color:#6b5540;width:30%;">Dátum</td><td style="padding:8px 0;"><strong>Pondelok, 12. októbra 2026</strong></td></tr>
     <tr><td style="padding:8px 0;color:#6b5540;">Čas</td><td style="padding:8px 0;"><strong>19:30 – 21:30</strong> (príchod od 19:15)</td></tr>
-    <tr><td style="padding:8px 0;color:#6b5540;">Miesto</td><td style="padding:8px 0;"><strong>[VENUE NAME], [ADRESA]</strong><br><span style="color:#6b5540;font-size:0.86rem;">Wien, 1. okres · [U-Bahn/tram info]</span></td></tr>
-    <tr><td style="padding:8px 0;color:#6b5540;">Formát</td><td style="padding:8px 0;">10 stretnutí × 5 minút + voľná konverzácia</td></tr>
+    <tr><td style="padding:8px 0;color:#6b5540;">Miesto</td><td style="padding:8px 0;"><strong>[VENUE NAME], [ADRESA]</strong><br><span style="color:#6b5540;font-size:0.86rem;">Wien, [OKRES] · [U-Bahn/tram info]</span></td></tr>
+    <tr><td style="padding:8px 0;color:#6b5540;">Formát</td><td style="padding:8px 0;">8 stretnutí × 5 minút + voľná konverzácia</td></tr>
     <tr><td style="padding:8px 0;color:#6b5540;">Dress code</td><td style="padding:8px 0;">Smart casual. To, v čom by si šiel/šla na rande do dobrej reštaurácie.</td></tr>
   </table>
 
@@ -33,7 +33,7 @@ Sent MANUALLY (or via Jotform Workflow Approve branch) after you review and appr
 
   <ol style="font-size:0.94rem;padding-left:22px;margin:0 0 18px;">
     <li style="margin-bottom:6px;"><strong>19:15 – 19:30</strong> Príchod, welcome drink, krátky brief.</li>
-    <li style="margin-bottom:6px;"><strong>19:30 – 20:30</strong> 10 stretnutí, každé 5 minút. Po každom zaznamenáš pocit (✓ chcem ďalej / ✗ nie / ? neviem).</li>
+    <li style="margin-bottom:6px;"><strong>19:30 – 20:30</strong> 8 stretnutí, každé 5 minút. Po každom zaznamenáš pocit (✓ chcem ďalej / ✗ nie / ? neviem).</li>
     <li style="margin-bottom:6px;"><strong>20:30 – 21:30</strong> Voľná konverzácia, drink, sieťovanie.</li>
     <li><strong>Do 24 hodín</strong> dostaneš email s tvojimi matchmi. Vzájomné záujmy = výmena kontaktov.</li>
   </ol>
@@ -41,8 +41,8 @@ Sent MANUALLY (or via Jotform Workflow Approve branch) after you review and appr
   <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;font-weight:600;color:#8b2252;margin:28px 0 10px;">Praktické</h3>
 
   <ul style="font-size:0.94rem;padding-left:22px;margin:0 0 18px;">
-    <li style="margin-bottom:6px;"><strong>Platba:</strong> €39 už máš zaplatené ✓ <em>(alebo: použil/a si kód MORAVA — vstup zadarmo ✓)</em></li>
-    <li style="margin-bottom:6px;"><strong>Nemôžeš prísť?</strong> Daj vedieť aspoň 7 dní vopred (do 15. júna), peniaze ti vrátime. Po tomto termíne presunieme tvoje miesto na ďalšiu edíciu.</li>
+    <li style="margin-bottom:6px;"><strong>Platba:</strong> €39 už máš zaplatené ✓</li>
+    <li style="margin-bottom:6px;"><strong>Nemôžeš prísť?</strong> Daj vedieť aspoň 7 dní vopred (do 5. októbra), peniaze ti vrátime. Po tomto termíne presunieme tvoje miesto na ďalšiu edíciu.</li>
     <li style="margin-bottom:6px;"><strong>Otázky?</strong> Stačí odpísať na tento email.</li>
   </ul>
 
@@ -70,25 +70,25 @@ Si vnútri.
 
 Ahoj {firstName},
 
-Prešli sme tvoju prihlášku a tešíme sa, že ťa 22. júna 2026 uvidíme pri stole.
+Prešli sme tvoju prihlášku a tešíme sa, že ťa 12. októbra 2026 uvidíme pri stole.
 
 DETAILY VEČERA
-Dátum:     Pondelok, 22. júna 2026
+Dátum:     Pondelok, 12. októbra 2026
 Čas:       19:30 – 21:30 (príchod od 19:15)
 Miesto:    [VENUE NAME], [ADRESA]
-           Wien, 1. okres · [U-Bahn/tram info]
-Formát:    10 stretnutí × 5 minút + voľná konverzácia
+           Wien, [OKRES] · [U-Bahn/tram info]
+Formát:    8 stretnutí × 5 minút + voľná konverzácia
 Dress code: Smart casual
 
 AKO TO BUDE PREBIEHAŤ
 19:15 – 19:30  Príchod, welcome drink, krátky brief.
-19:30 – 20:30  10 stretnutí, každé 5 minút. Po každom zaznamenáš pocit.
+19:30 – 20:30  8 stretnutí, každé 5 minút. Po každom zaznamenáš pocit.
 20:30 – 21:30  Voľná konverzácia, drink, sieťovanie.
 Do 24 h        Email s matchmi. Vzájomné záujmy = výmena kontaktov.
 
 PRAKTICKÉ
-- Platba: €39 zaplatené (alebo MORAVA = zadarmo).
-- Nemôžeš prísť? Daj vedieť do 15. júna, peniaze vrátime. Inak presúvame miesto na Edíciu II.
+- Platba: €39 zaplatené.
+- Nemôžeš prísť? Daj vedieť do 5. októbra, peniaze vrátime. Inak presúvame miesto na ďalšiu edíciu.
 - Otázky? Odpíš na tento email.
 
 Tešíme sa.
@@ -109,7 +109,7 @@ Once you have these three things, this email is shippable.
 
 ## Rejection variant (when you click DENY)
 
-Subject: `ČS Dating Edícia I — tentoraz to nevyšlo`
+Subject: `ČS Dating Edícia II — tentoraz to nevyšlo`
 
 Body (short, humane):
 
@@ -118,7 +118,7 @@ Ahoj {firstName},
 
 ďakujeme za prihlášku na ČS Dating Wien.
 
-Pre Edíciu I tentoraz nesedíš s naším výberom — kvôli balansu 10+10, vekovému rozsahu, alebo profilu, ktorý nezodpovedá tomu, čo na večeri hľadáme. Nie je to o tebe, je to o zložení skupiny.
+Pre Edíciu II tentoraz nesedíš s naším výberom — kvôli balansu 8+8, vekovému rozsahu, alebo profilu, ktorý nezodpovedá tomu, čo na večeri hľadáme. Nie je to o tebe, je to o zložení skupiny.
 
 Tvoje €39 ti vraciame do 72 hodín. Ak chceš, dáme ti vedieť o ďalších edíciách — odpíš slovom "áno".
 

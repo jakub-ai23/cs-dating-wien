@@ -1,4 +1,4 @@
-# Jotform Auto-Confirmation Email — ČS Dating Edícia I
+# Jotform Auto-Confirmation Email — ČS Dating Edícia II
 
 Sent automatically after every successful form submission.
 Configure in Jotform: Settings → Emails → Notifier (to applicant) → Edit.
@@ -19,7 +19,7 @@ Tvoja prihláška dorazila. Ozveme sa do 24 hodín.
 
 **C. Branded:**
 ```
-ČS Dating · Edícia I — prihláška prijatá
+ČS Dating · Edícia II — prihláška prijatá
 ```
 
 **My pick: B.** Sets expectation in the subject = open rate insurance + lower anxiety.
@@ -35,15 +35,15 @@ Tvoja prihláška dorazila. Ozveme sa do 24 hodín.
 
   <p style="font-size:0.96rem;margin:0 0 14px;">Ahoj {firstName},</p>
 
-  <p style="font-size:0.96rem;margin:0 0 14px;">Ďakujeme za prihlášku na <strong>ČS Dating Wien — Edíciu I</strong> (22. júna 2026).</p>
+  <p style="font-size:0.96rem;margin:0 0 14px;">Ďakujeme za prihlášku na <strong>ČS Dating Wien — Edíciu II</strong> (12. októbra 2026).</p>
 
-  <p style="font-size:0.96rem;margin:0 0 14px;">Tvoje údaje sme prijali a momentálne ich prechádzame. Overujeme každú prihlášku osobne, kvôli balansu (10 mužov + 10 žien) a kvôli bezpečnosti všetkých účastníkov.</p>
+  <p style="font-size:0.96rem;margin:0 0 14px;">Tvoje údaje sme prijali a momentálne ich prechádzame. Overujeme každú prihlášku osobne, kvôli balansu (8 mužov + 8 žien) a kvôli bezpečnosti všetkých účastníkov.</p>
 
   <p style="font-size:0.96rem;margin:0 0 14px;"><strong>Do 24 hodín ti napíšeme</strong>:</p>
 
   <ul style="font-size:0.94rem;margin:0 0 18px;padding-left:20px;">
     <li>či si prijatý/á</li>
-    <li>presnú adresu venue (Wien, 1. okres)</li>
+    <li>presnú adresu venue (Wien, tajné miesto)</li>
     <li>časový harmonogram večera</li>
     <li>info o platbe (ak ešte nebola)</li>
   </ul>
@@ -61,7 +61,7 @@ Tvoja prihláška dorazila. Ozveme sa do 24 hodín.
   </p>
 
   <p style="font-size:0.74rem;color:#6b5540;margin:18px 0 0;letter-spacing:0.5px;">
-    🔒 Platba bezpečne cez Stripe &nbsp;·&nbsp; 💸 €39 späť ak nezapadáš &nbsp;·&nbsp; 📍 Wien, 1. okres
+    🔒 Platba bezpečne cez Stripe &nbsp;·&nbsp; 💸 €39 späť ak nezapadáš &nbsp;·&nbsp; 📍 Wien, tajné miesto
   </p>
 
 </div>
@@ -74,13 +74,13 @@ Tvoja prihláška dorazila. Ozveme sa do 24 hodín.
 ```
 Ahoj {firstName},
 
-Dostali sme tvoju prihlášku na ČS Dating Wien — Edíciu I (22. júna 2026).
+Dostali sme tvoju prihlášku na ČS Dating Wien — Edíciu II (12. októbra 2026).
 
-Tvoje údaje sme prijali a momentálne ich prechádzame. Overujeme každú prihlášku osobne, kvôli balansu (10 mužov + 10 žien) a kvôli bezpečnosti všetkých účastníkov.
+Tvoje údaje sme prijali a momentálne ich prechádzame. Overujeme každú prihlášku osobne, kvôli balansu (8 mužov + 8 žien) a kvôli bezpečnosti všetkých účastníkov.
 
 Do 24 hodín ti napíšeme:
 - či si prijatý/á
-- presnú adresu venue (Wien, 1. okres)
+- presnú adresu venue (Wien, tajné miesto)
 - časový harmonogram večera
 - info o platbe
 
