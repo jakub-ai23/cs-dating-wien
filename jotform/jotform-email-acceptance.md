@@ -1,5 +1,7 @@
 # Email #2 — Acceptance + Venue + Agenda
 
+> **⚠️ EDÍCIA II ZRUŠENÁ (September 2026).** Tento email template je archívny. Neodosielať — Edícia II sa nekoná.
+
 Sent MANUALLY (or via Jotform Workflow Approve branch) after you review and approve an applicant.
 
 ---

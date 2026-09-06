@@ -1,5 +1,7 @@
 # Jotform Auto-Confirmation Email — ČS Dating Edícia II
 
+> **⚠️ EDÍCIA II ZRUŠENÁ (September 2026).** Tento email template je archívny. Formulár Edícia II (261763961718367) by mal byť vypnutý v Jotform.
+
 Sent automatically after every successful form submission.
 Configure in Jotform: Settings → Emails → Notifier (to applicant) → Edit.
 
